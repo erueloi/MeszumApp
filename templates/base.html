@@ -47,7 +47,11 @@
 
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
-                <a href="{% url 'login' %}" class="btn btn-primary navbar-btn navbar-right">Sign in</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'auth_logout' %}?next=/meszum/" class="btn btn-primary navbar-btn navbar-right">Logout</a>
+                {% else %}
+                <a href="{% url 'auth_login' %}" class="btn btn-primary navbar-btn navbar-right">Sign in</a>
+                {% endif %}
 	        </div><!--/.navbar-collapse -->
 	      </div>
 	    </nav>    
