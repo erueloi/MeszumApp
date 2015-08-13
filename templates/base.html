@@ -1,6 +1,7 @@
 <!doctype html>
-{% csrf_token %}
+
 {% load staticfiles %}
+
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -44,21 +45,30 @@
 	          	 <img src="http://meszum.darrueye.com/img/nav_logo.png">
 	          </a>
 	          <a class="navbar-brand" href="/meszum">MeSZum</a>
-
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
+             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'auth_logout' %}?next=/meszum/" class="btn btn-primary navbar-btn navbar-right">Logout</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }} <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="{% url 'administrationspace' %}">Administration</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{% url 'auth_logout' %}?next=/meszum/">Logout</a></li>
+                          </ul>
+                    </li>
                 {% else %}
-                <a href="{% url 'auth_login' %}" class="btn btn-primary navbar-btn navbar-right">Sign in</a>
+                    <a href="{% url 'auth_login' %}" class="btn btn-primary navbar-btn">Sign in</a>
                 {% endif %}
+             </ul>
 	        </div><!--/.navbar-collapse -->
 	      </div>
 	    </nav>    
     
      <div class="container">
-      <!-- Example row of columns -->
-     {% block container %} {% endblock %}
+          {% block container %} {% endblock %}
      </div> <!-- /container -->
     </div>
     <footer class="footer">
@@ -66,14 +76,12 @@
         <p class="text-muted">Copyright © 2015  </p>
       </div>
     </footer>
-
         <script>window.jQuery || document.write('<script src="{% static "js/vendor/jquery-1.11.2.min.js" %}"><\/script>')</script>
-
 		<script src="{% static "js/vendor/bootstrap.min.js" %}"></script>
-
         <script src="{% static "js/classie.js" %}"></script>
 		<script src="{% static "js/helper.js" %}"></script>
 		<script src="{% static "js/grid3d.js" %}"></script>
+        <script src="{% static "js/sidebar_menu.js" %}"></script>
 		<script>
 			new grid3D( document.getElementById( 'grid3d' ) );
 		</script>

@@ -7,5 +7,8 @@ def index(request):
 def login(request):
 
     context_dict = {}
-
     return render(request, 'login.html', context_dict)
+
+def administrationspace(request):
+    context_dict = {}
+    return render(request, 'AdministrationSpace.html', context_dict)

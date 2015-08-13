@@ -17,17 +17,13 @@
 body {
 	height: 100%;
 	background: #e5e5e5;
-	font-size: 100%;
-	line-height: 1.25;
-	font-family: 'Lato', Arial, sans-serif;
+	/*font-size: 100%;*/
+	/*line-height: 1.25;*/
+	/*font-family: 'Lato', Arial, sans-serif;*/
 }
 
 body.demo-2 {
 	background: #3498db;
-}
-
-.container {
-	overflow: hidden;
 }
 
 a {

@@ -193,7 +193,7 @@ body {
 
 .close-content {
 	position: fixed;
-	z-index: 1000;
+	z-index: 1100;
 	top: 0;
 	right: 10px;
 	font-size: 1.6em;
