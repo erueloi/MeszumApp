@@ -3,31 +3,67 @@
 
 {% block container %}
    <div class="row">
+
     <div class="col-sm-12 col-md-12">
-    <div class="panel">
-              <div class="tabbable tabs-left clearfix">
-                <ul id="myTab1" class="nav nav-tabs">
-                  <li class="active"><a href="#home3" data-toggle="tab">Dades</a></li>
+         <div class="page-header" style="border-bottom-color: #FFCE54;padding-bottom: 0px;">
+                <h4>Administration</h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+              <div class="media">
+                  <div class="media-left media-middle">
+                    <a href="#">
+                      <img src="https://pbs.twimg.com/profile_images/547294814031839232/gvj_6sJ1_400x400.jpeg" class="img-circle" style="width: 100px; height: 100px;">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">La Boite</h4>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="panel panel-warning">
+              <div class="panel-heading">
+                <h3 class="panel-title">Configuration</h3>
+              </div>
+              <div class="panel-body">
+                 <ul id="myTab1" class="nav nav-tabs">
+                  <li class="active"><a href="#home3" data-toggle="tab">Information</a></li>
                   <li class=""><a href="#profile3" data-toggle="tab">Events</a></li>
-                  <li class=""><a href="#myTabDrop3" data-toggle="tab">Dropdown</a></li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
                   <div class="tab-pane fade active in" id="home3">
-                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</p>
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="form-group">
+                                  <label>Name</label>
+                                  <input type="text" class="form-control" placeholder="Name">
+                              </div>
+                              <div class="form-group">
+                                  <label for="form.email.id_for_label">Email</label><br>
+                                  <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                    <input class="form-control" id="id_email" name="email" type="email" placeholder="someone@site.com">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                   </div>
+
                   <div class="tab-pane fade" id="profile3">
                     <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.  </p>
                     <ul class="media-list">
                           <li class="media">
-                            <a class="pull-left" href="#"><img class="media-object img-rounded" src="img/photo-1.jpg"></a>
+                            <a class="pull-left" href="#"><img class="media-object img-rounded" src="{% static "img/events/boite.jpg" %}" style="width: 64px; height: 70px;"></a>
                             <div class="media-body">
-                              <h4 class="media-heading">Media heading</h4>
-                              <p>12 Apr, 2013 at 12:00</p>
+                              <h4 class="media-heading">Fi d'any 2015</h4>
+                              <p>12 Dec, 2015 at 12:00</p>
                               <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
                             </div>
                           </li>
                           <li class="media">
-                            <a class="pull-left" href="#"><img class="media-object img-rounded" src="img/photo-1.jpg"></a>
+                            <a class="pull-left" href="#"><img class="media-object img-rounded" src="{% static "img/events/boite.jpg" %}" style="width: 64px; height: 70px;"></a>
                             <div class="media-body">
                               <h4 class="media-heading">Media heading</h4>
                               <p>12 Apr, 2013 at 12:00</p>
@@ -35,44 +71,20 @@
                             </div>
                           </li>
                         <li class="media">
-                            <a class="pull-left" href="#"><img class="media-object img-rounded" src="img/photo-1.jpg"></a>
+                            <a class="pull-left" href="#"><img class="media-object img-rounded" src="{% static "img/events/boite.jpg" %}" style="width: 64px; height: 70px;"></a>
                             <div class="media-body">
                               <h4 class="media-heading">Media heading</h4>
                               <p>12 Apr, 2013 at 12:00</p>
                               <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
                             </div>
                           </li>
-                        <li class="media">
-                            <a class="pull-left" href="#"><img class="media-object img-rounded" src="img/photo-1.jpg"></a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Media heading</h4>
-                              <p>12 Apr, 2013 at 12:00</p>
-                              <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
-                            </div>
-                          </li>
-            </ul>
+                    </ul>
                   </div>
-                  <div class="tab-pane fade" id="myTabDrop3">
-                    <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone...</p>
-                  </div>
+
                 </div>
               </div>
             </div>
-        </div>
-
-   </div>
-  <!--
-  <div class="row clearfix">
-
-    <div class="col-sm-3 col-md-2 sidebar-nav">
-        <ul class="nav nav-pills nav-stacked" role="tablist">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Another link</a></li>
-            <li><a href="#">Next link</a></li>
-            <li><a href="#">Last link</a></li>
-        </ul>
     </div>
-    <div class="col-sm-9 col-md-10 main"> <h1 class="page-header">Dashboard</h1></div>
-  </div>-->
+</div>
 
 {% endblock %}
