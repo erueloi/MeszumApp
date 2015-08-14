@@ -20,7 +20,7 @@
 
 .card .card-heading {
   padding: 0 0 10px 0;
-  text-algin: left;
+  text-algin: left;!important
   margin: 0;
 }
 
