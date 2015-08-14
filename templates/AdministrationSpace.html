@@ -2,6 +2,16 @@
 {% load staticfiles %}
 
 {% block container %}
-  Admin
+  <div class="row clearfix">
+    <div class="col-sm-3 col-md-2 sidebar-nav">
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-9 col-md-10 main"> <h1 class="page-header">Dashboard</h1></div>
+  </div>
 
 {% endblock %}
