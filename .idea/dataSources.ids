@@ -52,6 +52,7 @@
       <exported-key name="auth_user_groups_user_id_4b5ed4ffdb8fd9b0_fk_auth_user_id" table="auth_user_groups" schema="" catalog="meszum" columns="user_id"/>
       <exported-key name="auth_user_user_permissi_user_id_7f0938558328534a_fk_auth_user_id" table="auth_user_user_permissions" schema="" catalog="meszum" columns="user_id"/>
       <exported-key name="django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id" table="django_admin_log" schema="" catalog="meszum" columns="user_id"/>
+      <exported-key name="registration_registratio_user_id_e84782b3f7685bb_fk_auth_user_id" table="registration_registrationprofile" schema="" catalog="meszum" columns="user_id"/>
       <index name="username" unique="true" columns="username"/>
     </table>
     <table name="auth_user_groups" schema="" catalog="meszum" type="TABLE">
@@ -111,6 +112,32 @@
       <column name="expire_date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="session_key"/>
       <index name="django_session_de54fa62" unique="false" columns="expire_date"/>
+    </table>
+    <table name="meszum_event" schema="" catalog="meszum" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="startdate" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="poster" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="space_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="meszum_event_space_id_226a4d3da06b46b5_fk_meszum_space_id" columns="space_id" ref-table="meszum_space" ref-schema="" ref-catalog="meszum" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="meszum_event_84defa73" unique="false" columns="space_id"/>
+    </table>
+    <table name="meszum_space" schema="" catalog="meszum" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="254" scale="0" nullable="false" jdbcType="12"/>
+      <column name="logotype" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="meszum_event_space_id_226a4d3da06b46b5_fk_meszum_space_id" table="meszum_event" schema="" catalog="meszum" columns="space_id"/>
+    </table>
+    <table name="registration_registrationprofile" schema="" catalog="meszum" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="activation_key" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="registration_registratio_user_id_e84782b3f7685bb_fk_auth_user_id" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="meszum" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
   </data-source>
 </component>
