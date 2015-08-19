@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 from meszum.forms import SpaceForm
 from django.contrib.auth.models import User
 
@@ -13,7 +14,7 @@ def login(request):
 
 def administrationspace(request):
 
-    objUser = User.objects.get(user=request.user)
+    objUser = User.objects.get(id=request.user.id)
 
     # A HTTP POST?
     if request.method == 'POST':
@@ -23,8 +24,8 @@ def administrationspace(request):
             objSpace = form.save(commit=False)
             objSpace.user = objUser
             objSpace.save()
-
-            return administrationspace(request)
+            messages.add_message(request, messages.SUCCESS, 'S''ha guardat correctament.')
+            #return redirect('administrationspace')
         else:
             print form.errors
     else:
