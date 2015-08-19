@@ -10,3 +10,13 @@ class SpaceForm(forms.ModelForm):
         model = Space
         fields = ('name', 'email', 'logotype')
 
+class EventForm(forms.ModelForm):
+    title = forms.CharField(max_length=100)
+    description = forms.CharField(max_length=100)
+    startdate = forms.CharField(max_length=100)
+    poster = forms.ImageField(required=False)
+
+    class Meta:
+        model = Event
+        fields = ('title', 'description', 'startdate')
+

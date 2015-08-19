@@ -44,9 +44,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registration',
     'widget_tweaks',
     'meszum',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -72,7 +72,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'meszum',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'Naieruvaryvalee',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }

@@ -5,11 +5,22 @@
 {% block container %}
    <div class="row">
     <div class="col-sm-12 col-md-12">
-       <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
-    <div class="page-header" style="border-bottom-color: #FFCE54;padding-bottom: 0px;">
+       <div class="container-fluid">
+    <div class="page-header" style="border-bottom:1px solid #f6bb42">
       <h4 class="pull-left">
         Administration
       </h4>
+         {% if messages %}
+    {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+         <div class="alert alert-success alert-dismissable pull-left">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+               {{ message }}.
+         </div>
+    {% endfor %}
+{% endif %}
+
+
       <div class="pull-right">
         <ol class="breadcrumb breadcrumb-arrow">
                   <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
@@ -35,16 +46,6 @@
 				    {% endfor %}
 
 				{% endif %}
-                  {% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-        {{ message }}
-    </li>
-    {% endfor %}
-</ul>
-{% endif %}
                   </div>
               </div>
           </div>
@@ -63,7 +64,7 @@
                   <div class="tab-pane fade active in" id="home3">
                       <div class="row">
                           <div class="col-md-4">
-                              <form action="." method="post" role="form" enctype="multipart/form-data">
+                              <form action="../" method="post" role="form" enctype="multipart/form-data">
                                   {% csrf_token %}
                               <div class="form-group">
                                   <label for="form.name.id_for_label">Name</label>
