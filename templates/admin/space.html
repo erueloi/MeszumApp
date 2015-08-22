@@ -11,16 +11,14 @@
         Administration
       </h4>
          {% if messages %}
-    {% for message in messages %}
-        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-         <div class="alert alert-success alert-dismissable pull-left">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-               {{ message }}.
-         </div>
-    {% endfor %}
-{% endif %}
-
-
+            {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                 <div class="alert alert-success alert-dismissable pull-left">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                       {{ message }}.
+                 </div>
+            {% endfor %}
+         {% endif %}
       <div class="pull-right">
         <ol class="breadcrumb breadcrumb-arrow">
                   <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>

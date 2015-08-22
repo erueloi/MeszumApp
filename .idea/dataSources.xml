@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2021984548">
+  <component name="DataSourceManagerImpl" format="xml" hash="315944864">
     <data-source source="LOCAL" name="Django default" uuid="ec4d8fa9-1718-4cdc-a0e4-c716454e65b8">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/meszum</jdbc-url>
+      <jdbc-url>jdbc:mysql://mysql.server/meszum$meszum</jdbc-url>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
@@ -21,6 +21,13 @@
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/mysql-connector-java-5.1.35-bin.jar</url>
         </library>
       </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - meszum@localhost" uuid="b895b5c2-83d9-4826-8773-0ffad7fbed02">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/meszum</jdbc-url>
+      <libraries />
     </data-source>
   </component>
 </project>

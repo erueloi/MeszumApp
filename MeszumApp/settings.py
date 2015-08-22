@@ -39,14 +39,16 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'django.contrib.admin',
+    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'widget_tweaks',
+    'geopy',
     'meszum',
-    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,19 +66,46 @@ ROOT_URLCONF = 'MeszumApp.urls'
 WSGI_APPLICATION = 'MeszumApp.wsgi.application'
 
 
-# Database
+# Database MYSQL Ubuntu - Casa
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'meszum',
+#         'USER': 'root',
+#         'PASSWORD': 'Naieruvaryvalee',
+#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#     }
+# }
+
+#Database PostgreSQL + PostGIS
+#https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'meszum',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': 'Naieruvaryvalee',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'HOST': 'localhost',
     }
 }
+
+# Database PYTHONANYWHERE
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'meszum$meszum',
+#         'USER': 'meszum',
+#         'PASSWORD': 'MusicAllSet',
+#         'HOST': 'mysql.server',
+#     }
+# }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

@@ -1,8 +1,23 @@
 from django.shortcuts import render
 from django.contrib import messages
 from meszum.forms import SpaceForm, EventForm
-from meszum.models import Space
+from meszum.models import Space, Event
 from django.contrib.auth.models import User
+from geopy.geocoders.googlev3 import GoogleV3
+from geopy.geocoders.googlev3 import GeocoderQueryError
+from urllib2 import URLError
+from django.contrib.gis import geos
+
+def geocode_address(address):
+    address = address.encode('utf-8')
+    geocoder = GoogleV3()
+    try:
+        _, latlon = geocoder.geocode(address)
+    except (URLError, GeocoderQueryError, ValueError):
+        return None
+    else:
+        point = "POINT(%s %s)" % (latlon[1], latlon[0])
+        return geos.fromstr(point)
 
 def index(request):
     context_dict = {}
@@ -39,15 +54,37 @@ def administrationspace(request):
 
 def administrationevents(request):
     context_dict = {}
+
+    try:
+        space = Space.objects.get(user=request.user.id)
+        events = Event.objects.filter(space=space).order_by('startdate')
+    except Space.DoesNotExist:
+        space = None
+        events = None
+
+    context_dict['association'] = space
+    context_dict['events'] = events
+
     return render(request, 'admin/events.html', context_dict)
 
 def addevents(request):
+    objUser = User.objects.get(id=request.user.id)
+    try:
+        objSpace = Space.objects.get(user=objUser)
+    except Space.DoesNotExist:
+        objSpace = None
 
     if request.method == 'POST':
-        form = EventForm(request.POST)
+        form = EventForm(request.POST, request.FILES)
         if form.is_valid():
+            address = form.cleaned_data['address']
+            objEvent = form.save(commit=False)
+            objEvent.geometry = geocode_address(address)
+            objEvent.space = objSpace
+            objEvent.save()
             #Save Event
-            messages.add_message(request, messages.SUCCESS, 'S''ha guardat correctament')
+            messages.success(request,'S''ha guardat correctament l''Event')
+            return administrationevents(request)
         else:
             print form.errors
     else:
