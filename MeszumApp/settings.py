@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Django settings for MeszumApp project.
 
@@ -16,6 +17,15 @@ SETTINGS_DIR = os.path.dirname(__file__)
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_ROOT = os.path.abspath(PROJECT_PATH)
 
+
+# obtener la configuración de la base de dato a partir de la variable $DATABASE_URL
+# import dj_database_url
+#
+# DATABASES['default'] =  dj_database_url.config()
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#
+# # Permitir todos los nombres de dominio
+# ALLOWED_HOSTS = ['*']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -48,6 +58,7 @@ INSTALLED_APPS = (
     'django.contrib.gis',
     'widget_tweaks',
     'geopy',
+    'gunicorn',
     'meszum',
 )
 
@@ -124,6 +135,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+#STATIC_ROOT = 'staticfiles'
 STATIC_PATH = os.path.join(BASE_DIR,'static')
 
 STATIC_URL = '/static/' # You may find this is already defined as such.

@@ -1,7 +1,11 @@
+Django==1.8.3
+django-import-export==0.2.6
+django-registration-redux==1.1
+django-widget-tweaks==1.4.1
+geopy==1.10.0
 dj-database-url==0.3.0
-Django==1.8.1
-django-postgrespool==0.3.0
-gunicorn==19.3.0
-psycopg2==2.6
-SQLAlchemy==1.0.4
-whitenoise==1.0.6
+dj-static==0.0.6
+gunicorn==19.1.1
+psycopg2==2.5.1
+static==0.4
+wsgiref==0.1.2
