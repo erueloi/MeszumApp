@@ -23,7 +23,7 @@ PROJECT_ROOT = os.path.abspath(PROJECT_PATH)
 #
  DATABASES['default'] =  dj_database_url.config()
  DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 #
 # # Permitir todos los nombres de dominio
  ALLOWED_HOSTS = ['*']
