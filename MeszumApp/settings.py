@@ -19,14 +19,14 @@ PROJECT_ROOT = os.path.abspath(PROJECT_PATH)
 
 
 # obtener la configuración de la base de dato a partir de la variable $DATABASE_URL
- import dj_database_url
+# import dj_database_url
 #
- DATABASES['default'] =  dj_database_url.config()
- DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
- SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# DATABASES['default'] =  dj_database_url.config()
+# DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 #
 # # Permitir todos los nombres de dominio
- ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '60b*3s2y9xs1w+rmxmmg_4&2a_jni32+h*a8%#p76lm4g(cn3f'
