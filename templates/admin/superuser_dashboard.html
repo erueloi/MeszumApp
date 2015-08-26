@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+
+{% block container %}
+    <style>
+    .btn-xxl {
+  padding: 20px 26px;
+  font-size: 35px;
+  border-radius: 8px;
+}
+    </style>
+     <div class="row" style="padding-top: 50px;">
+        <div class="col-md-10">
+                <ol class="breadcrumb breadcrumb-arrow">
+                    <li><a href="#"><i class="glyphicon glyphicon-home"></i> SuperUser Dashboard</a></li>
+                </ol>
+              </div>
+         <div class="col-md-2">
+                <div class="form-search search-only">
+                  <i class="search-icon glyphicon glyphicon-search"></i>
+                  <input type="text" class="form-control search-query">
+                </div>
+         </div>
+
+        <div class="col-xs-10 col-xs-offset-2 col-sm-9 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <a href="{% url 'sd_spaces' %}" class="btn btn-info btn-xxl" role="button"><span class="glyphicon glyphicon-fullscreen"></span> <br/>Spaces</a>
+            <a href="#" class="btn btn-success btn-xxl" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Users</a>
+            <a href="#" class="btn btn-primary btn-xxl" role="button"><span class="glyphicon glyphicon-calendar"></span> <br/>Events</a>
+            <a href="#" class="btn btn-warning btn-xxl" role="button"><span class="glyphicon glyphicon-star"></span> <br/>Favs.</a>
+        </div>
+    </div>
+
+{% endblock %}

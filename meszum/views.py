@@ -23,6 +23,15 @@ def index(request):
     context_dict = {}
     return render(request, 'index.html', context_dict)
 
+def superuserdashboard(request):
+    context_dict = {}
+    return render(request, 'admin/superuser_dashboard.html', context_dict)
+
+def sd_spaces(request):
+    context_dict = {}
+    context_dict['spaces'] = Space.objects.all();
+    return render(request, 'admin/sd_spaces.html', context_dict)
+
 def login(request):
 
     context_dict = {}

@@ -19,6 +19,8 @@
         <script src="{% static "js/vendor/bootstrap.min.js" %}"></script>
         <script src="{% static "js/vendor/bootstrap-datetimepicker.min.js" %}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+        <script src="{% static "js/jquery.dataTables.js" %}"></script>
+        <script src="{% static "js/dataTables.bootstrap.min.js" %}"></script>
         <script src="{% static "js/modernizr.custom.js" %}"></script>
         <script src="{% static "js/classie.js" %}"></script>
         <script src="{% static "js/helper.js" %}"></script>
@@ -34,6 +36,7 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/bootplus.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/bootflat.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-datetimepicker.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/dataTables.bootstrap.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/demo.css" %}" />
 		<link rel="stylesheet" type="text/css" href="{% static "css/component.css" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}" />
@@ -70,11 +73,12 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }} <span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                <li><a href="{% url 'administrationspace' %}">Administration</a></li>
-                                <li><a href="{% url 'administrationevents' %}">Events</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="{% url 'auth_logout' %}?next=/meszum/">Logout</a></li>
+                                  {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
+                                  <li><a href="{% url 'administrationspace' %}">Administration</a></li>
+                                  <li><a href="{% url 'administrationevents' %}">Events</a></li>
+                                  <li><a href="#">Something else here</a></li>
+                                  <li role="separator" class="divider"></li>
+                                  <li><a href="{% url 'auth_logout' %}?next=/meszum/">Logout</a></li>
                               </ul>
                         </li>
                     {% else %}
