@@ -11,36 +11,37 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import socket
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+# openshift is our PAAS for now.
+ON_PAAS = 'OPENSHIFT_REPO_DIR' in os.environ
 
 SETTINGS_DIR = os.path.dirname(__file__)
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_ROOT = os.path.abspath(PROJECT_PATH)
 
-
-# obtener la configuración de la base de dato a partir de la variable $DATABASE_URL
-# import dj_database_url
-#
-# DATABASES['default'] =  dj_database_url.config()
-# DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#
-# # Permitir todos los nombres de dominio
-ALLOWED_HOSTS = ['*']
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '60b*3s2y9xs1w+rmxmmg_4&2a_jni32+h*a8%#p76lm4g(cn3f'
+if ON_PAAS:
+    SECRET_KEY = os.environ['OPENSHIFT_SECRET_TOKEN']
+else:
+    # SECURITY WARNING: keep the secret key used in production secret!
+    SECRET_KEY = '60b*3s2y9xs1w+rmxmmg_4&2a_jni32+h*a8%#p76lm4g(cn3f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# adjust to turn off when on Openshift, but allow an environment variable to override on PAAS
+# DEBUG = not ON_PAAS
+# DEBUG = DEBUG or os.getenv("debug","false").lower() == "true"
 DEBUG = True
+
+if ON_PAAS and DEBUG:
+    print("*** Warning - Debug mode is on ***")
 
 TEMPLATE_DEBUG = True
 
-TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT, 'templates'),
-)
-
-ALLOWED_HOSTS = []
+if ON_PAAS:
+    ALLOWED_HOSTS = [os.environ['OPENSHIFT_APP_DNS'], socket.gethostname()]
+else:
+    ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -74,6 +75,45 @@ ROOT_URLCONF = 'MeszumApp.urls'
 
 WSGI_APPLICATION = 'MeszumApp.wsgi.application'
 
+if ON_PAAS:
+    # determine if we are on MySQL or POSTGRESQL
+    if "OPENSHIFT_POSTGRESQL_DB_USERNAME" in os.environ: 
+    
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.contrib.gis.db.backends.postgis',  
+                'NAME':     os.environ['OPENSHIFT_APP_NAME'],
+                'USER':     os.environ['OPENSHIFT_POSTGRESQL_DB_USERNAME'],
+                'PASSWORD': os.environ['OPENSHIFT_POSTGRESQL_DB_PASSWORD'],
+                'HOST':     os.environ['OPENSHIFT_POSTGRESQL_DB_HOST'],
+                'PORT':     os.environ['OPENSHIFT_POSTGRESQL_DB_PORT'],
+            }
+        }
+        
+    elif "OPENSHIFT_MYSQL_DB_USERNAME" in os.environ: 
+    
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME':     os.environ['OPENSHIFT_APP_NAME'],
+                'USER':     os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
+                'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
+                'HOST':     os.environ['OPENSHIFT_MYSQL_DB_HOST'],
+                'PORT':     os.environ['OPENSHIFT_MYSQL_DB_PORT'],
+            }
+        }        
+else:
+    #Database PostgreSQL + PostGIS
+    #https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.contrib.gis.db.backends.postgis',
+            'NAME': 'meszum',
+            'USER': 'postgres',
+            'PASSWORD': 'Naieruvaryvalee',
+            'HOST': 'localhost',
+        }
+    }
 
 # Database MYSQL Ubuntu - Casa
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -89,18 +129,7 @@ WSGI_APPLICATION = 'MeszumApp.wsgi.application'
 #     }
 # }
 
-#Database PostgreSQL + PostGIS
-#https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'meszum',
-        'USER': 'postgres',
-        'PASSWORD': 'Naieruvaryvalee',
-        'HOST': 'localhost',
-    }
-}
 
 # Database PYTHONANYWHERE
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -134,12 +163,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 #STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'wsgi','static')
 STATIC_PATH = os.path.join(BASE_DIR,'static')
 
 STATIC_URL = '/static/' # You may find this is already defined as such.
 
 STATICFILES_DIRS = (
     STATIC_PATH,
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'templates'),
 )
 
 MEDIA_URL = '/media/'
