@@ -69,7 +69,8 @@
 .top-content .description a:focus { border-bottom: 1px dotted #fff; }
 
 .form-box {
-	margin-top: 35px;
+	margin-top: 45px;
+	font-family: 'Roboto', sans-serif;
 }
 
 .form-top {
@@ -86,7 +87,7 @@
 	padding-top: 25px;
 }
 
-.form-top-left h3 { margin-top: 0; }
+.form-top-left h3 { margin-top: 0px; }
 
 .form-top-right {
 	float: left;
@@ -99,7 +100,7 @@
 }
 
 .form-bottom {
-	padding: 25px 25px 30px 25px;
+	padding: 25px 25px 5px 25px;
 	background: #eee;
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 	text-align: left;
@@ -117,12 +118,24 @@
 	border-color: #4aaf51;
 }
 
-.social-login {
-	margin-top: 35px;
+/*.social-login {*/
+	/*margin-top: 35px;*/
+/*}*/
+
+.social-login-buttons {
+	margin-top: 25px;
+}
+
+.social-login h3 {
+	color: #fff;
+	text-align: center;
+	font-size: 22px;
+	margin-top: 10px!important;
 }
 
 .social-login-buttons {
 	margin-top: 25px;
+	text-align: center;
 }
 
 /*input[type="text"],*/
@@ -178,7 +191,7 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
     margin: 0;
     padding: 0 20px;
     vertical-align: middle;
-    background: #4aaf51;
+    background: #fdc81a;
     border: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;

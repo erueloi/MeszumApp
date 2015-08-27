@@ -5,34 +5,102 @@
 {% block container %}
 
     	<div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="col-sm-4 col-sm-offset-4 form-box">
                         	<div class="form-top">
                         		<div class="form-top-left">
                         			<h3>Login to our site</h3>
-                            		<p>Enter your username and password to log on:</p>
+                            		<p>Enter your username and password to log</p>
                         		</div>
                         		<div class="form-top-right">
                         			<i class="fa fa-key"></i>
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" action="" method="post" class="login-form">
+			                    <form role="form" action="." method="post" class="form-horizontal" id="logForm">
                                     {% csrf_token %}
 			                    	<div class="form-group">
-			                    		<label class="sr-only" for="form-username">Username</label>
-			                        	<input type="text" id="id_username" name="username" placeholder="Username..." class="form-username form-control">
+                                         <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                                                <input type="text" id="id_username" name="username" placeholder="Username..." class="form-control input-lg">
+                                            </div>
+                                        </div>
 			                        </div>
 			                        <div class="form-group">
-			                        	<label class="sr-only" for="form-password">Password</label>
-			                        	<input type="password" placeholder="Password..." class="form-password form-control" id="id_password" name="password">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                                <input type="password" placeholder="Password..." class="form-control input-lg" id="id_password" name="password">
+                                            </div>
+                                        </div>
 			                        </div>
-			                        <button type="submit" class="btn" value="Submit">Sign in!</button>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <div class="checkbox" style="padding-left:15px;">
+                                                    <label>
+                                                        <input type="checkbox" checked="" autocomplete="off" > Keep me logged in
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <button type="submit" class="btn btn-primary btn-lg" value="Submit">Log In</button>
+                                            </div>
+                                        </div>
+                                    </div>
 			                    </form>
-		                    </div>
+		                        <form action="{% url 'registration_register' %}" id="regForm" method="post" class="form-horizontal" style="display: none;">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                                                <input type="text" class="form-control input-lg" placeholder="Username" autocomplete="off" id="id_username" name="username">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                                                <input type="text" class="form-control input-lg" placeholder="Email" autocomplete="off" id="id_email" name="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                                <input type="password" class="form-control input-lg" placeholder="Password" autocomplete="off" id="id_password1" name="password1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group formSubmit">
+                                        <div class="col-sm-7">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" autocomplete="off"> I agree to the Terms &amp; Conditions
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5 submitWrap">
+                                            <button type="submit" class="btn btn-success btn-lg">Register</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group formNotice">
+                                        <div class="col-xs-12">
+                                            <p class="hasAccount text-center">Already have an account? <span>Log in here</span></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                             <div class="col-xs-12 formNotice" style="color: #fff; padding-top: 5px;">
+                                <p class="text-center">Don't have an account? <span> Register now</span></p>
+                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3 social-login">
                         	<h3>...or login with:</h3>
                         	<div class="social-login-buttons">
 	                        	<a class="btn btn-link-1 btn-link-1-facebook" href="#">
@@ -48,4 +116,40 @@
                         </div>
                     </div>
 
+    <script>
+        jQuery(document).ready(function() {
+
+            /*
+                Fullscreen background
+            */
+            $.backstretch("{% static "img/backgrounds/bg_login2.jpg" %}");
+
+            /*
+                Form validation
+            */
+            $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
+                $(this).removeClass('input-error');
+            });
+
+            $('.login-form').on('submit', function(e) {
+
+                $(this).find('input[type="text"], input[type="password"], textarea').each(function(){
+                    if( $(this).val() == "" ) {
+                        e.preventDefault();
+                        $(this).addClass('input-error');
+                    }
+                    else {
+                        $(this).removeClass('input-error');
+                    }
+                });
+
+            });
+
+            $('.formNotice span').click(function() {
+						$("#logForm").toggle();
+						$("#regForm").toggle();
+					});
+
+        });
+    </script>
 {% endblock %}
