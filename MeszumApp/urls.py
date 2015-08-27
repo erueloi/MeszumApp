@@ -1,8 +1,10 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from meszum import views
 
 urlpatterns = patterns('',
+    url(r'^$', views.commingsoon, name='commingsoon'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^meszum/', include('meszum.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),

@@ -19,6 +19,10 @@ def geocode_address(address):
         point = "POINT(%s %s)" % (latlon[1], latlon[0])
         return geos.fromstr(point)
 
+def commingsoon(request):
+    context_dict = {}
+    return render(request, 'commingsoon.html', context_dict)
+
 def index(request):
     context_dict = {}
     return render(request, 'index.html', context_dict)
