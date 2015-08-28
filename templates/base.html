@@ -80,11 +80,12 @@
                                   <li><a href="{% url 'administrationevents' %}">Events</a></li>
                                   <li><a href="#">Something else here</a></li>
                                   <li role="separator" class="divider"></li>
-                                  <li><a href="{% url 'auth_logout' %}?next=/meszum/">Logout</a></li>
+                                  <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>
                               </ul>
                         </li>
                     {% else %}
-                        <a href="{% url 'auth_login' %}" class="btn btn-primary navbar-btn">Sign in</a>
+                        <a href="{% url 'account_login' %}" class="btn btn-success navbar-btn">Log in</a>
+                        <a href="{% url 'account_signup' %}" class="btn btn-primary navbar-btn">Sign up</a>
                     {% endif %}
                  </ul>
                 </div><!--/.navbar-collapse -->

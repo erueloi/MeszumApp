@@ -36,11 +36,6 @@ def sd_spaces(request):
     context_dict['spaces'] = Space.objects.all();
     return render(request, 'admin/sd_spaces.html', context_dict)
 
-def login(request):
-
-    context_dict = {}
-    return render(request, 'login.html', context_dict)
-
 def administrationspace(request):
 
     objUser = User.objects.get(id=request.user.id)

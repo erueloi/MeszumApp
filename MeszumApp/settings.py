@@ -27,6 +27,8 @@ else:
     # SECURITY WARNING: keep the secret key used in production secret!
     SECRET_KEY = '60b*3s2y9xs1w+rmxmmg_4&2a_jni32+h*a8%#p76lm4g(cn3f'
 
+SITE_ID = 1
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # adjust to turn off when on Openshift, but allow an environment variable to override on PAAS
 # DEBUG = not ON_PAAS
@@ -48,16 +50,21 @@ else:
 
 INSTALLED_APPS = (
     'django.contrib.admin',
-    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'widget_tweaks',
     'geopy',
     'gunicorn',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
     'meszum',
 )
 
@@ -172,6 +179,13 @@ STATICFILES_DIRS = (
     STATIC_PATH,
 )
 
+# TEMPLATE_CONTEXT_PROCESSORS = (
+#     'django.core.context_processors.request',
+#     'django.contrib.auth.context_processors.auth',
+#     'allauth.account.context_processors.account',
+#     'allauth.socialaccount.context_processors.socialaccount'
+# )
+
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
 )
@@ -184,5 +198,8 @@ REGISTRATION_OPEN = True                # If True, users can register
 ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
 REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.
 LOGIN_REDIRECT_URL = '/meszum/'  # The page you want users to arrive at after they successful log in
-LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in,
-                                                                # and are trying to access pages requiring authentication
+LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in  # and are trying to access pages requiring authentication
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_LOGOUT_REDIRECT_URL = '/meszum/'
+ACCOUNT_SIGNUP_FORM_CLASS = 'meszum.forms.SignupForm'
+ACCOUNT_EMAIL_VERIFICATION = 'none'

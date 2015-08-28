@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import Group
 from meszum.models import Space, Event
 
 class SpaceForm(forms.ModelForm):
@@ -21,3 +22,20 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = ('title', 'description', 'startdate', 'poster', 'address')
 
+class SignupForm(forms.Form):
+    isBussines = forms.CharField(max_length=2)
+
+    def signup(self, request, user):
+        if self.cleaned_data['isBussines'] == "1":
+            group = Group.objects.get(name='Space')
+        else:
+            group = Group.objects.get(name='Member')
+        user.groups.add(group)
+        user.save()
+
+# first_name = forms.CharField(max_length=30, label='Voornaam')
+#     last_name = forms.CharField(max_length=30, label='Achternaam')
+#
+#     def signup(self, request, user):
+#         user.first_name = self.cleaned_data['first_name']
+#         user.last_name = self.cleaned_data['last_name']
