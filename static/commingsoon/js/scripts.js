@@ -25,7 +25,7 @@ jQuery(document).ready(function() {
     /*
 	    Countdown initializer
 	*/
-	var now = new Date(2016,7,27);
+	var now = new Date(2016,9,11);
 	var countTo = 25 * 24 * 60 * 60 * 1000 + now.valueOf();    
 	$('.timer').countdown(countTo, function(event) {
 		$(this).find('.days').text(event.offset.totalDays);

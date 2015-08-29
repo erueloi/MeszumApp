@@ -22,7 +22,7 @@
         <script src="{% static "js/jquery.backstretch.min.js" %}"></script>
         <script src="{% static "js/jquery.dataTables.js" %}"></script>
         <script src="{% static "js/dataTables.bootstrap.min.js" %}"></script>
-        <script src="{% static "js/owl.carousel.min.js" %}"></script>
+        <script src="{% static "js/slick.min.js" %}"></script>
         <script src="{% static "js/modernizr.custom.js" %}"></script>
         <script src="{% static "js/classie.js" %}"></script>
         <script src="{% static "js/helper.js" %}"></script>
@@ -39,8 +39,8 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/bootflat.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-datetimepicker.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/dataTables.bootstrap.min.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "css/owlcarrousel/owl.carousel.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "css/owlcarrousel/owl.theme.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick-theme.css" %}"/>
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" type="text/css" href="{% static "css/demo.css" %}" />
 		<link rel="stylesheet" type="text/css" href="{% static "css/component.css" %}" />
@@ -79,9 +79,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }}<span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                   {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
-                                  {% if user.is_superuser or user.groups.all.0.name == 'Space' %}<li><a href="{% url 'administrationspace' %}">Administration</a></li>{% endif %}
-                                  {% if user.is_superuser or user.groups.all.0.name == 'Space' %}<li><a href="{% url 'administrationevents' %}">Events</a></li>{% endif %}
-                                  {% if user.is_superuser or user.groups.all.0.name == 'Member' %}<li><a href="#">Configuration</a></li>{% endif %}
+                                  {% if user.groups.all.0.name == 'Space' %}<li><a href="{% url 'administrationspace' %}">Administration</a></li>{% endif %}
+                                  {% if user.groups.all.0.name == 'Space' %}<li><a href="{% url 'administrationevents' %}">Events</a></li>{% endif %}
+                                  {% if user.groups.all.0.name == 'Member' %}<li><a href="#">Configuration</a></li>{% endif %}
                                   <li role="separator" class="divider"></li>
                                   <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>
                               </ul>

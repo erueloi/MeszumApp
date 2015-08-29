@@ -33,7 +33,7 @@ def superuserdashboard(request):
 
 def sd_spaces(request):
     context_dict = {}
-    context_dict['spaces'] = Space.objects.all();
+    context_dict['spaces'] = Space.objects.filter();
     return render(request, 'admin/sd_spaces.html', context_dict)
 
 def administrationspace(request):
@@ -62,7 +62,6 @@ def administrationspace(request):
 
 def administrationevents(request):
     context_dict = {}
-
     try:
         space = Space.objects.get(user=request.user.id)
         events = Event.objects.filter(space=space).order_by('startdate')
