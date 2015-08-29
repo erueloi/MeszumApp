@@ -6,82 +6,70 @@
    <div class="row">
     <div class="col-sm-12 col-md-12">
        <div class="container-fluid">
-    <div class="page-header" style="border-bottom:1px solid #f6bb42">
-      <h4 class="pull-left">
-        Administration
-      </h4>
-         {% if messages %}
-            {% for message in messages %}
-                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-                 <div class="alert alert-success alert-dismissable pull-left">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                       {{ message }}.
-                 </div>
-            {% endfor %}
-         {% endif %}
-      <div class="pull-right">
-        <ol class="breadcrumb breadcrumb-arrow">
-                  <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                  <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
+            <div class="page-header" style="border-bottom:1px solid #f6bb42; margin-bottom: 10px!important;">
+              <h4 class="pull-left" style="margin-bottom: 0px!important;">
+                Administration
+              </h4>
+                 {% if messages %}
+                    {% for message in messages %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                         <div class="alert alert-success alert-dismissable pull-left">
+                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                               {{ message }}.
+                         </div>
+                    {% endfor %}
+                 {% endif %}
+              <div class="pull-right">
+                <ol class="breadcrumb breadcrumb-arrow" style="margin-bottom: 0px!important;">
+                  <li><a href="{% url 'superuserdashboard' %}"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
+                  <li class="active"><span><i class="glyphicon glyphicon-fullscreen"></i>  La Boite</span></li>
                 </ol>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-</div>
-        <div class="panel panel-default">
-          <div class="panel-body">
-              <div class="media">
-                  <div class="media-left media-middle">
-                    <a href="#">
-                      <img src="https://pbs.twimg.com/profile_images/547294814031839232/gvj_6sJ1_400x400.jpeg" class="img-circle" style="width: 100px; height: 100px;">
-                    </a>
-                  </div>
-                  <div class="media-body">
-                    <h4 class="media-heading">La Boite</h4>
-                        {% if form.errors %}
-                    {% for error in form.errors %}
-				    	 {{ error|escape }} </br>
-				    {% endfor %}
-
-				{% endif %}
-                  </div>
               </div>
-          </div>
+              <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+   </div>
+    <div class="row">
+        <div class="col-md-3">
+             <div class="panel panel-default">
+                 <div class="panel-body">
+                     <img src="https://pbs.twimg.com/profile_images/547294814031839232/gvj_6sJ1_400x400.jpeg" class="img-responsive img-circle" style="width: 100px; height: 100px; margin:0px auto!important;">
+                     <h4 style="text-align: center;">La Boite</h4>
+                     <ul class="list-group">
+                      <li class="list-group-item"><span class="badge badge-default">25</span>Events</li>
+                      <li class="list-group-item"><span class="badge badge-primary">1500</span>Followers</li>
+                    </ul>
+                     <div>
+                         <strong><i class="fa fa-pencil margin-r-5"></i> Type</strong>
+                          <p>
+                            <span class="label label-danger">UI Design</span>
+                            <span class="label label-success">Coding</span>
+                            <span class="label label-info">Javascript</span>
+                            <span class="label label-warning">PHP</span>
+                            <span class="label label-primary">Node.js</span>
+                          </p>
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                          <p class="text-muted">Essera, 29 Lleida</p>
+                    </div>
+                 </div>
+             </div>
         </div>
 
-        <div class="panel panel-warning">
+        <div class="col-md-9">
+            <div class="panel panel-warning">
               <div class="panel-heading">
-                <h3 class="panel-title">Configuration</h3>
+                <h3 class="panel-title"></h3>
               </div>
               <div class="panel-body">
-                 <ul id="myTab1" class="nav nav-tabs">
-                  <li class="active"><a href="#home3" data-toggle="tab">Information</a></li>
-                  <li class=""><a href="#profile3" data-toggle="tab">Events</a></li>
-                </ul>
+                  <ul id="myTab1" class="nav nav-tabs">
+                      <li class="active"><a href="#profile3" data-toggle="tab">Upcoming Events</a></li>
+                      <li class=""><a href="#home3" data-toggle="tab">Settings</a></li>
+                  </ul>
                 <div id="myTabContent" class="tab-content">
-                  <div class="tab-pane fade active in" id="home3">
-                      <div class="row">
-                          <div class="col-md-4">
-                              <form action="." method="post" role="form" enctype="multipart/form-data">
-                                  {% csrf_token %}
-                              <div class="form-group">
-                                  <label for="form.name.id_for_label">Name</label>
-                                  {{ form.name|add_class:"form-control" }}
-                              </div>
-                              <div class="form-group">
-                                  <label for="form.email.id_for_label">Email</label><br>
-                                  <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    {{ form.email|add_class:"form-control" }}
-                                  </div>
-                              </div>
-                               <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
-                               </form>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="tab-pane fade" id="profile3">
+                     <div class="tab-pane fade active in" id="profile3">
                     <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.  </p>
                     <ul class="media-list">
                           <li class="media">
@@ -110,11 +98,37 @@
                           </li>
                     </ul>
                   </div>
-
+                     <div class="tab-pane fade" id="home3">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <form action="." method="post" role="form" enctype="multipart/form-data">
+                                  {% csrf_token %}
+                              <div class="form-group">
+                                  <label for="form.name.id_for_label">Name</label>
+                                  {{ form.name|add_class:"form-control" }}
+                              </div>
+                              <div class="form-group">
+                                  <label for="form.email.id_for_label">Email</label><br>
+                                  <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                    {{ form.email|add_class:"form-control" }}
+                                  </div>
+                              </div>
+                               <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+                               </form>
+                          </div>
+                      </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+        </div>
+
+
     </div>
-</div>
+
+
+
 
 {% endblock %}

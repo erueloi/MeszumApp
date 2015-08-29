@@ -20,10 +20,10 @@
                 {% endfor %}
              {% endif %}
               <div class="pull-right">
-                <ol class="breadcrumb breadcrumb-arrow">
-                          <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                          <li><a href="#"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
-                          <li class="active"><a href="#"><i class="glyphicon glyphicon-calendar"></i> Events</a></li>
+                <ol class="breadcrumb breadcrumb-arrow" style="margin-bottom: 0px!important;">
+                    <li><a href="{% url 'administrationspace' %}"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
+                    <li><a href="{% url 'administrationspace' %}"><i class="glyphicon glyphicon-fullscreen"></i> La Boite</a></li>
+                    <li class="active"><span><i class="glyphicon glyphicon-calendar"></i>  Events</span></li>
                 </ol>
               </div>
               <div class="clearfix"></div>

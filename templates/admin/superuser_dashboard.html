@@ -23,13 +23,94 @@
                   <input type="text" class="form-control search-query">
                 </div>
          </div>
-
-        <div class="col-xs-10 col-xs-offset-2 col-sm-9 col-sm-offset-2 col-md-6 col-md-offset-3">
-            <a href="{% url 'sd_spaces' %}" class="btn btn-info btn-xxl" role="button"><span class="glyphicon glyphicon-fullscreen"></span> <br/>Spaces</a>
-            <a href="#" class="btn btn-success btn-xxl" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Users</a>
-            <a href="#" class="btn btn-primary btn-xxl" role="button"><span class="glyphicon glyphicon-calendar"></span> <br/>Events</a>
-            <a href="#" class="btn btn-warning btn-xxl" role="button"><span class="glyphicon glyphicon-star"></span> <br/>Favs.</a>
+     </div>
+    <div class="row">
+        <div class="col-md-12">
+          <h4 style="margin-top: 10px!important; margin-bottom: 5px!important;">
+            Dashboard
+            <small>Control panel</small>
+          </h4>
+          <hr style="height: 1px; border: none; color: #000; background-color: #f6bb42;margin-top: 0px!important; ">
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3>15</h3>
+                  <p>Spaces</p>
+                </div>
+                <div class="icon">
+                  <i class="glyphicon glyphicon-fullscreen"></i>
+                </div>
+                <a href="{% url 'sd_spaces' %}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3>1500</h3>
+                  <p>Users</p>
+                </div>
+                <div class="icon">
+                  <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner">
+                  <h3>15000</h3>
+                  <p>Events</p>
+                </div>
+                <div class="icon">
+                  <i class="glyphicon glyphicon-calendar"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <h3>0</h3>
+                  <p>Favs</p>
+                </div>
+                <div class="icon">
+                  <i class="glyphicon glyphicon-star"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-md-12">
+          <h4 style="margin-bottom: 5px!important;">
+            Configuration
+            <small>Control panel</small>
+          </h4>
+          <hr style="height: 1px; border: none; color: #000; background-color: #f6bb42;margin-top: 0px!important; ">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3>Parameters</h3>
+                  <p></p>
+                </div>
+                <div class="icon">
+                  <i class="glyphicon glyphicon-wrench"></i>
+                </div>
+                <a href="{% url 'sd_spaces' %}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+        </div>
+    </div>
+
 
 {% endblock %}

@@ -420,7 +420,59 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
    Event List
    ========================================================================== */
 
+/* ==========================================================================
+   Small Box
+   ========================================================================== */
+.small-box {
+	margin-bottom:20px;
+	border-radius:2px;
+	position:relative;
+	box-shadow:0 1px 1px rgba(0,0,0,0.1);
+}
 
+.small-box:hover .icon{font-size:67px}
+
+.small-box .inner {padding: 10px;}
+
+.small-box h3 {margin:0px!important;}
+
+.small-box .icon{
+	-webkit-transition:all .3s linear;
+	-o-transition:all .3s linear;
+	transition:all .3s linear;
+	position:absolute;
+	top:8px;
+	right:30px;
+	z-index:0;
+	font-size:60px;
+	color:rgba(0,0,0,0.15);
+}
+
+.small-box-footer{
+	position:relative;
+	text-align:center;
+	padding:3px 0;
+	color:#fff;
+	color:rgba(255,255,255,0.8);
+	display:block;
+	z-index:10;
+	background:rgba(0,0,0,0.1);
+	text-decoration:none;
+}
+
+.small-box>.small-box-footer:hover{
+	color:#fff;
+	background:rgba(0,0,0,0.15);
+}
+
+.bg-aqua {background-color: #00c0ef !important;}
+.bg-yellow {background-color: #f39c12 !important}
+.bg-green {background-color: #00a65a !important}
+.bg-red {background-color: #dd4b39 !important}
+
+/* ==========================================================================
+   Small Box
+   ========================================================================== */
 
 
 
