@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.contrib import messages
-from meszum.forms import SpaceForm, EventForm
+from meszum.forms import SpaceForm, EventForm, SubscribeForm
 from meszum.models import Space, Event
 from django.contrib.auth.models import User
 from geopy.geocoders.googlev3 import GoogleV3
 from geopy.geocoders.googlev3 import GeocoderQueryError
 from urllib2 import URLError
 from django.contrib.gis import geos
+from django.core.mail import send_mail
 
 def geocode_address(address):
     address = address.encode('utf-8')
@@ -20,8 +21,21 @@ def geocode_address(address):
         return geos.fromstr(point)
 
 def commingsoon(request):
-    context_dict = {}
-    return render(request, 'commingsoon.html', context_dict)
+    if request.method == 'POST':
+        form = SubscribeForm(request.POST)
+        # Send email with activation key
+        if form.is_valid():
+            form.save(commit=True)
+            email_subject = 'Subscribe Meszum Stay up-to-date'
+            email_body = "Thanks to subscribe Meszum App. When our application is ready to register will send an email to inform you. See you soon ;),"
+            email_address = form.cleaned_data['email']
+            send_mail(email_subject, email_body, 'hello@meszum.com',
+                [email_address], fail_silently=False)
+            messages.success(request, 'Email sent successfully. Thank you for subscribe.')
+    else:
+        form = SubscribeForm()
+
+    return render(request, 'commingsoon.html',  {'form': form})
 
 def index(request):
     context_dict = {}
@@ -29,12 +43,20 @@ def index(request):
 
 def superuserdashboard(request):
     context_dict = {}
+    context_dict['nspaces'] = Space.objects.all().count();
+    context_dict['nusers'] = User.objects.all().count();
+    context_dict['nevents'] = Event.objects.all().count();
     return render(request, 'admin/superuser_dashboard.html', context_dict)
 
 def sd_spaces(request):
     context_dict = {}
-    context_dict['spaces'] = Space.objects.filter();
+    context_dict['spaces'] = Space.objects.all();
     return render(request, 'admin/sd_spaces.html', context_dict)
+
+def sd_users(request):
+    context_dict = {}
+    context_dict['users'] = User.objects.all();
+    return render(request, 'admin/sd_users.html', context_dict)
 
 def administrationspace(request):
 

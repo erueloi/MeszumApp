@@ -38,7 +38,7 @@
               <!-- small box -->
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3>15</h3>
+                  <h3>{{ nspaces }}</h3>
                   <p>Spaces</p>
                 </div>
                 <div class="icon">
@@ -51,20 +51,20 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3>1500</h3>
+                  <h3>{{ nusers }}</h3>
                   <p>Users</p>
                 </div>
                 <div class="icon">
                   <i class="glyphicon glyphicon-user"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{% url 'sd_users' %}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
         </div>
         <div class="col-lg-2 col-md-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3>15000</h3>
+                  <h3>{{ nevents }}</h3>
                   <p>Events</p>
                 </div>
                 <div class="icon">
@@ -101,13 +101,13 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3>Parameters</h3>
+                  <h3>Params</h3>
                   <p></p>
                 </div>
                 <div class="icon">
                   <i class="glyphicon glyphicon-wrench"></i>
                 </div>
-                <a href="{% url 'sd_spaces' %}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
         </div>
     </div>

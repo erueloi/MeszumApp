@@ -199,7 +199,15 @@ ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course
 REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.
 LOGIN_REDIRECT_URL = '/meszum/'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in  # and are trying to access pages requiring authentication
+
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_LOGOUT_REDIRECT_URL = '/meszum/'
 ACCOUNT_SIGNUP_FORM_CLASS = 'meszum.forms.SignupForm'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'erueloi@gmail.com'
+EMAIL_HOST_PASSWORD = 'zxcwlehueuteoogl'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'hello@meszum.com'

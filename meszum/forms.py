@@ -1,6 +1,13 @@
 from django import forms
 from django.contrib.auth.models import Group
-from meszum.models import Space, Event
+from meszum.models import Space, Event, Subscriber
+
+class SubscribeForm(forms.ModelForm):
+    email = forms.EmailField(max_length=254)
+
+    class Meta:
+        model = Subscriber
+        fields = ('email',)
 
 class SpaceForm(forms.ModelForm):
     name = forms.CharField(max_length=30)
@@ -32,10 +39,3 @@ class SignupForm(forms.Form):
             group = Group.objects.get(name='Member')
         user.groups.add(group)
         user.save()
-
-# first_name = forms.CharField(max_length=30, label='Voornaam')
-#     last_name = forms.CharField(max_length=30, label='Achternaam')
-#
-#     def signup(self, request, user):
-#         user.first_name = self.cleaned_data['first_name']
-#         user.last_name = self.cleaned_data['last_name']

@@ -15,7 +15,11 @@ from django.contrib import messages
 def user_signed_up_(request, user, **kwargs):
     # user signed up now send email
     # send email part - do your self
+    #send_mail('Welcome', 'Your registration at abc.com is successful. Your username is %s' %user.username, 'Hello <hello@abc.com>', [user.email])
     messages.success(request, 'Your account has been created Successfully! You can log in.')
+
+class Subscriber(models.Model):
+    email = models.EmailField(max_length=254)
 
 class Space(models.Model):
     name = models.CharField(max_length=30)
