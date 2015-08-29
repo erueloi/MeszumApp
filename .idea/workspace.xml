@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bd94954-7cc6-4e1c-853d-392bf07ea119" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/sd_users.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/commingsoon.html" afterPath="$PROJECT_DIR$/templates/commingsoon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/forms.py" afterPath="$PROJECT_DIR$/meszum/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/models.py" afterPath="$PROJECT_DIR$/meszum/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/commingsoon/js/scripts.js" afterPath="$PROJECT_DIR$/static/commingsoon/js/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MeszumApp/settings.py" afterPath="$PROJECT_DIR$/MeszumApp/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/superuser_dashboard.html" afterPath="$PROJECT_DIR$/templates/admin/superuser_dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/urls.py" afterPath="$PROJECT_DIR$/meszum/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/views.py" afterPath="$PROJECT_DIR$/meszum/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meszum/migrations/0006_subscriber.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MeszumApp.iws" />
@@ -203,6 +194,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MeszumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MeszumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MeszumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meszum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MeszumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MeszumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meszum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -656,7 +679,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440876422512</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Superuser Dashboard list users&#10;Subscribe to coming soon">
+      <created>1440892035050</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1440892035050</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView">
@@ -752,7 +781,8 @@
     <MESSAGE value="Correct migrate" />
     <MESSAGE value="Styleize Superdashboar, Administration Space" />
     <MESSAGE value="Slider Events in Space Admin&#10;Styleize Events, Add Events" />
-    <option name="LAST_COMMIT_MESSAGE" value="Slider Events in Space Admin&#10;Styleize Events, Add Events" />
+    <MESSAGE value="Superuser Dashboard list users&#10;Subscribe to coming soon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Superuser Dashboard list users&#10;Subscribe to coming soon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
