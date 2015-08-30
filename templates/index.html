@@ -4,7 +4,28 @@
 {% block container %}
       <section class="grid3d horizontal" id="grid3d">
 				<div class="grid-wrap">
-					<div class="grid">						
+					<div class="grid">
+                        {% for event in events %}
+                            <figure>
+                                <div class="card">
+                                 <div class="card-heading image">
+                                    <img src="https://pbs.twimg.com/profile_images/547294814031839232/gvj_6sJ1_400x400.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
+                                    <div class="card-heading-header">
+                                       <h3>{{ event.title }} - Boite</h3>
+                                       <span><i class="glyphicon glyphicon-calendar"></i> Date: {{ event.startdate|date }}</span>
+                                    </div>
+                                 </div>
+                                 <div class="card-media">
+                                    <a class="card-media-container" href="#">
+                                       <img src="{{ event.poster.url }}" alt="500x300" data-src="holder.js/500x300/social" style="width: 500px; height: 300px;">
+                                    </a>
+                                 </div>
+                                 <div class="card-body">
+                                    <p>{{ event.description }} </p>
+                                 </div>
+                              </div>
+                            </figure>
+                        {% endfor %}
 						<figure>
 							<div class="card">
 		                     <div class="card-heading image">

@@ -70,9 +70,17 @@
                 <div id="myTabContent" class="tab-content">
                      <div class="tab-pane fade active in" id="profile3">
                          <div class="blue center" style="padding-top: 1 0px;">
+                              {% for event in events %}
+                                  <div>
+                                      <div style="margin-bottom: 20px;text-align: center;">
+                                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> {{ event.title }} - {{ space.name }}</h5>
+                                           <span>Date: {{ event.startdate|date }}M</span>
+                                        </div>
+                                      <img src="{{ event.poster.url }}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;">
+                                  </div>
+                             {% endfor %}
                           <div>
                               <div style="margin-bottom: 20px;text-align: center;">
-
 		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
 		                           <span>Published today - 08.34 AM</span>
 		                        </div>
@@ -83,49 +91,15 @@
 		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
 		                           <span>Published today - 08.34 AM</span>
 		                        </div>
-                              <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;"></div>
+                              <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;">
+                          </div>
                           <div>
                               <div style="margin-bottom: 20px;text-align: center;">
 		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
 		                           <span>Published today - 08.34 AM</span>
 		                        </div>
-                              <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;"></div>
-                             <div>
-                                 <div style="margin-bottom: 20px;text-align: center;">
-		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-                                 <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;"></div>
-                             <div>
-                                 <div style="margin-bottom: 20px;text-align: center;">
-		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-                                 <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;"></div>
-                             <div>
-                                 <div style="margin-bottom: 20px;text-align: center;">
-		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-                                 <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;"></div>
-                             <div>
-                                 <div style="margin-bottom: 20px;text-align: center;">
-		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-                                 <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;"></div>
-                             <div>
-                                 <div style="margin-bottom: 20px;text-align: center;">
-		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-                                 <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;"></div>
-                             <div>
-                                 <div style="margin-bottom: 20px;text-align: center;">
-		                           <h5 style="margin-bottom: 0px!important;">Fi d'any 2015 - Boite</h5>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-                                 <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;"></div>
+                              <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;">
+                          </div>
                         </div>
                          <a href="{% url 'administrationevents' %}" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> See all</a>
                   </div>

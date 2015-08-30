@@ -60,6 +60,7 @@ def startpage(request):
 
 def index(request):
     context_dict = {}
+    context_dict['events'] = Event.objects.all();
     return render(request, 'index.html', context_dict)
 
 def superuserdashboard(request):
@@ -80,12 +81,16 @@ def sd_users(request):
     return render(request, 'admin/sd_users.html', context_dict)
 
 def administrationspace(request):
+    context_dict = {}
 
     objUser = User.objects.get(id=request.user.id)
     try:
         objSpace = Space.objects.get(user=objUser)
     except Space.DoesNotExist:
         objSpace = None
+
+    context_dict['space'] = objSpace
+    context_dict['events'] = Event.objects.filter(space=objSpace)
 
     # A HTTP POST?
     if request.method == 'POST':
@@ -101,7 +106,9 @@ def administrationspace(request):
     else:
         form = SpaceForm(instance=objSpace)
 
-    return render(request, 'admin/space.html', {'form': form})
+    context_dict['form'] = form
+
+    return render(request, 'admin/space.html', context_dict)
 
 def administrationevents(request):
     context_dict = {}
