@@ -67,7 +67,7 @@
 						<figure>
 							<div class="card">
 		                     <div class="card-heading image">
-		                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p160x160/1381642_528689337207239_609898282_n.png?oh=17bfb38dbccbd0d51173984c1ac0532d&oe=55D653DB&__gda__=1440204556_36a4588a9b9fabb64f0dea400c909a68" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
+		                        <img src="https://pbs.twimg.com/profile_images/515450714114359298/22mGyQqz.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
 		                        <div class="card-heading-header">
 		                           <h3>CLasses gratis Bachata</h3>
 		                           <span>Published today - 08.34 AM</span>
@@ -121,26 +121,7 @@
 		                     </div>		
 		                  </div>
 						</figure>	
-						</figure>	
-							<figure>
-							<div class="card">
-		                     <div class="card-heading image">
-		                        <img src="https://pbs.twimg.com/profile_images/3287382424/268ba35eb0bd53cbff7d33a040ac688e_reasonably_small.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
-		                        <div class="card-heading-header">
-		                           <h3>Lny Tnz</h3>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-		                     </div>
-		                     <div class="card-media">
-		                        <a class="card-media-container" href="#">
-		                           <img src="{% static "img/events/river.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="width: 500px; height: 300px;">
-		                        </a>
-		                     </div>
-		                     <div class="card-body">
-		                        <p>Lorem ipsum </p>
-		                     </div>		
-		                  </div>
-						</figure>				
+						</figure>
 					</div>
 				</div><!-- /grid-wrap -->
 				<div class="content">
@@ -186,7 +167,11 @@
             /*
                 Fullscreen background
             */
-            $.backstretch("{% static "img/backgrounds/bg_login2.jpg" %}");
+            $.backstretch([
+                        "{% static "img/backgrounds/bg_login2.jpg" %}",
+                        "{% static "img/backgrounds/2.jpg" %}",
+                        "{% static "img/backgrounds/3.jpg" %}",
+                       ], {duration: 8000, fade: 750});
 
         });
     </script>
