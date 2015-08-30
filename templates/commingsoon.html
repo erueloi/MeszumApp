@@ -99,7 +99,7 @@
                             </h1>
                             <div class="description wow fadeInLeftBig" data-wow-duration="1.5s" data-wow-delay="2s">
                             	<p>
-	                            	We are working very hard on the new version of <strong>Meszum</strong> application <a href="{% url 'index' %}"><strong>(See live preview)</strong></a>. It will bring a lot of new features.
+	                            	We are working very hard on the new version of <strong>Meszum</strong> application <strong>(<a href="{% url 'index' %}">See live preview</a> or <a href="{% url 'startpage' %}">Information Page Project</a>)</strong>. It will bring a lot of new features.
 	                            	Sign up in the form below and you'll be one of the first to know when the site is ready.
                             	</p>
                             </div>
@@ -129,7 +129,6 @@
                             <div class="subscribe wow fadeInUp" {% if messages.count > 0 %} style="display:none" {% endif %} data-wow-duration="1.5s" data-wow-delay="3s">
 	                			<form class="form-inline" role="form" action="." method="post">
                                     {% csrf_token %}
-                                    <p>Stay up-to-date</p>
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="subscribe-email">Email address</label>
 			                        	<input type="text" name="email" placeholder="Enter your email..."  class="subscribe-email form-control" id="subscribe-email">

@@ -5,6 +5,7 @@ from meszum import views
 
 urlpatterns = patterns('',
     url(r'^$', views.commingsoon, name='commingsoon'),
+    url(r'^startpage/', views.startpage, name='startpage'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^meszum/', include('meszum.urls')),
     #All Auth URLS

@@ -41,6 +41,27 @@ def index(request):
     context_dict = {}
     return render(request, 'index.html', context_dict)
 
+def startpage(request):
+    # if request.method == 'POST':
+    #     form = SubscribeForm(request.POST)
+    #     # Send email with activation key
+    #     if form.is_valid():
+    #         form.save(commit=True)
+    #         email_subject = 'Subscribe Meszum Stay up-to-date'
+    #         email_body = "Thanks to subscribe Meszum App. When our application is ready to register will send an email to inform you. See you soon ;),"
+    #         email_address = form.cleaned_data['email']
+    #         send_mail(email_subject, email_body, 'hello@meszum.com',
+    #             [email_address], fail_silently=False)
+    #         messages.success(request, 'Email sent successfully. Thank you for subscribe.')
+    # else:
+    #     form = SubscribeForm()
+
+    return render(request, 'startpage.html',  {})
+
+def index(request):
+    context_dict = {}
+    return render(request, 'index.html', context_dict)
+
 def superuserdashboard(request):
     context_dict = {}
     context_dict['nspaces'] = Space.objects.all().count();
