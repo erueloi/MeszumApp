@@ -81,7 +81,7 @@
                                   {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
                                   {% if user.groups.all.0.name == 'Space' %}<li><a href="{% url 'administrationspace' %}">Administration</a></li>{% endif %}
                                   {% if user.groups.all.0.name == 'Space' %}<li><a href="{% url 'administrationevents' %}">Events</a></li>{% endif %}
-                                  {% if user.groups.all.0.name == 'Member' %}<li><a href="#">Configuration</a></li>{% endif %}
+                                  {% if user.groups.all.0.name == 'Member' %}<li><a href="{% url 'profile' %}">Profile</a></li>{% endif %}
                                   <li role="separator" class="divider"></li>
                                   <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>
                               </ul>

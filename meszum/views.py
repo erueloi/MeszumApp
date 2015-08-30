@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib import messages
-from meszum.forms import SpaceForm, EventForm, SubscribeForm
+from meszum.forms import SpaceForm, EventForm, SubscribeForm, ProfileForm
 from meszum.models import Space, Event
 from django.contrib.auth.models import User
 from geopy.geocoders.googlev3 import GoogleV3
@@ -120,3 +120,15 @@ def addevents(request):
         form = EventForm()
 
     return render(request, 'admin/addevents.html', {'form': form})
+
+def profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=request.user)
+        form.actual_user = request.user
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Profile updated successfully')
+    else:
+        form = ProfileForm(instance=request.user)
+
+    return render(request, 'account/profile.html', {'form': form})
