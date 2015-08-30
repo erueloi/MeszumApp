@@ -8,6 +8,7 @@ from geopy.geocoders.googlev3 import GeocoderQueryError
 from urllib2 import URLError
 from django.contrib.gis import geos
 from django.core.mail import send_mail
+from django.http import JsonResponse
 
 def geocode_address(address):
     address = address.encode('utf-8')
@@ -23,19 +24,30 @@ def geocode_address(address):
 def commingsoon(request):
     if request.method == 'POST':
         form = SubscribeForm(request.POST)
+        data = {}
         # Send email with activation key
-        if form.is_valid():
-            form.save(commit=True)
-            email_subject = 'Subscribe Meszum Stay up-to-date'
-            email_body = "Thanks to subscribe Meszum App. When our application is ready to register will send an email to inform you. See you soon ;),"
-            email_address = form.cleaned_data['email']
-            send_mail(email_subject, email_body, 'hello@meszum.com',
-                [email_address], fail_silently=False)
-            messages.success(request, 'Email sent successfully. Thank you for subscribe.')
-    else:
-        form = SubscribeForm()
+        if request.is_ajax():
+            if form.is_valid():
+                print('form is valid')
+                form.save(commit=True)
+                email_subject = 'Subscribe Meszum Stay up-to-date'
+                email_body = "Thanks for subscribing Meszum App! As soon as we are ready to accepts registrations we will send you an email in order to inform you. See you soon ;),"
+                email_address = form.cleaned_data['email']
+                send_mail(email_subject, email_body, 'hello@meszum.com',
+                    [email_address], fail_silently=False)
+                data['valid'] = '1'
+                data['message'] = 'Thanks for your subscription!'
+                print('before send data')
+                return JsonResponse(data)
+            else:
+                data['valid'] = '0'
+                data['message'] = 'Insert a valid email address!'
+                return JsonResponse(data)
+    #Get goes here
+    print('before send data Get')
+    return render(request, 'commingsoon.html')
 
-    return render(request, 'commingsoon.html',  {'form': form})
+
 
 def index(request):
     context_dict = {}

@@ -46,38 +46,63 @@ jQuery(document).ready(function() {
 	//		$('.top-content').backstretch("resize");
 	//	});
 	//});
+	//For getting CSRF token
+	function getCookie(name) {
+			  var cookieValue = null;
+			  if (document.cookie && document.cookie != '') {
+					var cookies = document.cookie.split(';');
+			  for (var i = 0; i < cookies.length; i++) {
+				   var cookie = jQuery.trim(cookies[i]);
+			  // Does this cookie string begin with the name we want?
+			  if (cookie.substring(0, name.length + 1) == (name + '=')) {
+				cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+				  break;
+				 }
+			  }
+		  }
+	 return cookieValue;
+	}
 
-	//$('.subscribe form').submit(function(e) {
-	//	e.preventDefault();
-	//    var postdata = $('.subscribe form').serialize();
-	//    $.ajax({
-	//        type: 'POST',
-	//        url: 'assets/subscribe.php',
-	//        data: postdata,
-	//        dataType: 'json',
-	//        success: function(json) {
-	//            if(json.valid == 0) {
-	//                $('.success-message').hide();
-	//                $('.error-message').hide();
-	//                $('.error-message').html(json.message);
-	//                $('.error-message').fadeIn('fast', function(){
-	//                	$('.subscribe form').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-	//            			$(this).removeClass('animated shake');
-	//            		});
-	//                });
-	//            }
-	//            else {
-	//                $('.error-message').hide();
-	//                $('.success-message').hide();
-	//                $('.subscribe form').hide();
-	//                $('.success-message').html(json.message);
-	//                $('.success-message').fadeIn('fast', function(){
-	//                	$('.top-content').backstretch("resize");
-	//                });
-	//            }
-	//        }
-	//    });
-	//});
+	$('.subscribe form').submit(function(e) {
+		e.preventDefault();
+		//Prepare csrf token
+ 		var csrftoken = Cookies.get('csrftoken');
+		//Collect data from fields
+ 		var email = $('#subscribe-email').val();
+	    var postdata = $('.subscribe form').serialize();
+	    $.ajax({
+	        type: 'POST',
+	        url: window.location.href,
+	        data: { csrfmiddlewaretoken : csrftoken,
+				   email : email
+					},
+	        dataType: 'json',
+	        success: function(json) {
+	            if(json.valid == 0) {
+	                $('.success-message').hide();
+	                $('.error-message').hide();
+	                $('.error-message').html(json.message);
+	                $('.error-message').fadeIn('fast', function(){
+	                	$('.subscribe form').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	            			$(this).removeClass('animated shake');
+	            		});
+	                });
+	            }
+	            else {
+	                $('.error-message').hide();
+	                $('.success-message').hide();
+	                $('.subscribe form').hide();
+	                $('.success-message').html(json.message);
+	                $('.success-message').fadeIn('fast', function(){
+	                	$('.top-content').backstretch("resize");
+	                });
+	            }
+	        },
+			error:  function(xhr,errmsg,err) {
+					 console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+					 }
+	    });
+	});
 
 });
 

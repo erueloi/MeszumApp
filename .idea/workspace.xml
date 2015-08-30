@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bd94954-7cc6-4e1c-853d-392bf07ea119" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/account/profile.html" afterPath="$PROJECT_DIR$/templates/account/profile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/commingsoon/js/js.cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/commingsoon.html" afterPath="$PROJECT_DIR$/templates/commingsoon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/commingsoon/js/scripts.js" afterPath="$PROJECT_DIR$/static/commingsoon/js/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/views.py" afterPath="$PROJECT_DIR$/meszum/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -68,53 +69,7 @@
     <favorites_list name="MeszumApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="14.083333">
-              <caret line="123" column="33" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.791667">
-              <caret line="106" column="52" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/account/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34567901">
-              <caret line="221" column="48" selection-start-line="221" selection-start-column="48" selection-end-line="221" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meszum/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#470#760#0" expanded="false" />
-                <element signature="e#1685#2462#0" expanded="false" />
-                <element signature="e#4589#5385#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -128,8 +83,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="erueloi &lt;erueloi@gmail.com&gt;" />
         <option value="erueloi &lt;erueloi@gmail.com&gt;A" />
+        <option value="erueloi &lt;erueloi@gmail.com&gt;" />
         <option value="eaymerich" />
       </list>
     </option>
@@ -172,22 +127,22 @@
         <option value="$PROJECT_DIR$/templates/admin/superuser_dashboard.html" />
         <option value="$PROJECT_DIR$/templates/admin/sd_users.html" />
         <option value="$PROJECT_DIR$/MeszumApp/settings.py" />
-        <option value="$PROJECT_DIR$/static/commingsoon/js/scripts.js" />
         <option value="$PROJECT_DIR$/meszum/forms.py" />
-        <option value="$PROJECT_DIR$/meszum/urls.py" />
         <option value="$PROJECT_DIR$/templates/admin/profile.html" />
         <option value="$PROJECT_DIR$/templates/account/signup.html" />
         <option value="$PROJECT_DIR$/templates/admin/sd_spaces.html" />
         <option value="$PROJECT_DIR$/MeszumApp/urls.py" />
-        <option value="$PROJECT_DIR$/templates/commingsoon.html" />
         <option value="$PROJECT_DIR$/static/css/font-awesome.min.css" />
         <option value="$PROJECT_DIR$/templates/startpage.html" />
         <option value="$PROJECT_DIR$/meszum/models.py" />
         <option value="$PROJECT_DIR$/templates/admin/space.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/meszum/views.py" />
         <option value="$PROJECT_DIR$/templates/account/profile.html" />
+        <option value="$PROJECT_DIR$/templates/commingsoon.html" />
+        <option value="$PROJECT_DIR$/static/commingsoon/js/scripts.js" />
+        <option value="$PROJECT_DIR$/meszum/views.py" />
+        <option value="$PROJECT_DIR$/meszum/urls.py" />
       </list>
     </option>
   </component>
@@ -258,38 +213,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MeszumApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MeszumApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MeszumApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MeszumApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="meszum" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -303,7 +226,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MeszumApp" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Escriptori" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -782,7 +705,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440955252464</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Save Profile">
+      <created>1440956882127</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1440956882127</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView">
@@ -798,28 +727,28 @@
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33409092" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21818182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2219697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4148607" sideWeight="0.5030303" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2863777" sideWeight="0.5030303" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60990715" sideWeight="0.50151515" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60990715" sideWeight="0.49848485" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@MeszumApp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5603715" sideWeight="0.4969697" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -833,18 +762,21 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60990715" sideWeight="0.50151515" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60990715" sideWeight="0.49848485" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@MeszumApp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5603715" sideWeight="0.4969697" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@MeszumApp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5603715" sideWeight="0.4969697" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21818182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4148607" sideWeight="0.5030303" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Settings">
+    <option name="SHOW_BRANCHES_PANEL" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -858,7 +790,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add login Page" />
     <MESSAGE value="Add Admin Page and Menu" />
     <MESSAGE value="Add Admin Page Information and Events" />
     <MESSAGE value="Add Events Page&#10;Save Space Data" />
@@ -883,7 +814,8 @@
     <MESSAGE value="Add Start Page Information Project" />
     <MESSAGE value="Show real event in index Page" />
     <MESSAGE value="Background auto change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Background auto change" />
+    <MESSAGE value="Save Profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Save Profile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -989,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,7 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38961038">
           <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,28 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/a85d32fb/b895b5c2-83d9-4826-8773-0ffad7fbed02/meszum.public.meszum_subscriber">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meszum/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4642857">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/a85d32fb/b895b5c2-83d9-4826-8773-0ffad7fbed02/meszum.public.auth_user">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1153,7 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1266892">
           <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,9 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1186,7 +1090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,9 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1204,7 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24350649">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,7 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="217" column="18" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1220,22 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3716216">
           <caret line="326" column="72" selection-start-line="326" selection-start-column="72" selection-end-line="326" selection-end-column="72" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/commingsoon.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35472974">
-          <caret line="101" column="154" selection-start-line="101" selection-start-column="137" selection-end-line="101" selection-end-column="154" />
           <folding />
         </state>
       </provider>
@@ -1244,11 +1126,88 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.625">
           <caret line="25" column="89" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a85d32fb/b895b5c2-83d9-4826-8773-0ffad7fbed02/meszum.public.meszum_event">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/space.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6013514">
+          <caret line="91" column="57" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
+          <folding>
+            <element signature="e#230#301#0#HTML" expanded="false" />
+            <element signature="e#4437#4484#0#HTML" expanded="false" />
+            <element signature="e#4519#4556#0#HTML" expanded="false" />
+            <element signature="e#4858#4880#0#HTML" expanded="false" />
+            <element signature="e#4982#5029#0#HTML" expanded="false" />
+            <element signature="e#5064#5101#0#HTML" expanded="false" />
+            <element signature="e#5403#5425#0#HTML" expanded="false" />
+            <element signature="e#5527#5574#0#HTML" expanded="false" />
+            <element signature="e#5609#5646#0#HTML" expanded="false" />
+            <element signature="e#5948#5970#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meszum/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5113636">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#28#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/img/backgrounds/2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3918919">
+          <caret line="229" column="92" selection-start-line="229" selection-start-column="92" selection-end-line="229" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5185811">
+          <caret line="106" column="52" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5709459">
+          <caret line="123" column="33" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meszum/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a85d32fb/b895b5c2-83d9-4826-8773-0ffad7fbed02/meszum.public.meszum_subscriber">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1261,90 +1220,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meszum/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24350649">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/space.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6013514">
-          <caret line="91" column="57" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
-          <folding>
-            <element signature="e#230#301#0#HTML" expanded="true" />
-            <element signature="e#4437#4484#0#HTML" expanded="true" />
-            <element signature="e#4519#4556#0#HTML" expanded="true" />
-            <element signature="e#4858#4880#0#HTML" expanded="true" />
-            <element signature="e#4982#5029#0#HTML" expanded="true" />
-            <element signature="e#5064#5101#0#HTML" expanded="true" />
-            <element signature="e#5403#5425#0#HTML" expanded="true" />
-            <element signature="e#5527#5574#0#HTML" expanded="true" />
-            <element signature="e#5609#5646#0#HTML" expanded="true" />
-            <element signature="e#5948#5970#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meszum/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5113636">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/backgrounds/2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/commingsoon/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9724026">
-          <caret line="81" column="3" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.8538961">
+          <caret line="92" column="49" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/templates/commingsoon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="14.083333">
-          <caret line="123" column="33" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
-          <folding />
+        <state vertical-scroll-proportion="1.7094594">
+          <caret line="194" column="56" selection-start-line="194" selection-start-column="56" selection-end-line="194" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/meszum/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.791667">
-          <caret line="106" column="52" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.26785713">
+          <caret line="12" column="71" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meszum/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.042207792">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#470#760#0" expanded="false" />
-            <element signature="e#1685#2462#0" expanded="false" />
-            <element signature="e#4589#5385#0" expanded="false" />
+            <element signature="e#507#797#0" expanded="false" />
+            <element signature="e#2116#2893#0" expanded="false" />
+            <element signature="e#5020#5816#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34567901">
-          <caret line="221" column="48" selection-start-line="221" selection-start-column="48" selection-end-line="221" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
