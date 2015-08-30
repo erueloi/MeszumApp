@@ -152,7 +152,6 @@ def addevents(request):
 def profile(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=request.user)
-        form.actual_user = request.user
         if form.is_valid():
             form.save()
             messages.success(request,'Profile updated successfully')
