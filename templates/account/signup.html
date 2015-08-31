@@ -5,16 +5,6 @@
 {% block container %}
 
     	<div class="row">
-                        {% if form.errors %}
-                	<div class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h4><i class="icon fa fa-ban"></i> Errors!</h4>
-                    {% for error in form.errors %}
-				    	 {{ error|escape }} </br>
-				    {% endfor %}
-                  	</div>
-				{% endif %}
-
                         <div class="col-sm-4 col-sm-offset-4 form-box" id="regMember">
                         	<div class="form-top">
                         		<div class="form-top-left">

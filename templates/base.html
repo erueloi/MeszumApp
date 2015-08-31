@@ -24,6 +24,7 @@
         <script src="{% static "js/dataTables.bootstrap.min.js" %}"></script>
         <script src="{% static "js/slick.min.js" %}"></script>
         <script src="{% static "js/modernizr.custom.js" %}"></script>
+        <script src="{% static "js/bootstrap-notify.min.js" %}"></script>
         <script src="{% static "js/classie.js" %}"></script>
         <script src="{% static "js/helper.js" %}"></script>
         <script src="{% static "js/grid3d.js" %}"></script>
@@ -41,15 +42,13 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/dataTables.bootstrap.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick.css" %}"/>
         <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick-theme.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "css/animate.css" %}"/>
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" type="text/css" href="{% static "css/demo.css" %}" />
 		<link rel="stylesheet" type="text/css" href="{% static "css/component.css" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css"href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-
-
-
     </head>
     <body>
 
@@ -110,6 +109,54 @@
 
         <script>
             new grid3D( document.getElementById( 'grid3d' ) );
+        </script>
+
+        <!-- System Notifications Alerts -->
+        <script>
+            $(document).ready(function() {
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                            $.notify({
+                                // options
+                                icon: 'glyphicon glyphicon-warning-sign',
+                                message: '{{ message }}'
+                            },{
+                                // settings
+                                type: 'danger',
+                                newest_on_top: true
+                            });
+                        {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                            $.notify({
+                                icon: 'glyphicon glyphicon glyphicon-ok-sign',
+                                message: '{{ message }}'
+                            },{
+                                // settings
+                                type: 'success',
+                                newest_on_top: true
+                            });
+                        {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                            $.notify({
+                                icon: 'glyphicon glyphicon glyphicon-warning-sign',
+                                message: '{{ message }}'
+                            },{
+                                // settings
+                                type: 'warning',
+                                newest_on_top: true
+                            });
+                        {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                            $.notify({
+                                icon: 'glyphicon glyphicon glyphicon-info-sign',
+                                message: '{{ message }}'
+                            },{
+                                // settings
+                                type: 'info',
+                                newest_on_top: true
+                            });
+                        {% endif %}
+                    {% endfor %}
+            {% endif %}
+            });
         </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
