@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block container %}
-      <section class="grid3d horizontal" id="grid3d">
+      <section class="grid3d horizontal" id="grid3d" style="margin-bottom:40px;">
 				<div class="grid-wrap">
 					<div class="grid">
                         {% for event in events %}
@@ -102,7 +102,7 @@
 		                     </div>		    
 		                  </div>
 						</figure>	
-							<figure>
+                        <figure>
 							<div class="card">
 		                     <div class="card-heading image">
 		                        <img src="https://pbs.twimg.com/profile_images/378800000790344965/2e1aeb108fea2b16d6b2ce3782b10e57_reasonably_small.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -125,11 +125,22 @@
 					</div>
 				</div><!-- /grid-wrap -->
 				<div class="content">
-					<div>
-						<div class="dummy-img"><img src="{% static "img/events/boite.jpg" %}"></div>
-						<p style="color:#000">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
-						<p>The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
-					</div>
+                    {% for event in events %}
+                            <div class="container-fluid" style="margin-top: 100px;">
+                        <div class="row">
+                            <div class="col-md-3">
+                                    <img src="{{ event.poster.url }}" class="img-responsive" style="width: 100% \9;">
+                            </div>
+                            <div class="col-md-6">
+                                <p style="color:#000">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+						        <p>The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>Disc</h5>
+                            </div>
+                        </div>
+						</div>
+                        {% endfor %}
 					<div>
 						<div class="dummy-img"></div>
 						<p class="dummy-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
@@ -159,8 +170,8 @@
 					<span class="icon close-content"></span>
 				</div>
 		</section>    
-		<section>
-        </section>
+        <div class="clearfix"></div>
+
      <script>
         jQuery(document).ready(function() {
 
