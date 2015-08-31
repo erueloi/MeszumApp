@@ -5,6 +5,7 @@
       <section class="grid3d horizontal" id="grid3d" style="margin-bottom:40px;">
 				<div class="grid-wrap">
 					<div class="grid">
+                        <!--  List Events -->
                         {% for event in events %}
                             <figure>
                                 <div class="card">
@@ -123,20 +124,22 @@
 						</figure>	
 						</figure>
 					</div>
-				</div><!-- /grid-wrap -->
+				</div>/grid-wrap -->
 				<div class="content">
+                    <!--  Content Events -->
                     {% for event in events %}
                             <div class="container-fluid" style="margin-top: 100px;">
                         <div class="row">
                             <div class="col-md-3">
                                     <img src="{{ event.poster.url }}" class="img-responsive" style="width: 100% \9;">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-7">
+                                <h3>{{ event.title }}</h3>
                                 <p style="color:#000">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
 						        <p>The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
                             </div>
-                            <div class="col-md-3">
-                                <h5>Disc</h5>
+                            <div class="col-md-2" style="padding-left: 0px!important; padding-right: 0px!important;">
+                                 <img src="{% static "img/lp_list.png" %}" class="img-responsive pull-right" style="width: 100% \9;">
                             </div>
                         </div>
 						</div>
