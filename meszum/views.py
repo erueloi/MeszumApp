@@ -165,9 +165,9 @@ def addevents(request, idspace, idevent=None):
     except Space.DoesNotExist:
         objSpace = None
 
-    try:
+    if idevent:
         oEvent = Event.objects.get(id=idevent)
-    except Space.DoesNotExist:
+    else:
         oEvent = None
 
     context_dict['space'] = objSpace
