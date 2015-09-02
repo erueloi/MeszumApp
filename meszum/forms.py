@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import Group, User
-from meszum.models import Space, Event, Subscriber
+from meszum.models import Space, Event, Subscriber, UserProfile
 
 class SubscribeForm(forms.ModelForm):
     email = forms.EmailField(max_length=254)
@@ -21,7 +21,7 @@ class SpaceForm(forms.ModelForm):
 class EventForm(forms.ModelForm):
     title = forms.CharField(max_length=100)
     description = forms.CharField(max_length=100)
-    startdate = forms.DateField(widget=forms.widgets.DateInput(format="%d/%m/%Y%"))
+    startdate = forms.DateField(widget=forms.widgets.DateInput(format="%d/%m/%Y"))
     poster = forms.ImageField(required=True)
     address = forms.CharField(max_length=100)
 
@@ -39,6 +39,9 @@ class SignupForm(forms.Form):
             group = Group.objects.get(name='Member')
         user.groups.add(group)
         user.save()
+        objUserProfile = UserProfile()
+        objUserProfile.user = user
+        objUserProfile.save()
 
 class ProfileForm(forms.ModelForm):
     username = forms.CharField(required=True)
@@ -57,3 +60,10 @@ class ProfileForm(forms.ModelForm):
         if email and User.objects.filter(email=email).exclude(username=username).count():
             raise forms.ValidationError('This email address is already in use. Please supply a different email address.')
         return email
+
+class UserProfileForm(forms.ModelForm):
+    avatar = forms.ImageField(required=False)
+
+    class Meta:
+        model = UserProfile
+        fields = ('avatar',)

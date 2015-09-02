@@ -21,10 +21,15 @@ def user_signed_up_(request, user, **kwargs):
 class Subscriber(models.Model):
     email = models.EmailField(max_length=254)
 
+class UserProfile(models.Model):
+    user   = models.OneToOneField(User)
+    avatar = models.ImageField(upload_to='avatars', blank=True)
+
 class Space(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField(max_length=254)
     logotype = models.ImageField(upload_to='logos', blank=True)
+    #address = models.CharField(max_length=30)
     user = models.ForeignKey(User, unique= True)
 
 class Event(models.Model):

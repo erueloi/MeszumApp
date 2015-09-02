@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
-from meszum.forms import SpaceForm, EventForm, SubscribeForm, ProfileForm
-from meszum.models import Space, Event
+from meszum.forms import SpaceForm, EventForm, SubscribeForm, ProfileForm, UserProfileForm
+from meszum.models import Space, Event, UserProfile
 from django.contrib.auth.models import User
 from geopy.geocoders.googlev3 import GoogleV3
 from geopy.geocoders.googlev3 import GeocoderQueryError
@@ -50,10 +50,6 @@ def commingsoon(request):
     #Get goes here
     return render(request, 'commingsoon.html')
 
-def index(request):
-    context_dict = {}
-    return render(request, 'index.html', context_dict)
-
 def startpage(request):
     # if request.method == 'POST':
     #     form = SubscribeForm(request.POST)
@@ -93,12 +89,10 @@ def sd_users(request):
     context_dict['users'] = User.objects.all();
     return render(request, 'admin/sd_users.html', context_dict)
 
-def administrationspace(request):
+def administrationspace(request, idspace):
     context_dict = {}
-
-    objUser = User.objects.get(id=request.user.id)
     try:
-        objSpace = Space.objects.get(user=objUser)
+        objSpace = Space.objects.get(id=idspace)
     except Space.DoesNotExist:
         objSpace = None
 
@@ -107,13 +101,13 @@ def administrationspace(request):
 
     # A HTTP POST?
     if request.method == 'POST':
-        form = SpaceForm(request.POST, instance=objSpace)
+        form = SpaceForm(request.POST, request.FILES, instance=objSpace)
         if form.is_valid():
             objSpace = form.save(commit=False)
+            objUser = User.objects.get(id=request.user.id)
             objSpace.user = objUser
             objSpace.save()
             messages.add_message(request, messages.SUCCESS, 'S''ha guardat correctament')
-            #return redirect('administrationspace')
         else:
             print form.errors
     else:
@@ -123,29 +117,63 @@ def administrationspace(request):
 
     return render(request, 'admin/space.html', context_dict)
 
-def administrationevents(request):
+def profilespace(request):
+    context_dict = {}
+    objUser = User.objects.get(id=request.user.id)
+    objUserProfile = UserProfile.objects.get(user=objUser)
+    context_dict['profile'] = objUserProfile
+    context_dict['spaces'] = Space.objects.filter(user=objUser)
+    nspace = 0
+    for objspace in objUser.space_set.all():
+        nspace = nspace + objspace.event_set.all().count()
+    context_dict['nevents'] = nspace
+
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=objUserProfile)
+        formuser = ProfileForm(request.POST, instance=objUser)
+        if form.is_valid() and formuser.is_valid():
+            form.save()
+            formuser.save()
+            messages.success(request,'Profile updated successfully')
+    else:
+        form = UserProfileForm(request.FILES, instance=objUserProfile)
+        formuser = ProfileForm(instance=objUser)
+
+    context_dict['form'] = form
+    context_dict['formuser'] = formuser
+
+    return render(request, 'account/profilespace.html', context_dict)
+
+def administrationevents(request, idspace):
     context_dict = {}
     try:
-        space = Space.objects.get(user=request.user.id)
+        space = Space.objects.get(id=idspace)
         events = Event.objects.filter(space=space).order_by('startdate')
     except Space.DoesNotExist:
         space = None
         events = None
 
-    context_dict['association'] = space
+    context_dict['space'] = space
     context_dict['events'] = events
 
     return render(request, 'admin/events.html', context_dict)
 
-def addevents(request):
-    objUser = User.objects.get(id=request.user.id)
+def addevents(request, idspace, idevent=None):
+    context_dict = {}
     try:
-        objSpace = Space.objects.get(user=objUser)
+        objSpace = Space.objects.get(id=idspace)
     except Space.DoesNotExist:
         objSpace = None
 
+    try:
+        oEvent = Event.objects.get(id=idevent)
+    except Space.DoesNotExist:
+        oEvent = None
+
+    context_dict['space'] = objSpace
+
     if request.method == 'POST':
-        form = EventForm(request.POST, request.FILES)
+        form = EventForm(request.POST, request.FILES, instance=oEvent)
         if form.is_valid():
             address = form.cleaned_data['address']
             objEvent = form.save(commit=False)
@@ -154,21 +182,33 @@ def addevents(request):
             objEvent.save()
             #Save Event
             messages.success(request,'S''ha guardat correctament l''Event')
-            return administrationevents(request)
+            return administrationevents(request, idspace)
         else:
             print form.errors
     else:
-        form = EventForm()
+        form = EventForm(instance=oEvent)
 
-    return render(request, 'admin/addevents.html', {'form': form})
+    context_dict['event'] = oEvent
+    context_dict['form'] = form
+    return render(request, 'admin/addevents.html', context_dict)
 
 def profile(request):
+    context_dict = {}
+    objUser = User.objects.get(id=request.user.id)
+    objUserProfile = UserProfile.objects.get(user=objUser)
+    context_dict['profile'] = objUserProfile
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=request.user)
-        if form.is_valid():
+        formprofile = UserProfileForm(request.POST, request.FILES, instance=objUserProfile)
+        if form.is_valid() and formprofile.is_valid():
             form.save()
+            formprofile.save()
             messages.success(request,'Profile updated successfully')
     else:
         form = ProfileForm(instance=request.user)
+        formprofile = UserProfileForm(request.FILES, instance=objUserProfile)
 
-    return render(request, 'account/profile.html', {'form': form})
+    context_dict['formprofile'] = formprofile
+    context_dict['form'] = form
+
+    return render(request, 'account/profile.html', context_dict)

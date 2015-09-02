@@ -1846,6 +1846,7 @@
       <exported-key name="auth_user_user_permiss_user_id_7f0938558328534a_fk_auth_user_id" table="auth_user_user_permissions" schema="public" catalog="meszum" columns="user_id"/>
       <exported-key name="django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id" table="django_admin_log" schema="public" catalog="meszum" columns="user_id"/>
       <exported-key name="meszum_space_user_id_6d3d2b94142a7d91_fk_auth_user_id" table="meszum_space" schema="public" catalog="meszum" columns="user_id"/>
+      <exported-key name="meszum_userprofile_user_id_357c1fa17d54e911_fk_auth_user_id" table="meszum_userprofile" schema="public" catalog="meszum" columns="user_id"/>
       <exported-key name="registration_registrati_user_id_e84782b3f7685bb_fk_auth_user_id" table="registration_registrationprofile" schema="public" catalog="meszum" columns="user_id"/>
       <exported-key name="socialaccount_socialac_user_id_3fd78aac97693583_fk_auth_user_id" table="socialaccount_socialaccount" schema="public" catalog="meszum" columns="user_id"/>
       <index name="auth_user_username_key" unique="true" columns="username"/>
@@ -2080,6 +2081,26 @@
       <primary-key name="meszum_subscriber_pkey" columns="id"/>
     </table>
     <table name="meszum_subscriber_id_seq" schema="public" catalog="meszum" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="meszum_userprofile" schema="public" catalog="meszum" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbWVzenVtX3VzZXJwcm9maWxlX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
+      <column name="avatar" sqlType="varchar" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="meszum_userprofile_pkey" columns="id"/>
+      <foreign-key name="meszum_userprofile_user_id_357c1fa17d54e911_fk_auth_user_id" columns="user_id" ref-table="auth_user" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="meszum_userprofile_user_id_key" unique="true" columns="user_id"/>
+    </table>
+    <table name="meszum_userprofile_id_seq" schema="public" catalog="meszum" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
