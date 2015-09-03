@@ -30,7 +30,7 @@ class Space(models.Model):
     email = models.EmailField(max_length=254)
     logotype = models.ImageField(upload_to='logos', blank=True)
     #address = models.CharField(max_length=30)
-    user = models.ForeignKey(User, unique= True)
+    user = models.ForeignKey(User, unique= False)
 
 class Event(models.Model):
     title = models.CharField(max_length=100)

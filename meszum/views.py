@@ -10,6 +10,7 @@ from django.contrib.gis import geos
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import get_template
 from django.http import JsonResponse
+from django.core import serializers
 
 def geocode_address(address):
     address = address.encode('utf-8')
@@ -127,20 +128,29 @@ def profilespace(request):
     for objspace in objUser.space_set.all():
         nspace = nspace + objspace.event_set.all().count()
     context_dict['nevents'] = nspace
+    objSpace = None
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=objUserProfile)
         formuser = ProfileForm(request.POST, instance=objUser)
+        formspace = SpaceForm(request.POST, request.FILES, instance=objSpace)
         if form.is_valid() and formuser.is_valid():
             form.save()
             formuser.save()
             messages.success(request,'Profile updated successfully')
+        if formspace.is_valid():
+            objSpace = formspace.save(commit=False)
+            objSpace.user = objUser
+            objSpace.save()
+            messages.success(request,'Event added successfully')
     else:
         form = UserProfileForm(request.FILES, instance=objUserProfile)
         formuser = ProfileForm(instance=objUser)
+        formspace = SpaceForm(request.FILES, instance=objSpace)
 
     context_dict['form'] = form
     context_dict['formuser'] = formuser
+    context_dict['formspace'] = formspace
 
     return render(request, 'account/profilespace.html', context_dict)
 
