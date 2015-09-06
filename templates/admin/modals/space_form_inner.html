@@ -1,0 +1,27 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+<form action="{% url 'space-modal' %}" method="post" role="form" enctype="multipart/form-data">
+  {% csrf_token %}
+    <div class="form-group {% if form.name.errors %}has-error{% endif %}">
+      <label for="form.name.id_for_label">Name</label>
+      {% if form.name.errors %}<label class="control-label" for="form.name.id_for_label"> {{ form.name.errors|striptags }}</label>{% endif %}
+      {{ form.name|add_class:"form-control" }}
+    </div>
+    <div class="form-group {% if form.email.errors %}has-error{% endif %}">
+      <label for="form.email.id_for_label">Email</label>
+        {% if form.email.errors %}<label class="control-label" for="form.email.id_for_label"> {{ form.email.errors|striptags }}</label>{% endif %}
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        {{ form.email|add_class:"form-control" }}
+      </div>
+    </div>
+       <div class="form-group {% if form.logotype.errors %}has-error{% endif %}">
+                <label for="form.logotype.id_for_label">Logotype</label></br>
+                <!--<img class="img-responsive img-circle" src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" alt="logo" style="width: 64px; height: 64px;"></a>-->
+                {{ form.logotype|add_class:"form-control" }}
+          </div>
+<button type="submit" class="btn btn-success pull-right" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+<button type="button" class="btn btn-default pull-right" data-dismiss="modal" style="margin-right: 10px;">Cancel</button>
+
+{#            <input type="submit" class="btn btn-success pull-right"> Save</input>#}
+</form>

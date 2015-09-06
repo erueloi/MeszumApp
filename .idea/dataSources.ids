@@ -2037,10 +2037,33 @@
       <column name="address" sqlType="varchar" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="meszum_event_pkey" columns="id"/>
       <foreign-key name="meszum_event_space_id_226a4d3da06b46b5_fk_meszum_space_id" columns="space_id" ref-table="meszum_space" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="meszum_song_event_id_68efad615f09e709_fk_meszum_event_id" table="meszum_song" schema="public" catalog="meszum" columns="event_id"/>
       <index name="meszum_event_84defa73" unique="false" columns="space_id"/>
       <index name="meszum_event_geometry_id" unique="false" columns="geometry"/>
     </table>
     <table name="meszum_event_id_seq" schema="public" catalog="meszum" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="meszum_song" schema="public" catalog="meszum" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbWVzenVtX3NvbmdfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="title" sqlType="varchar" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="artist" sqlType="varchar" precision="254" scale="0" nullable="false" jdbcType="12"/>
+      <column name="album" sqlType="varchar" precision="254" scale="0" nullable="false" jdbcType="12"/>
+      <column name="event_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="meszum_song_pkey" columns="id"/>
+      <foreign-key name="meszum_song_event_id_68efad615f09e709_fk_meszum_event_id" columns="event_id" ref-table="meszum_event" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="meszum_song_4437cfac" unique="false" columns="event_id"/>
+    </table>
+    <table name="meszum_song_id_seq" schema="public" catalog="meszum" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -2061,7 +2084,6 @@
       <primary-key name="meszum_space_pkey" columns="id"/>
       <foreign-key name="meszum_space_user_id_6d3d2b94142a7d91_fk_auth_user_id" columns="user_id" ref-table="auth_user" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <exported-key name="meszum_event_space_id_226a4d3da06b46b5_fk_meszum_space_id" table="meszum_event" schema="public" catalog="meszum" columns="space_id"/>
-      <index name="meszum_space_user_id_key" unique="true" columns="user_id"/>
     </table>
     <table name="meszum_space_id_seq" schema="public" catalog="meszum" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>

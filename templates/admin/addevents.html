@@ -60,7 +60,7 @@
                     <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
                     <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-user"></i> {{ user.username }}</a></li>
                     <li><a href="{% url 'administrationspace' space.id %}"><i class="glyphicon glyphicon-fullscreen"></i> {{ space.name }}</a></li>
-                    <li><a href="{% url 'administrationevents' space.id %}"><i class="glyphicon glyphicon-calendar"></i> Events</a></li>
+{#                    <li><a href="{% url 'administrationevents' space.id %}"><i class="glyphicon glyphicon-calendar"></i> Events</a></li>#}
                     {% if event %}
                         <li class="active"><span><i class="glyphicon glyphicon-calendar"></i>  {{ event.title    }}</span></li>
                     {% else %}
@@ -77,6 +77,7 @@
             <div class="col-md-2">
                  <div class="panel panel-default">
                      <div class="panel-body">
+                        <h5>{{ event.title }}</h5>
                          <img src="{% if event.poster %} {{ event.poster.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive" style="width: 226px; height: 300px; margin:0px auto!important;">
                      </div>
                  </div>
@@ -87,7 +88,25 @@
                 <h3 class="panel-title">Event Configuration</h3>
               </div>
               <div class="panel-body">
-                <div class="row">
+                <ul id="myTab1" class="nav nav-tabs">
+                      <li class="active"><a href="#profile3" data-toggle="tab">Songs Playlist</a></li>
+                      <li class=""><a href="#home3" data-toggle="tab">Settings</a></li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content">
+                  <div class="tab-pane fade active in" id="profile3">
+                         <label for="query">Search:</label>
+                        <input class="form-control autocomplete" name="spotify_song_search" id="spotify_song_search" placeholder="Start typing song or artist to add in list..." type="text"><br>
+                        <table class="table table-bordered table-hover" id="ufs">
+                        <thead>
+                          <tr>
+                            <th>Cançó - Artista</th>
+                          </tr>
+                        </thead>
+                      </table>
+
+                   </div>
+                   <div class="tab-pane fade" id="home3">
+                        <div class="row">
                           <div class="col-md-8">
                 <form action="." method="post" role="form" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -138,6 +157,7 @@
                 </form>
                 </div>
             </div>
+
                           </div>
             </div>
 		        </div>
@@ -145,8 +165,21 @@
         <script>
 
             $(document).ready(function () {
+                var map;
+                function resizeMap() {
+                  if (typeof map == "undefined") return;
+                  resizingMap();
+                }
+
+                function resizingMap() {
+                  if (typeof map == "undefined") return;
+                  var center = map.getCenter();
+                  google.maps.event.trigger(map, "resize");
+                  map.setCenter(center);
+                }
+
                 function initMap() {
-                  var map = new google.maps.Map(document.getElementById('map'), {
+                  map = new google.maps.Map(document.getElementById('map'), {
                     center: {lat: -33.8688, lng: 151.2195},
                     zoom: 13
                   });
@@ -220,6 +253,58 @@
                   setupClickListener('changetype-geocode', ['geocode']);
                 }
                 initMap();
+
+
+                songstable = $('#ufs').DataTable();
+
+                function split( val ) {
+                  return val.split( /;\s*/ );
+                }
+
+                function extractLast( term ) {
+                  return split( term ).pop();
+                }
+
+                $("#spotify_song_search").bind( "keydown", function( event ) {
+                    if ( event.keyCode === $.ui.keyCode.TAB && $( this ).data( "ui-autocomplete" ).menu.active ) {
+                      event.preventDefault();
+                    }
+                  }).autocomplete({
+                    source: function(request, response) {
+                            $.get("http://ws.spotify.com/search/1/track.json", {
+                                    q: extractLast( request.term  )
+                            }, function(data) {
+                                    response($.map(data.tracks, function(item) {
+                                            return {label: item.name + " by " + item.artists[0].name, track: item};
+                                    }));
+                            });
+                    },
+                    focus: function() {
+                      // prevent value inserted on focus
+                    return false;
+                  },
+                  select: function( event, ui ) {
+                    var terms = split( this.value );
+                    // remove the current input
+                    terms.pop();
+                    // add the selected item
+                    terms.push( ui.item.value );
+                    // add placeholder to get the comma-and-space at the end
+                    terms.push( "" );
+                    songstable.row.add( [
+                        terms.join( " " )
+                    ] ).draw();
+                    return false;
+                  },
+                    minLength: 3,
+
+                });
+
+                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                  resizeMap();
+                });
+
+
             });
             </script>
     <script type="text/javascript">

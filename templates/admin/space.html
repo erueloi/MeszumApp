@@ -3,6 +3,73 @@
 {% load widget_tweaks %}
 
 {% block container %}
+           <style>
+      #map {
+          width: 400px;
+          height: 300px;
+          z-index: 1100!important;
+
+      }
+      #map-canvas {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#map-canvas {
+  width: 500px;
+  height: 480px;
+}
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+.pac-container{
+    z-index: 1100!important;
+}
+
+.gm-style{
+    z-index: 1100!important;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+</style>
+
    <div class="row">
     <div class="col-sm-12 col-md-12">
        <div class="container-fluid">
@@ -51,6 +118,7 @@
         </div>
 
         <div class="col-md-9">
+
             <div class="panel panel-warning">
               <div class="panel-heading">
                 <h3 class="panel-title"></h3>
@@ -62,39 +130,62 @@
                   </ul>
                   <div id="myTabContent" class="tab-content">
                      <div class="tab-pane fade active in" id="profile3">
-                         <div class="blue center" style="padding-top: 1 0px;">
+                         {% block modal %}
+                             <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
+                         {% endblock modal %}
+{#                        <a href="{% url 'administrationevents' space.id %}" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</a><br><br>#}
+                        <table class="table table-bordered table-hover" id="ufs">
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Poster</th>
+                            <th>Description</th>
+                            <th>Social</th>
+                          </tr>
+                        </thead>
+                        <tbody class="event-list">
+                             {% for event in events %}
+                             <tr style="cursor:pointer" data-link="{% url 'administrationevent' space.id event.id %}">
+                                <td>
+                                     <time datetime="{{ event.startdate }}">
+                                        <span class="day">{{ event.startdate.day }}</span>
+                                        <span class="month">{{ event.startdate|date:"N" }}</span>
+                                        <span class="year">{{ event.startdate.year }}</span>
+                                        <span class="time">ALL DAY</span>
+                                    </time>
+                                </td>
+                                <td> <img style="width: 60px;" alt="Independence Day" src="{{ event.poster.url }}" /></td>
+                                <td>
+                                    <div class="info">
+                                        <h3 class="title">{{ event.title }} </h3>
+                                        <p class="desc">{{ event.description }} </p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="social">
+                                        <ul>
+                                            <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+                                            <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+                                            <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                             </tr>
+                             {% endfor %}
+                        </tbody>
+                      </table>
+                      <div class="blue center" style="padding-top: 1 0px;">
                               {% for event in events %}
                                   <div>
-                                      <div style="margin-bottom: 20px;text-align: center;">
-                                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> {{ event.title }} - {{ space.name }}</h5>
-                                           <span>Date: {{ event.startdate|date }}M</span>
+                                      <div>
+                                           <h7 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> {{ event.title }}</h7><br>
+                                           <span>{{ event.startdate|date }}</span>
                                         </div>
-                                      <img src="{{ event.poster.url }}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;">
+                                      <img src="{{ event.poster.url }}" alt="500x300" data-src="holder.js/500x300/social" style="height: 100px;">
                                   </div>
                              {% endfor %}
-                          <div>
-                              <div style="margin-bottom: 20px;text-align: center;">
-		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-                              <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;">
-                          </div>
-                          <div>
-                              <div style="margin-bottom: 20px;text-align: center;">
-		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-                              <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;">
-                          </div>
-                          <div>
-                              <div style="margin-bottom: 20px;text-align: center;">
-		                           <h5 style="margin-bottom: 0px!important;"><i class="glyphicon glyphicon-calendar"></i> Fi d'any 2015 - Boite</h5>
-		                           <span>Published today - 08.34 AM</span>
-		                        </div>
-                              <img src="{% static "img/events/boite.jpg" %}" alt="500x300" data-src="holder.js/500x300/social" style="height: 400px;">
-                          </div>
                         </div>
-                         <a href="{% url 'administrationevents' space.id %}" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> See all</a>
+
                   </div>
                      <div class="tab-pane fade" id="home3">
                       <div class="row">
@@ -128,19 +219,36 @@
         </div>
     </div>
 
+     <!-- Modal -->
+		<div class="modal fade" id="SpaceModal" tabindex="-1">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-calendar"></i> Add Event</h4>
+		      </div>
+		      <div class="modal-body" id="space-modal-body">
+                  Hola
+		      </div>
+                 <div class="modal-footer">
+
+              </div>
+		    </div>
+		  </div>
+		</div>
+
+
     <script>
             $(document).ready(function() {
+                var map;
 				$('.center').slick({
-                  centerMode: true,
-                  centerPadding: '5px',
-                  slidesToShow: 3,
+                  slidesToShow: 6,
                   responsive: [
                     {
                       breakpoint: 768,
                       settings: {
                         arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
+                        centerPadding: '10px',
                         slidesToShow: 3
                       }
                     },
@@ -148,16 +256,149 @@
                       breakpoint: 480,
                       settings: {
                         arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
+                        centerPadding: '10px',
                         slidesToShow: 1
                       }
                     }
                   ]
                 });
+                $('#ufs').DataTable();
+                $("tr[data-link]").click(function() {
+						window.location = this.dataset.link
+					});
+                var formAjaxSubmit = function(form, modal) {
+                $(form).submit(function (e) {
+                        var formData = new FormData(document.getElementById("eventform"));
+                        e.preventDefault();
+                        $.ajax({
+                            type: $(this).attr('method'),
+                            url: $(this).attr('action'),
+                            data: formData,
+                            contentType: false,
+	                        processData: false,
+                            success: function (xhr, ajaxOptions, thrownError) {
+                                if ( $(xhr).find('.has-error').length > 0 ) {
+                                    $(modal).find('.modal-body').html(xhr);
+                                    formAjaxSubmit(form, modal);
+                                    initMap();
+                                } else {
+                                    $(modal).modal('toggle');
+                                    location.reload();
+                                    $.notify({
+                                        icon: 'glyphicon glyphicon glyphicon-ok-sign',
+                                        message: 'Space added successfully'
+                                    },{
+                                        // settings
+                                        type: 'success',
+                                        newest_on_top: true
+                                    });
+                                }
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                            }
+                        });
+                    });
+                }
+                $('#comment-button').click(function() {
+                    $('#space-modal-body').load('{% url 'event-modal' %}', function () {
+                        $('#SpaceModal').modal('toggle');
+                        formAjaxSubmit('#space-modal-body form', '#SpaceModal');
+                        initMap();
+                    });
+                });
+                $('#SpaceModal').on('shown.bs.modal', function() {
+                  //Must wait until the render of the modal appear, thats why we use the resizeMap and NOT resizingMap!! ;-)
+                  resizeMap();
+                  $('#spaceid').val({{ space.id }});
+                });
+                function initMap() {
+                  map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -33.8688, lng: 151.2195},
+                    zoom: 13
+                  });
+                  var input = /** @type  {!HTMLInputElement} */(
+                      document.getElementById('id_address'));
+
+                  var types = document.getElementById('type-selector');
+                  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+                  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+
+                  var autocomplete = new google.maps.places.Autocomplete(input);
+                  autocomplete.bindTo('bounds', map);
+
+                  var infowindow = new google.maps.InfoWindow();
+                  var marker = new google.maps.Marker({
+                    map: map,
+                    anchorPoint: new google.maps.Point(0, -29)
+                  });
+
+                  autocomplete.addListener('place_changed', function() {
+                    infowindow.close();
+                    marker.setVisible(false);
+                    var place = autocomplete.getPlace();
+                    if (!place.geometry) {
+                      window.alert("Autocomplete's returned place contains no geometry");
+                      return;
+                    }
+
+                    // If the place has a geometry, then present it on a map.
+                    if (place.geometry.viewport) {
+                      map.fitBounds(place.geometry.viewport);
+                    } else {
+                      map.setCenter(place.geometry.location);
+                      map.setZoom(17);  // Why 17? Because it looks good.
+                    }
+                    marker.setIcon(/** @type {google.maps.Icon} */({
+                      url: place.icon,
+                      size: new google.maps.Size(71, 71),
+                      origin: new google.maps.Point(0, 0),
+                      anchor: new google.maps.Point(17, 34),
+                      scaledSize: new google.maps.Size(35, 35)
+                    }));
+                    marker.setPosition(place.geometry.location);
+                    marker.setVisible(true);
+
+                    var address = '';
+                    if (place.address_components) {
+                      address = [
+                        (place.address_components[0] && place.address_components[0].short_name || ''),
+                        (place.address_components[1] && place.address_components[1].short_name || ''),
+                        (place.address_components[2] && place.address_components[2].short_name || '')
+                      ].join(' ');
+                    }
+
+                    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+                    infowindow.open(map, marker);
+                  });
+
+                  // Sets a listener on a radio button to change the filter type on Places
+                  // Autocomplete.
+                  function setupClickListener(id, types) {
+                    var radioButton = document.getElementById(id);
+                    radioButton.addEventListener('click', function() {
+                      autocomplete.setTypes(types);
+                    });
+                  }
+
+                  setupClickListener('changetype-all', []);
+                  setupClickListener('changetype-address', ['address']);
+                  setupClickListener('changetype-establishment', ['establishment']);
+                  setupClickListener('changetype-geocode', ['geocode']);
+
+                    google.maps.event.addDomListener(window, "resize", resizingMap());
+                }
+                function resizeMap() {
+                  if (typeof map == "undefined") return;
+                  resizingMap();
+                }
+
+                function resizingMap() {
+                  if (typeof map == "undefined") return;
+                  var center = map.getCenter();
+                  google.maps.event.trigger(map, "resize");
+                  map.setCenter(center);
+                }
+{#                initMap();#}
 			} );
     </script>
-
-
-
 {% endblock %}

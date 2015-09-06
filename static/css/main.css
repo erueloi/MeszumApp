@@ -222,63 +222,62 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 
  .event-list {
 		list-style: none;
-		font-family: 'Lato', sans-serif;
 		margin: 0px;
 		padding: 0px;
 	}
-	.event-list > li {
+	.event-list > tr {
 		background-color: rgb(255, 255, 255);
 		box-shadow: 0px 0px 5px rgb(51, 51, 51);
 		box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
 		padding: 0px;
 		margin: 0px 0px 20px;
 	}
-	.event-list > li > time {
+	.event-list > tr > td > time {
 		display: inline-block;
-		width: 100%;
+		/*width: 100%;*/
 		color: rgb(255, 255, 255);
 		background-color: rgb(197, 44, 102);
 		padding: 5px;
 		text-align: center;
 		text-transform: uppercase;
 	}
-	.event-list > li:nth-child(even) > time {
+	.event-list > tr:nth-child(even) > time {
 		background-color: rgb(165, 82, 167);
 	}
-	.event-list > li > time > span {
+	.event-list > tr > td > time > span {
 		display: none;
 	}
-	.event-list > li > time > .day {
+	.event-list > tr > td >  time > .day {
 		display: block;
-		font-size: 56pt;
+		font-size: 36pt;
 		font-weight: 100;
 		line-height: 1;
 	}
-	.event-list > li time > .month {
+	.event-list > tr > td > time > .month {
 		display: block;
-		font-size: 24pt;
+		font-size: 12pt;
 		font-weight: 900;
 		line-height: 1;
 	}
-	.event-list > li > img {
+	.event-list > tr > td > img {
 		width: 100%;
 	}
-	.event-list > li > .info {
+	.event-list > tr > td > .info {
 		padding-top: 5px;
 		text-align: center;
 	}
-	.event-list > li > .info > .title {
+	.event-list > tr > td > .info > .title {
 		font-size: 17pt;
 		font-weight: 700;
 		margin: 0px;
 	}
-	.event-list > li > .info > .desc {
+	.event-list > tr > td > .info > .desc {
 		font-size: 13pt;
 		font-weight: 300;
 		margin: 0px;
 	}
-	.event-list > li > .info > ul,
-	.event-list > li > .social > ul {
+	.event-list > tr > td > .info > ul,
+	.event-list > tr > td > .social > ul {
 		display: table;
 		list-style: none;
 		margin: 10px 0px 0px;
@@ -286,11 +285,11 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 		width: 100%;
 		text-align: center;
 	}
-	.event-list > li > .social > ul {
+	.event-list > tr > td > .social > ul {
 		margin: 0px;
 	}
-	.event-list > li > .info > ul > li,
-	.event-list > li > .social > ul > li {
+	.event-list > tr > td > .info > ul > li,
+	.event-list > tr > td > .social > ul > li {
 		display: table-cell;
 		cursor: pointer;
 		color: rgb(30, 30, 30);
@@ -298,20 +297,20 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 		font-weight: 300;
         padding: 3px 0px;
 	}
-    .event-list > li > .info > ul > li > a {
+    .event-list > tr > td > .info > ul > li > a {
 		display: block;
 		width: 100%;
 		color: rgb(30, 30, 30);
 		text-decoration: none;
 	}
-    .event-list > li > .social > ul > li {
+    .event-list > tr > td > .social > ul > li {
         padding: 0px;
     }
-    .event-list > li > .social > ul > li > a {
+    .event-list > tr > td > .social > ul > li > a {
         padding: 3px 0px;
 	}
-	.event-list > li > .info > ul > li:hover,
-	.event-list > li > .social > ul > li:hover {
+	.event-list > tr > td > .info > ul > li:hover,
+	.event-list > tr > td > .social > ul > li:hover {
 		color: rgb(30, 30, 30);
 		background-color: rgb(200, 200, 200);
 	}
@@ -342,77 +341,76 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 	}
 
 	@media (min-width: 768px) {
-		.event-list > li {
+		.event-list > tr {
 			position: relative;
-			display: block;
 			width: 100%;
-			height: 120px;
+			height: 9	0px;
 			padding: 0px;
 		}
 
-		.event-list > li > time,
-		.event-list > li > img {
+		.event-list > tr > td > time,
+		.event-list > tr > td > img {
 			display: inline-block;
 		}
 
-		.event-list > li > time,
-		.event-list > li > img {
+		.event-list > tr > td > time,
+		.event-list > tr > td > img {
 			width: 120px;
 			float: left;
 		}
 
-		.event-list > li > .info {
-			background-color: rgb(245, 245, 245);
+		.event-list > tr > td > .info {
+			/*background-color: rgb(245, 245, 245);*/
 			overflow: hidden;
 		}
 
-		.event-list > li > time,
-		.event-list > li > img {
-			width: 120px;
-			height: 120px;
-			padding: 0px;
+		.event-list > tr > td > time,
+		.event-list > tr > td > img {
+			width: 60px;
+			/*height: 60px;*/
+			/*padding: 0px;*/
 			margin: 0px;
 		}
 
-		.event-list > li > .info {
+		.event-list > tr > td > .info {
 			position: relative;
-			height: 120px;
-			text-align: left;
-			padding-right: 40px;
+			/*height: 120px;*/
+			/*text-align: left;*/
+			/*padding-right: 40px;*/
 		}
 
-		.event-list > li > .info > .title,
-		.event-list > li > .info > .desc {
+		.event-list > tr > td > .info > .title,
+		.event-list > tr > td > .info > .desc {
 			padding: 0px 10px;
 		}
 
-		.event-list > li > .info > ul {
+		.event-list > tr > td > .info > ul {
 			position: absolute;
 			left: 0px;
 			bottom: 0px;
 		}
 
-		.event-list > li > .social {
-			position: absolute;
+		.event-list > tr > td > .social {
+			/*position: absolute;*/
 			top: 0px;
 			right: 0px;
 			display: block;
 			width: 40px;
 		}
 
-		.event-list > li > .social > ul {
-			border-left: 1px solid rgb(230, 230, 230);
+		.event-list > tr > td > .social > ul {
+			/*border-left: 1px solid rgb(230, 230, 230);*/
 		}
 
-		.event-list > li > .social > ul > li {
+		.event-list > tr > td > .social > ul > li {
 			display: block;
 			padding: 0px;
 		}
 
-		.event-list > li > .social > ul > li > a {
+		.event-list > tr > td > .social > ul > li > a {
 			display: block;
-			width: 40px;
-			padding: 10px 0px 9px;
+			width: 20px;
+			padding: 5px 0px 3px;
 		}
 	}
 
@@ -483,7 +481,6 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 	color:#e67e22;opacity:1;
 	transform:scale(1.08);}
 .center img{
-	opacity:0.8;
 	transition:all 300ms ease;}
 .blue img{
 	background:#fff;

@@ -55,3 +55,9 @@ class Event(models.Model):
                 point = "POINT(%s %s)" % (latlon[1], latlon[0])
                 self.geometry = geos.fromstr(point)
         super(Event, self).save()
+
+class Song(models.Model):
+    title = models.CharField(max_length=30)
+    artist = models.EmailField(max_length=254)
+    album = models.EmailField(max_length=254)
+    event = models.ForeignKey(Event)
