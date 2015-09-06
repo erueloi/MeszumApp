@@ -249,7 +249,7 @@ def addevents(request, idspace, idevent=None):
             objEvent.save()
             #Save Event
             messages.success(request,'S''ha guardat correctament l''Event')
-            return administrationevents(request, idspace)
+            return administrationspace(request, idspace)
         else:
             print form.errors
     else:
