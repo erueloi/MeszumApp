@@ -19,6 +19,9 @@
         <script src="{% static "js/vendor/moment-with-locales.min.js" %}"></script>
         <script src="{% static "js/vendor/bootstrap.min.js" %}"></script>
         <script src="{% static "js/vendor/bootstrap-datetimepicker.min.js" %}"></script>
+        <script src="{% static "js/typeahead/bloodhound.min.js" %}"></script>
+        <script src="{% static "js/typeahead/typeahead.bundle.min.js" %}"></script>
+        <script src="{% static "js/typeahead/typeahead.jquery.min.js" %}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
         <script src="{% static "js/jquery.backstretch.min.js" %}"></script>
         <script src="{% static "js/jquery.dataTables.js" %}"></script>
@@ -83,7 +86,7 @@
                                   {% if user.groups.all.0.name == 'Space' %}
                                       <li><a href="{% url 'profilespace' %}">Administration</a></li>
                                       {% for space in user.space_set.all  %}
-                                      <li><a href="{% url 'administrationevents' space.id %}">{{ space.name }} Events</a></li>
+                                      <li><a href="{% url 'administrationspace' space.id %}">{{ space.name }} Events</a></li>
                                       {% endfor %}
                                   {% endif %}
                                   {% if user.groups.all.0.name == 'Member' %}<li><a href="{% url 'profile' %}">Profile</a></li>{% endif %}

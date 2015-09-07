@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
 from meszum.forms import SpaceForm, EventForm, SubscribeForm, ProfileForm, UserProfileForm
-from meszum.models import Space, Event, UserProfile
+from meszum.models import Space, Event, UserProfile, Song
 from django.contrib.auth.models import User
 from geopy.geocoders.googlev3 import GoogleV3
 from geopy.geocoders.googlev3 import GeocoderQueryError
@@ -13,6 +13,7 @@ from django.http import JsonResponse
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import FormView, TemplateView
+import json
 
 def geocode_address(address):
     address = address.encode('utf-8')
@@ -238,6 +239,7 @@ def addevents(request, idspace, idevent=None):
         oEvent = None
 
     context_dict['space'] = objSpace
+    context_dict['songs'] = Song.objects.filter(event=oEvent)
 
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES, instance=oEvent)
@@ -252,10 +254,19 @@ def addevents(request, idspace, idevent=None):
             return administrationspace(request, idspace)
         else:
             print form.errors
+        if request.is_ajax():
+            data = {}
+            song = json.loads(form.data['song'])
+            objSong = Song()
+            objSong.title = song['name']
+            objSong.href_play = song['preview_url']
+            objSong.artist = song['artists'][0]['name']
+            objSong.album = song['album']['name']
+            objSong.event = oEvent
+            objSong.save()
+            return JsonResponse(data)
     else:
         form = EventForm(instance=oEvent)
-
-
 
     context_dict['event'] = oEvent
     context_dict['form'] = form

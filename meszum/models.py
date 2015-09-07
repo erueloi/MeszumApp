@@ -58,6 +58,8 @@ class Event(models.Model):
 
 class Song(models.Model):
     title = models.CharField(max_length=30)
-    artist = models.EmailField(max_length=254)
-    album = models.EmailField(max_length=254)
+    artist = models.CharField(max_length=254)
+    album = models.CharField(max_length=254)
+    href_play = models.CharField(max_length=1024)
+    likes = models.IntegerField(default=0)
     event = models.ForeignKey(Event)
