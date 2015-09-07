@@ -4,18 +4,20 @@
 
 {% block container %}
         <style>
-      #map {width: 500px; height: 300px}
-.controls {
-  margin-top: 10px;
-  border: 1px solid transparent;
-  border-radius: 2px 0 0 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  height: 32px;
-  outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+#map {
+  width: 100%;
+  height: 300px;
+  z-index: 1100!important;
 }
-
+#map-canvas {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#id_address
+{
+    width: 74%;
+}
 #pac-input {
   background-color: #fff;
   font-family: Roboto;
@@ -35,16 +37,12 @@
   font-family: Roboto;
 }
 
-#type-selector {
-  color: #fff;
-  background-color: #4d90fe;
-  padding: 5px 11px 0px 11px;
+.pac-container{
+    z-index: 1100!important;
 }
 
-#type-selector label {
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: 300;
+.gm-style{
+    z-index: 1100!important;
 }
 </style>
 
@@ -138,27 +136,13 @@
                             <div class="form-group">
                                   <label for="form.title.address">Address</label>
                                   {{ form.address|add_class:"form-control" }}
-                                <div id="type-selector" class="controls">
-                                  <input type="radio" name="type" id="changetype-all" checked="checked">
-                                  <label for="changetype-all">All</label>
-
-                                  <input type="radio" name="type" id="changetype-establishment">
-                                  <label for="changetype-establishment">Establishments</label>
-
-                                  <input type="radio" name="type" id="changetype-address">
-                                  <label for="changetype-address">Addresses</label>
-
-                                  <input type="radio" name="type" id="changetype-geocode">
-                                  <label for="changetype-geocode">Geocodes</label>
-                                </div>
                               </div>
-                            <div id="map"></div>
+                            <div id="map" class="form-group"></div>
                            <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
                 </form>
                 </div>
             </div>
-
-                          </div>
+                   </div>
             </div>
 		        </div>
          </div>
@@ -186,10 +170,7 @@
                   var input = /** @type {!HTMLInputElement} */(
                       document.getElementById('id_address'));
 
-                  var types = document.getElementById('type-selector');
                   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-                  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
-
                   var autocomplete = new google.maps.places.Autocomplete(input);
                   autocomplete.bindTo('bounds', map);
 
@@ -198,7 +179,6 @@
                     map: map,
                     anchorPoint: new google.maps.Point(0, -29)
                   });
-
                   autocomplete.addListener('place_changed', function() {
                     infowindow.close();
                     marker.setVisible(false);
@@ -207,7 +187,6 @@
                       window.alert("Autocomplete's returned place contains no geometry");
                       return;
                     }
-
                     // If the place has a geometry, then present it on a map.
                     if (place.geometry.viewport) {
                       map.fitBounds(place.geometry.viewport);
@@ -233,38 +212,19 @@
                         (place.address_components[2] && place.address_components[2].short_name || '')
                       ].join(' ');
                     }
-
                     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
                     infowindow.open(map, marker);
                   });
-
-                  // Sets a listener on a radio button to change the filter type on Places
-                  // Autocomplete.
-                  function setupClickListener(id, types) {
-                    var radioButton = document.getElementById(id);
-                    radioButton.addEventListener('click', function() {
-                      autocomplete.setTypes(types);
-                    });
-                  }
-
-                  setupClickListener('changetype-all', []);
-                  setupClickListener('changetype-address', ['address']);
-                  setupClickListener('changetype-establishment', ['establishment']);
-                  setupClickListener('changetype-geocode', ['geocode']);
                 }
                 initMap();
 
-
                 songstable = $('#ufs').DataTable();
-
                 function split( val ) {
                   return val.split( /;\s*/ );
                 }
-
                 function extractLast( term ) {
                   return split( term ).pop();
                 }
-
                 $("#spotify_song_search").bind( "keydown", function( event ) {
                     if ( event.keyCode === $.ui.keyCode.TAB && $( this ).data( "ui-autocomplete" ).menu.active ) {
                       event.preventDefault();
@@ -297,14 +257,11 @@
                     return false;
                   },
                     minLength: 3,
-
                 });
 
                 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                   resizeMap();
                 });
-
-
             });
             </script>
     <script type="text/javascript">

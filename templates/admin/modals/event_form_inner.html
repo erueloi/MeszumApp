@@ -35,22 +35,9 @@
                                   <label for="form.title.address">Address</label>
                                   {% if form.address.errors %}<label class="control-label" for="form.poster.id_for_label"> {{ form.address.errors|striptags }}</label>{% endif %}
                                   {{ form.address|add_class:"form-control" }}
-                                <div id="type-selector" class="controls">
-                                  <input type="radio" name="type" id="changetype-all" checked="checked">
-                                  <label for="changetype-all">All</label>
-
-                                  <input type="radio" name="type" id="changetype-establishment">
-                                  <label for="changetype-establishment">Establishments</label>
-
-                                  <input type="radio" name="type" id="changetype-address">
-                                  <label for="changetype-address">Addresses</label>
-
-                                  <input type="radio" name="type" id="changetype-geocode">
-                                  <label for="changetype-geocode">Geocodes</label>
-                                </div>
                               </div>
                             <input type='hidden' id="spaceid" name="spaceid" value="0" />
-                            <div id="map"></div>
+                            <div id="map" class="form-group"></div>
                            <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
                 </form>
     <script type="text/javascript">

@@ -3,33 +3,21 @@
 {% load widget_tweaks %}
 
 {% block container %}
-           <style>
-      #map {
-          width: 400px;
-          height: 300px;
-          z-index: 1100!important;
-
-      }
-      #map-canvas {
+    <style>
+#map {
+  width: 100%;
+  height: 300px;
+  z-index: 1100!important;
+}
+#map-canvas {
   margin: 0;
   padding: 0;
   height: 100%;
 }
-#map-canvas {
-  width: 500px;
-  height: 480px;
+#id_address
+{
+    width: 74%;
 }
-.controls {
-  margin-top: 10px;
-  border: 1px solid transparent;
-  border-radius: 2px 0 0 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  height: 32px;
-  outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
 #pac-input {
   background-color: #fff;
   font-family: Roboto;
@@ -49,24 +37,12 @@
   font-family: Roboto;
 }
 
-#type-selector {
-  color: #fff;
-  background-color: #4d90fe;
-  padding: 5px 11px 0px 11px;
-}
-
 .pac-container{
     z-index: 1100!important;
 }
 
 .gm-style{
     z-index: 1100!important;
-}
-
-#type-selector label {
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: 300;
 }
 </style>
 
@@ -109,7 +85,6 @@
                             <span class="label label-warning">Rock</span>
                           </p>
                           <hr>
-
                           <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
                           <p class="text-muted">Essera, 29 Lleida</p>
                     </div>
@@ -319,10 +294,7 @@
                   var input = /** @type  {!HTMLInputElement} */(
                       document.getElementById('id_address'));
 
-                  var types = document.getElementById('type-selector');
                   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-                  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
-
                   var autocomplete = new google.maps.places.Autocomplete(input);
                   autocomplete.bindTo('bounds', map);
 
@@ -370,28 +342,12 @@
                     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
                     infowindow.open(map, marker);
                   });
-
-                  // Sets a listener on a radio button to change the filter type on Places
-                  // Autocomplete.
-                  function setupClickListener(id, types) {
-                    var radioButton = document.getElementById(id);
-                    radioButton.addEventListener('click', function() {
-                      autocomplete.setTypes(types);
-                    });
-                  }
-
-                  setupClickListener('changetype-all', []);
-                  setupClickListener('changetype-address', ['address']);
-                  setupClickListener('changetype-establishment', ['establishment']);
-                  setupClickListener('changetype-geocode', ['geocode']);
-
-                    google.maps.event.addDomListener(window, "resize", resizingMap());
+                  google.maps.event.addDomListener(window, "resize", resizingMap());
                 }
                 function resizeMap() {
                   if (typeof map == "undefined") return;
                   resizingMap();
                 }
-
                 function resizingMap() {
                   if (typeof map == "undefined") return;
                   var center = map.getCenter();
