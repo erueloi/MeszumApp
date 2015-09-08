@@ -118,8 +118,8 @@
                                 <td>
                                     <audio id="player{{ song.id }}" src="{{ song.href_play }}"></audio>
                                     <div>
-                                        <button onclick="document.getElementById('player{{ song.id }}').play()">Play</button>
-                                        <button onclick="document.getElementById('player{{ song.id }}').pause()">Pause</button>
+                                        <button onclick="document.getElementById('player{{ song.id }}').play()"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-play"></span></button>
+                                        <button onclick="document.getElementById('player{{ song.id }}').pause()"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-pause"></span></button>
                                     </div>
                                 </td>
                                  <td>
@@ -286,22 +286,6 @@
 
                 $("#addsong").click(function() {
                     var input_string = $("#searchsong").val();
-{#                    $.ajax({#}
-{#                        url : "/ajaxexample_json", #}
-{#                        type : "POST",#}
-{#                        dataType: "json", #}
-{#                        data : {#}
-{#                            client_response : input_string,#}
-{#                            csrfmiddlewaretoken: '{{ csrf_token }}'#}
-{#                            },#}
-{#                        success : function(json) {#}
-{#                            $('#result').append( 'ServerResponse:' + json.server_response);#}
-{#                        },#}
-{#                        error : function(xhr,errmsg,err) {#}
-{#                            alert(xhr.status + ": " + xhr.responseText);#}
-{#                        }#}
-{#                    });#}
-                    var email = 'erueloi@gmail.com';
                     $.ajax({
                         type: 'POST',
                         url: window.location.href,
