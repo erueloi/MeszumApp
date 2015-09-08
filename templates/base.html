@@ -22,6 +22,7 @@
         <script src="{% static "js/typeahead/bloodhound.min.js" %}"></script>
         <script src="{% static "js/typeahead/typeahead.bundle.min.js" %}"></script>
         <script src="{% static "js/typeahead/typeahead.jquery.min.js" %}"></script>
+        <script src="{% static "js/fullcalendar.min.js" %}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
         <script src="{% static "js/jquery.backstretch.min.js" %}"></script>
         <script src="{% static "js/jquery.dataTables.js" %}"></script>
@@ -38,12 +39,65 @@
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
+            footer {
+                padding: 25px 0;
+                text-align: center;
+            }
+
+            footer span.copyright {
+                text-transform: uppercase;
+                text-transform: none;
+                font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+                line-height: 40px;
+                color: #ffffff;
+            }
+
+            footer ul.quicklinks {
+                margin-bottom: 0;
+                text-transform: uppercase;
+                text-transform: none;
+                font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+                line-height: 40px;
+                color:#ffffff;
+            }
+            ul.social-buttons {
+                margin-bottom: 0;
+            }
+
+            ul.social-buttons li a {
+                display: block;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                font-size: 20px;
+                line-height: 40px;
+                outline: 0;
+                color: #fff;
+                background-color: #222;
+                -webkit-transition: all .3s;
+                -moz-transition: all .3s;
+                transition: all .3s;
+            }
+
+            ul.social-buttons li a:hover,
+            ul.social-buttons li a:focus,
+            ul.social-buttons li a:active {
+                background-color: #fed136;
+            }
+
+            ul.quicklinks li a:hover,
+            ul.quicklinks li a:focus,
+            ul.quicklinks li a:active {
+                color: #fed136;
+            }
         </style>
         <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/jquery-ui.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/bootplus.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/bootflat.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-datetimepicker.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/fullcalendar.min.css" %}">
+{#        <link rel="stylesheet" type="text/css" href="{% static "css/fullcalendar.print.css" %}">#}
         <link rel="stylesheet" type="text/css" href="{% static "css/dataTables.bootstrap.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick.css" %}"/>
         <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick-theme.css" %}"/>
@@ -112,39 +166,31 @@
 
         <!-- Footer -->
         <footer class="footer" style="padding: 20px 0 5px!important;">
-                  <div class="container">
-                        <div class="clearfix">
-                          <div class="footer-logo"><a href="#"><img src="img/footer-logo.png" />Meszum</a></div>
-                          <dl class="footer-nav">
-                            <dt class="nav-title">PORTFOLIO</dt>
-                            <dd class="nav-item"><a href="#">Web Design</a></dd>
-                            <dd class="nav-item"><a href="#">Branding &amp; Identity</a></dd>
-                            <dd class="nav-item"><a href="#">Mobile Design</a></dd>
-                            <dd class="nav-item"><a href="#">Print</a></dd>
-                            <dd class="nav-item"><a href="#">User Interface</a></dd>
-                          </dl>
-                          <dl class="footer-nav">
-                            <dt class="nav-title">ABOUT</dt>
-                            <dd class="nav-item"><a href="#">The Company</a></dd>
-                            <dd class="nav-item"><a href="#">History</a></dd>
-                            <dd class="nav-item"><a href="#">Vision</a></dd>
-                          </dl>
-                          <dl class="footer-nav">
-                            <dt class="nav-title">GALLERY</dt>
-                            <dd class="nav-item"><a href="#">Flickr</a></dd>
-                            <dd class="nav-item"><a href="#">Picasa</a></dd>
-                            <dd class="nav-item"><a href="#">iStockPhoto</a></dd>
-                            <dd class="nav-item"><a href="#">PhotoDune</a></dd>
-                          </dl>
-                          <dl class="footer-nav">
-                            <dt class="nav-title">CONTACT</dt>
-                            <dd class="nav-item"><a href="#">Basic Info</a></dd>
-                            <dd class="nav-item"><a href="#">Map</a></dd>
-                            <dd class="nav-item"><a href="#">Conctact Form</a></dd>
-                          </dl>
-                        </div>
-                        <div class="footer-copyright text-center">Copyright &copy; 2015 Meszum. All rights reserved.</div>
-                  </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="copyright">Copyright &copy; Meszum 2015</span>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline quicklinks">
+                            <li><a href="#">Privacy Policy</a>
+                            </li>
+                            <li><a href="#">Terms of Use</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </footer>
 
         <script>
