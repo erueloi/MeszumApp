@@ -2,12 +2,93 @@
 {% load staticfiles %}
 
 {% block container %}
+    <style>
+     #PopularPosts1 h2{
+padding:7px 0 3px 0;
+width:100%;
+margin-bottom:10px;
+font-size:1.3em;
+text-indent:-12px;
+font-size:18px;
+text-align:center;
+color: #dfb92f; /* Color of the widget's title */
+}
+#PopularPosts1 ul{
+list-style:none;
+counter-reset:li;
+padding:8px 0px 1px;
+left:-7px;
+width:290px;
+}
+#PopularPosts1 li{
+position:relative;
+margin:0 0 10px 0;
+padding: 3px 2px 0 17px;
+left:-5px;
+width:285px;
+}
+#PopularPosts1 ul li{
+background: #eee;
+position: relative;
+display: block;
+padding: .4em .2em .4em 5px;
+*padding: .2em;
+margin: .5em 0;
+background: #dfb92f;
+text-decoration: none;
+border-radius: .3em;
+    border-color:black;
+    border-style: solid;
+transition: all .3s ease-out;
+}
+#PopularPosts1 ul li:before{
+content: counter(li);
+counter-increment: li;
+position: absolute;
+top: 50%;
+margin: -1.3em;
+height: 2em;
+width: 2em;
+line-height: 2em;
+font-size: 15px;
+color: #fff; /* text color of numbers */
+background: #FB8835; /* background color of numbers */
+border: .2em solid #fff; /* border color */
+-webkit-box-shadow: 0 8px 5px -7px #888;
+-moz-box-shadow: 0 8px 5px -7px #888;
+box-shadow: 0 8px 5px -7px #888;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+position: absolute;
+left: 0;
+transition: all .3s ease-out;
+}
+#PopularPosts1 ul li:hover{
+background: #eee;
+}
+#PopularPosts1 ul li:hover:before{
+transform: rotate(360deg);
+}
+#PopularPosts1 ul li a{
+text-shadow: 0 -1px 2px #fff;
+color: #444;
+display:block;
+min-height:25px;
+text-decoration:none;
+text-transform: uppercase;
+}
+#PopularPosts1 ul li a:hover{
+color: #444;
+}
+
+    </style>
       <section class="grid3d horizontal" id="grid3d" style="margin-bottom:40px;">
 				<div class="grid-wrap">
 					<div class="grid">
                         <!--  List Events -->
                         {% for event in events %}
-                            <figure>
+                            <figure class="animated fadeInUp">
                                 <div class="card">
                                  <div class="card-heading image">
                                     <img src="https://pbs.twimg.com/profile_images/547294814031839232/gvj_6sJ1_400x400.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -27,7 +108,7 @@
                               </div>
                             </figure>
                         {% endfor %}
-						<figure>
+						<figure class="animated fadeInUp">
 							<div class="card">
 		                     <div class="card-heading image">
 		                        <img src="https://pbs.twimg.com/profile_images/547294814031839232/gvj_6sJ1_400x400.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -46,7 +127,7 @@
 		                     </div>	                    		                   
 		                  </div>
 						</figure>
-						<figure>
+						<figure class="animated fadeInUp">
 							<div class="card">
 		                     <div class="card-heading image">
 		                        <img src="https://pbs.twimg.com/profile_images/515450714114359298/22mGyQqz.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -65,7 +146,7 @@
 		                     </div>		                   		                     
 		                  </div>
 						</figure>
-						<figure>
+						<figure class="animated fadeInUp">
 							<div class="card">
 		                     <div class="card-heading image">
 		                        <img src="https://pbs.twimg.com/profile_images/515450714114359298/22mGyQqz.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -84,7 +165,7 @@
 		                     </div>	
 		                  </div>
 						</figure>	
-						<figure>
+						<figure class="animated fadeInUp">
 							<div class="card">
 		                     <div class="card-heading image">
 		                        <img src="https://pbs.twimg.com/profile_images/3694859351/417c3467774dd62fe729740b988c3f46_400x400.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -128,24 +209,31 @@
 				<div class="content">
                     <!--  Content Events -->
                     {% for event in events %}
-                        <div class="container-fluid" style=" background-image: url('{{ event.poster.url }}'); background-size: cover; height: 100%;">
-                            <div class="row">
-                                        <div class="col-md-12">
-                                            <img src="{% static "img/lp_list.png" %}" class="img-responsive" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
+                        <div class="container-fluid" style=" background: url('{{ event.poster.url }}') no-repeat center center fixed; background-size: cover; ">
+                            <div class="row" style="background-color:rgba(255, 248, 255, 0.8);">
+                                <div class="col-md-12">
+                                    <img src="{% static "img/lp_list.png" %}" class="img-responsive" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
+                                </div>
+                            </div>
+                            <div class="row" style="background-color:rgba(255, 248, 255, 0.8);">
+                                <div class="col-md-3">
+                                        <img src="{{ event.poster.url }}" style="width: 275px;">
+                                </div>
+                                <div class="col-md-5" style="text-align: center">
+                                    <div class="PopularPosts" id="PopularPosts1">
+                                        <div class="popular-posts" style="padding-left: 35%">
+                                            <ul>
+                                                {% for song in event.song_set.all %}
+                                                    <li class="animated bounceIn">
+                                                        <a href="#">{{ song.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
                                         </div>
                                     </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                        <img src="{{ event.poster.url }}" class="img-responsive" style="width: 100% \9;">
-                                </div>
-                                <div class="col-md-7">
-                                        <h3>{{ event.title }}</h3>
-                                        <p style="color:#000">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
-                                        <p>The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
                                 </div>
                             </div>
-
-                            </div>
+                        </div>
                         {% endfor %}
 					<div>
 						<div class="dummy-img"></div>
