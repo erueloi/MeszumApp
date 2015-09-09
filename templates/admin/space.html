@@ -37,15 +37,11 @@
   font-family: Roboto;
 }
 
-.pac-container{
-    z-index: 1100!important;
+.fc-event{
+    cursor:pointer;
 }
 
-.gm-style{
-    z-index: 1100!important;
-}
 </style>
-
    <div class="row">
     <div class="col-sm-12 col-md-12">
        <div class="container-fluid">
@@ -103,52 +99,65 @@
                   </ul>
                   <div id="myTabContent" class="tab-content">
                      <div class="tab-pane fade active in" id="profile3">
+
+                     <div class="row" style="text-align: center;">
+                         <div class="btn-group">
+                          <button id="btncalendarevents" type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
+                          <button id="btnlistevents" type="button" class="btn btn-default"><i class="glyphicon glyphicon-list"></i></button>
+                        </div>
                          {% block modal %}
                              <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
                          {% endblock modal %}
-                         <div id='calendar'></div>
-                         <div style="margin-top: 20px;"></div>
-                         <table class="table table-bordered table-hover responsive" id="ufs" >
-                        <thead>
-                          <tr>
-                            <th>Date</th>
-                            <th>Poster</th>
-                            <th>Description</th>
-                            <th>Social</th>
-                          </tr>
-                        </thead>
-                        <tbody class="event-list">
-                             {% for event in events %}
-                             <tr style="cursor:pointer" data-link="{% url 'administrationevent' space.id event.id %}">
-                                <td>
-                                     <time datetime="{{ event.startdate }}">
-                                        <span class="day">{{ event.startdate.day }}</span>
-                                        <span class="month">{{ event.startdate|date:"N" }}</span>
-                                        <span class="year">{{ event.startdate.year }}</span>
-                                        <span class="time">ALL DAY</span>
-                                    </time>
-                                </td>
-                                <td> <img style="width: 60px;" alt="Independence Day" src="{{ event.poster.url }}" /></td>
-                                <td>
-                                    <div class="info">
-                                        <h3 class="title">{{ event.title }} </h3>
-                                        <p class="desc">{{ event.description }} </p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="social">
-                                        <ul>
-                                            <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-                                            <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-                                            <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                             </tr>
-                             {% endfor %}
-                        </tbody>
-                      </table>
-                      <div class="blue center" style="padding-top: 1 0px;">
+                     </div>
+                     <div class="row" id="calendarevents">
+                          <div id="calendar"></div>
+                     </div>
+                     <div class="row" id="listevents" style="display: none;">
+                         <div>
+                             <table class="table table-bordered table-hover responsive" id="ufs" >
+                                <thead>
+                                  <tr>
+                                    <th>Date</th>
+                                    <th>Poster</th>
+                                    <th>Description</th>
+                                    <th>Social</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="event-list">
+                                     {% for event in events %}
+                                     <tr style="cursor:pointer" data-link="{% url 'administrationevent' space.id event.id %}">
+                                        <td>
+                                             <time datetime="{{ event.startdate }}">
+                                                <span class="day">{{ event.startdate.day }}</span>
+                                                <span class="month">{{ event.startdate|date:"N" }}</span>
+                                                <span class="year">{{ event.startdate.year }}</span>
+                                                <span class="time">ALL DAY</span>
+                                            </time>
+                                        </td>
+                                        <td> <img style="width: 60px;" alt="Independence Day" src="{{ event.poster.url }}" /></td>
+                                        <td>
+                                            <div class="info">
+                                                <h3 class="title">{{ event.title }} </h3>
+                                                <p class="desc">{{ event.description }} </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="social">
+                                                <ul>
+                                                    <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+                                                    <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+                                                    <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                     </tr>
+                                     {% endfor %}
+                                </tbody>
+                              </table>
+                         </div>
+                     </div>
+                     <div class="row" style="margin-top: 10px;">
+                        <div class="blue center">
                               {% for event in events %}
                                   <div>
                                       <div>
@@ -159,6 +168,7 @@
                                   </div>
                              {% endfor %}
                         </div>
+                    </div>
 
                   </div>
                      <div class="tab-pane fade" id="home3">
@@ -202,7 +212,6 @@
 		        <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-calendar"></i> Add Event</h4>
 		      </div>
 		      <div class="modal-body" id="space-modal-body">
-                  Hola
 		      </div>
                  <div class="modal-footer">
 
@@ -235,7 +244,9 @@
                     }
                   ]
                 });
-                $('#ufs').DataTable();
+                $('#ufs').DataTable({
+                  "lengthMenu": [ 5, 10, 25, 50, 75, 100 ]
+                } );
                 $("tr[data-link]").click(function() {
 						window.location = this.dataset.link
 					});
@@ -363,21 +374,23 @@
                     editable: false,
                     eventLimit: true, // allow "more" link when too many events
                     timeFormat: 'H:mm',
-                    events: '/api/events/?format=json'
+                    events: '/api/events/?format=json',
+                    eventClick: function(calEvent, jsEvent, view) {
+                        url_to = window.location.href  + 'events/' +  calEvent.id
+                        window.location.href = url_to;
+{#                        window.open(url_to, '_self');#}
+                    }
+                });
+                $('#btncalendarevents').on('click', function(e) {
+                     $('#btncalendarevents').removeClass('active');
+                     $('#calendarevents').show('blind');
+                     $('#listevents').hide('blind');
+                });
+                $('#btnlistevents').on('click', function(e) {
+                     $('#calendarevents').hide('blind');
+                     $('#listevents').show('blind');
                 });
 
-                $('#calendar').fullCalendar({
-                    eventClick: function(calEvent, jsEvent, view) {
-
-                        alert('Event: ' + calEvent.title);
-                        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                        alert('View: ' + view.name);
-
-                        // change the border color just for fun
-                        $(this).css('border-color', 'red');
-
-                    }
-});
 			} );
     </script>
 {% endblock %}

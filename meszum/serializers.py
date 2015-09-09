@@ -7,7 +7,7 @@ class EventSerializer(serializers.ModelSerializer):
     start = serializers.DateTimeField(source='startdate', read_only=True)
     class Meta:
         model = Event
-        fields = ('title', 'description', 'start', 'poster', 'address')
+        fields = ('id','title', 'description', 'start', 'poster', 'address')
 
 # ViewSets define the view behavior.
 class EventViewSet(viewsets.ModelViewSet):

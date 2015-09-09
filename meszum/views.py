@@ -12,7 +12,8 @@ from django.template.loader import get_template
 from django.http import JsonResponse
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic import FormView, TemplateView
+from django.views.generic import FormView
+from django.contrib.auth.decorators import login_required
 import json
 
 def geocode_address(address):
@@ -123,6 +124,7 @@ def index(request):
 
 # SuperDashboard
 
+@login_required
 def superuserdashboard(request):
     context_dict = {}
     context_dict['nspaces'] = Space.objects.all().count();
@@ -130,11 +132,26 @@ def superuserdashboard(request):
     context_dict['nevents'] = Event.objects.all().count();
     return render(request, 'superdashboard/superuser_dashboard.html', context_dict)
 
+@login_required
 def sd_spaces(request):
     context_dict = {}
     context_dict['spaces'] = Space.objects.all();
     return render(request, 'superdashboard/sd_spaces.html', context_dict)
 
+@login_required
+def sd_events(request, idspace=None):
+    context_dict = {}
+    try:
+        objSpace = Space.objects.get(id=idspace)
+        context_dict['events'] = Event.objects.filter(space=objSpace);
+    except Space.DoesNotExist:
+        objSpace = None
+        context_dict['events'] = Event.objects.all();
+
+
+    return render(request, 'superdashboard/sd_events.html', context_dict)
+
+@login_required
 def sd_users(request):
     context_dict = {}
     context_dict['users'] = User.objects.all();
@@ -142,6 +159,7 @@ def sd_users(request):
 
 #Administration/Configuration Space
 
+@login_required
 def profilespace(request):
     context_dict = {}
     objUser = User.objects.get(id=request.user.id)
@@ -178,6 +196,7 @@ def profilespace(request):
 
     return render(request, 'account/profilespace.html', context_dict)
 
+@login_required
 def administrationspace(request, idspace):
     context_dict = {}
     try:
@@ -206,20 +225,7 @@ def administrationspace(request, idspace):
 
     return render(request, 'admin/space.html', context_dict)
 
-# def administrationevents(request, idspace):
-#     context_dict = {}
-#     try:
-#         space = Space.objects.get(id=idspace)
-#         events = Event.objects.filter(space=space).order_by('startdate')
-#     except Space.DoesNotExist:
-#         space = None
-#         events = None
-#
-#     context_dict['space'] = space
-#     context_dict['events'] = events
-#
-#     return render(request, 'admin/events.html', context_dict)
-
+@login_required
 def addevents(request, idspace, idevent=None):
     context_dict = {}
     try:
@@ -268,6 +274,7 @@ def addevents(request, idspace, idevent=None):
 
 # Administration/Configuration Member
 
+@login_required
 def profile(request):
     context_dict = {}
     objUser = User.objects.get(id=request.user.id)
