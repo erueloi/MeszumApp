@@ -1,69 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bd94954-7cc6-4e1c-853d-392bf07ea119" name="Default" comment="Correct Space Modal and save&#10;Add Event in Modal and save&#10;Add Song List and autocomplete">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/Material-Design-Icons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/Material-Design-Icons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/Material-Design-Icons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftBold.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftBold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftItalic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftItalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftMedium.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftMedium.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftRegular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftRegular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/Material-Design-Icons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/materialdesign/material.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/materialdesign/material.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/materialdesign/ripples.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/materialdesign/ripples.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/materialdesign/roboto.css" />
-      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\demo.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\plugins.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\modernizr-2.8.3-respond-1.4.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\npm.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\bootflat.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap/bootflat.min.css" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\bootplus.css" afterPath="$PROJECT_DIR$/static/css/bootstrap/bootplus.css" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\bootstrap-datetimepicker.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap/bootstrap-datetimepicker.min.css" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\dataTables.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap/dataTables.bootstrap.min.css" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\fullcalendar.min.css" afterPath="$PROJECT_DIR$/static/css/fullcalendar/fullcalendar.min.css" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\fullcalendar.print.css" afterPath="$PROJECT_DIR$/static/css/fullcalendar/fullcalendar.print.css" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\jquery-ui.min.css" afterPath="$PROJECT_DIR$/static/css/jquery/jquery-ui.min.css" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\bootstrap-notify.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/bootstrap-notify.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\dataTables.bootstrap.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/dataTables.bootstrap.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\fullcalendar.min.js" afterPath="$PROJECT_DIR$/static/js/fullcalendar/fullcalendar.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\jquery-ui.min.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery-ui.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\jquery.backstretch.min.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery.backstretch.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\jquery.dataTables.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery.dataTables.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\modernizr.custom.js" afterPath="$PROJECT_DIR$/static/js/modernizr/modernizr.custom.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\slick.min.js" afterPath="$PROJECT_DIR$/static/js/slick/slick.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\bootstrap-datetimepicker.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/bootstrap-datetimepicker.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\bootstrap.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/bootstrap.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\bootstrap.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/bootstrap.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\jquery-1.11.2.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery-1.11.2.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\jquery-1.11.2.min.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery-1.11.2.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\moment-with-locales.min.js" afterPath="$PROJECT_DIR$/static/js/moment/moment-with-locales.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\moment.min.js" afterPath="$PROJECT_DIR$/static/js/moment/moment.min.js" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\templates\admin\sd_spaces.html" afterPath="$PROJECT_DIR$/templates/superdashboard/sd_spaces.html" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\templates\admin\sd_users.html" afterPath="$PROJECT_DIR$/templates/superdashboard/sd_users.html" />
-      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\templates\admin\superuser_dashboard.html" afterPath="$PROJECT_DIR$/templates/superdashboard/superuser_dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MeszumApp.iml" afterPath="$PROJECT_DIR$/.idea/MeszumApp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/addevents.html" afterPath="$PROJECT_DIR$/templates/admin/addevents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/commingsoon.html" afterPath="$PROJECT_DIR$/templates/commingsoon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/component.css" afterPath="$PROJECT_DIR$/static/css/component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/commingsoon/css/form-elements.css" afterPath="$PROJECT_DIR$/static/commingsoon/css/form-elements.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/account/profilespace.html" afterPath="$PROJECT_DIR$/templates/account/profilespace.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/commingsoon/css/style.css" afterPath="$PROJECT_DIR$/static/commingsoon/css/style.css" />
+    <list default="true" id="1bd94954-7cc6-4e1c-853d-392bf07ea119" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/serializers.py" afterPath="$PROJECT_DIR$/meszum/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/space.html" afterPath="$PROJECT_DIR$/templates/admin/space.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MeszumApp/urls.py" afterPath="$PROJECT_DIR$/MeszumApp/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/urls.py" afterPath="$PROJECT_DIR$/meszum/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/views.py" afterPath="$PROJECT_DIR$/meszum/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MeszumApp.iws" />
@@ -128,12 +69,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meszum/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38403043">
-              <caret line="108" column="56" selection-start-line="108" selection-start-column="56" selection-end-line="108" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="36" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="36" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meszum/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="space.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/admin/space.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.83143216">
+              <caret line="377" column="0" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meszum/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="86" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MeszumApp/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -203,12 +188,9 @@
         <option value="$PROJECT_DIR$/meszum/models.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/startpage.html" />
-        <option value="$PROJECT_DIR$/templates/admin/space.html" />
         <option value="$PROJECT_DIR$/static/js/classie.js" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/MeszumApp/settings.py" />
-        <option value="$PROJECT_DIR$/meszum/serializers.py" />
-        <option value="$PROJECT_DIR$/MeszumApp/urls.py" />
         <option value="$PROJECT_DIR$/meszum/views.py" />
         <option value="$PROJECT_DIR$/meszum/urls.py" />
         <option value="$PROJECT_DIR$/templates/admin/addevents.html" />
@@ -218,6 +200,9 @@
         <option value="$PROJECT_DIR$/static/commingsoon/css/form-elements.css" />
         <option value="$PROJECT_DIR$/static/commingsoon/css/style.css" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/MeszumApp/urls.py" />
+        <option value="$PROJECT_DIR$/meszum/serializers.py" />
+        <option value="$PROJECT_DIR$/templates/admin/space.html" />
       </list>
     </option>
   </component>
@@ -841,7 +826,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441581622936</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Reorganize &amp; Clean Styles, Javascript and urls">
+      <created>1441801020045</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1441801020045</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView">
@@ -858,6 +849,7 @@
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29181495" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -871,7 +863,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41795665" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -921,7 +912,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge branch 'meszum-dev' of https://github.com/erueloi/MeszumApp into meszum-dev&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;" />
     <MESSAGE value="Add Super User Dashboard&#10;" />
     <MESSAGE value="Commingsoon Page&#10;" />
     <MESSAGE value="Register form and Login&#10;" />
@@ -946,7 +936,8 @@
     <MESSAGE value="Add Event = None" />
     <MESSAGE value="Add Space in Modal without submit" />
     <MESSAGE value="Correct Space Modal and save&#10;Add Event in Modal and save&#10;Add Song List and autocomplete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correct Space Modal and save&#10;Add Event in Modal and save&#10;Add Song List and autocomplete" />
+    <MESSAGE value="Reorganize &amp; Clean Styles, Javascript and urls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganize &amp; Clean Styles, Javascript and urls" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1120,6 +1111,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36525974">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1131,44 +1123,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meszum/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meszum/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="75" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="75" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meszum/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26785713">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MeszumApp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12515338">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meszum/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5377856">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1209,18 +1168,6 @@
             <element signature="e#4175#5583#0#HTML" expanded="false" />
             <element signature="e#5850#8477#0#HTML" expanded="false" />
             <element signature="e#8683#14972#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/space.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2991128">
-          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding>
-            <element signature="e#655#1604#0#HTML" expanded="false" />
-            <element signature="e#1609#9678#0#HTML" expanded="false" />
-            <element signature="e#9702#10313#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1328,6 +1275,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38403043">
           <caret line="108" column="56" selection-start-line="108" selection-start-column="56" selection-end-line="108" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MeszumApp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meszum/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="86" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meszum/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="36" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meszum/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/space.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83143216">
+          <caret line="377" column="0" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
           <folding />
         </state>
       </provider>

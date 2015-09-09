@@ -3,10 +3,11 @@ from django.contrib.auth.models import User
 from meszum.models import Event
 
 # Serializers define the API representation.
-class EventSerializer(serializers.HyperlinkedModelSerializer):
+class EventSerializer(serializers.ModelSerializer):
+    start = serializers.DateTimeField(source='startdate', read_only=True)
     class Meta:
         model = Event
-        fields = ('title', 'description', 'startdate', 'poster', 'address')
+        fields = ('title', 'description', 'start', 'poster', 'address')
 
 # ViewSets define the view behavior.
 class EventViewSet(viewsets.ModelViewSet):
