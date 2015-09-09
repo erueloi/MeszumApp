@@ -11,7 +11,7 @@ body {
 strong { font-weight: 500; }
 
 a, a:hover, a:focus {
-	color: #de995e;
+	color: #fed136;
 	text-decoration: none;
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
@@ -236,7 +236,7 @@ ul.navbar-nav {
 
 .features-box .features-box-icon {
     font-size: 70px;
-    color: #de995e;
+    color: #fed136;
     line-height: 70px;
 }
 

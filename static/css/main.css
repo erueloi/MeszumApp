@@ -1,3 +1,255 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body {
+	height: 100%;
+	padding-top: 25px;
+	padding-bottom: 20px;
+	background-color: #e6e9ed;
+}
+
+a {
+	color: rgba(0,0,0,0.4);
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover, a:focus {
+	/*color: #fff;*/
+	color: #fed136;
+}
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/* ==========================================================================
+   Index Grid Cards
+   ========================================================================== */
+
+.codrops-header {
+	margin: 0 auto;
+	padding: 2em;
+	text-align: center;
+}
+
+.codrops-header h1 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 2.6em;
+}
+
+.codrops-header h1 span {
+	display: block;
+	padding: 0.3em 0 2em;
+	font-size: 0.45em;
+}
+
+.codrops-demos a {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 10px;
+}
+
+.codrops-demos a.current-demo {
+	color: #fff;
+}
+
+/* To Navigation Style */
+.codrops-top {
+	width: 100%;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.69em;
+	line-height: 2.2;
+}
+
+.codrops-top a {
+	display: inline-block;
+	padding: 0 1em;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+
+.codrops-top span.right {
+	float: right;
+}
+
+.codrops-top span.right a {
+	display: block;
+	float: left;
+}
+
+.codrops-icon:before {
+	margin: 0 4px;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: 'codropsicons';
+	line-height: 1;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon-drop:before {
+	content: "\e001";
+}
+
+.codrops-icon-prev:before {
+	content: "\e004";
+}
+
+section {
+/*  	padding: 0em 5% 4em;  */
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.related > a {
+	border: 3px solid rgba(0,0,0,0.4);;
+	display: inline-block;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 25px;
+	-webkit-transition: color 0.3s, border-color 0.3s;
+	transition: color 0.3s, border-color 0.3s;
+}
+
+.related a:hover {
+	border-color: #fff;
+}
+
+.related a img {
+	max-width: 100%;
+	opacity: 0.8;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.related a:hover img,
+.related a:active img {
+	opacity: 1;
+}
+
+.related a h3 {
+	margin: 0;
+	padding: 0.5em 0 0.3em;
+	max-width: 300px;
+	text-align: left;
+	font-size: 0.75em;
+}
+
+@media screen and (max-width: 25em) {
+
+	.codrops-icon span {
+		display: none;
+	}
+
+}
+
+/* ==========================================================================
+   Index Grid Cards
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+  footer {
+		padding: 25px 0;
+		text-align: center;
+	}
+
+	footer span.copyright {
+		text-transform: uppercase;
+		text-transform: none;
+		font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+		line-height: 40px;
+		color: #ffffff;
+	}
+
+	footer ul.quicklinks {
+		margin-bottom: 0;
+		text-transform: uppercase;
+		text-transform: none;
+		font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+		line-height: 40px;
+		color:#ffffff;
+	}
+	ul.social-buttons {
+		margin-bottom: 0;
+	}
+
+	ul.social-buttons li a {
+		display: block;
+		width: 40px;
+		height: 40px;
+		border-radius: 100%;
+		font-size: 20px;
+		line-height: 40px;
+		outline: 0;
+		color: #fff;
+		background-color: #222;
+		-webkit-transition: all .3s;
+		-moz-transition: all .3s;
+		transition: all .3s;
+	}
+
+	ul.social-buttons li a:hover,
+	ul.social-buttons li a:focus,
+	ul.social-buttons li a:active {
+		background-color: #fed136;
+	}
+
+	ul.quicklinks li a:hover,
+	ul.quicklinks li a:focus,
+	ul.quicklinks li a:active {
+		color: #fed136;
+	}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+
 /* ==========================================================================
    Login Form
    ========================================================================== */
@@ -118,10 +370,6 @@
 	border-color: #4aaf51;
 }
 
-/*.social-login {*/
-	/*margin-top: 35px;*/
-/*}*/
-
 .social-login-buttons {
 	margin-top: 25px;
 }
@@ -137,26 +385,6 @@
 	margin-top: 25px;
 	text-align: center;
 }
-
-/*input[type="text"],*/
-/*input[type="password"],*/
-/*textarea,*/
-/*textarea.form-control {*/
-	/*height: 50px;*/
-    /*margin: 0;*/
-    /*padding: 0 20px;*/
-    /*vertical-align: middle;*/
-    /*background: #f8f8f8;*/
-    /*border: 3px solid #ddd;*/
-    /*font-family: 'Roboto', sans-serif;*/
-    /*font-size: 16px;*/
-    /*font-weight: 300;*/
-    /*line-height: 50px;*/
-    /*color: #888;*/
-    /*-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;*/
-    /*-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;*/
-    /*-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;*/
-/*}*/
 
 textarea,
 textarea.form-control {
@@ -344,7 +572,7 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 		.event-list > tr {
 			position: relative;
 			width: 100%;
-			height: 9	0px;
+			height: 90px;
 			padding: 0px;
 		}
 
@@ -497,6 +725,10 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 {
     color: #f6bb42!important;
 }
+
+/* ==========================================================================
+   Autocomplete with typehead
+   ========================================================================== */
 
 /*
  * typehead.js-bootstrap3.less

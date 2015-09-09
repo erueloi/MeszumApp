@@ -3,24 +3,25 @@
 {% load widget_tweaks %}
 
 {% block container %}
-       <div class="row">
-    <div class="col-sm-12 col-md-12">
-       <div class="container-fluid">
-            <div class="page-header" style="border-bottom:1px solid #f6bb42; margin-bottom: 10px!important;">
-              <h4 class="pull-left" style="margin-bottom: 0px!important;">
-                Administration
-              </h4>
-              <div class="pull-right">
-                <ol class="breadcrumb breadcrumb-arrow" style="margin-bottom: 0px!important;">
-                  <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
-                  <li class="active"><span><i class="glyphicon glyphicon-user"></i>  {{ user.username }}</span></li>
-                </ol>
-              </div>
-              <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="container-fluid">
+                <div class="page-header" style="border-bottom:1px solid #f6bb42; margin-bottom: 10px!important;">
+                    <h4 class="pull-left" style="margin-bottom: 0px!important;">
+                        Administration
+                    </h4>
+                    <div class="pull-right">
+                        <ol class="breadcrumb breadcrumb-arrow" style="margin-bottom: 0px!important;">
+                            <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
+                            <li class="active"><span><i class="glyphicon glyphicon-user"></i>  {{ user.username }}</span></li>
+                        </ol>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
             </div>
         </div>
     </div>
-   </div>
+
     <div class="row">
         <div class="col-md-3">
              <div class="panel panel-default">
@@ -30,164 +31,159 @@
                      <ul class="list-group">
                       <li class="list-group-item"><span class="badge badge-default">{{ nevents }}</span>Events</li>
                       <li class="list-group-item"><span class="badge badge-primary">1500</span>Followers</li>
-                    </ul>
+                     </ul>
                      <div>
                          <strong><i class="fa fa-pencil margin-r-5"></i> Type</strong>
-                          <p>
-                            <span class="label label-danger">Rumba</span>
-                            <span class="label label-success">Techno</span>
-                            <span class="label label-info">Swing</span>
-                            <span class="label label-warning">Rock</span>
-                          </p>
-                          <hr>
-
-                          <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
-                          <p class="text-muted">Essera, 29 Lleida</p>
+                         <p>
+                             <span class="label label-danger">Rumba</span>
+                             <span class="label label-success">Techno</span>
+                             <span class="label label-info">Swing</span>
+                             <span class="label label-warning">Rock</span>
+                         </p>
+                         <hr>
+                         <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                         <p class="text-muted">Essera, 29 Lleida</p>
                     </div>
                  </div>
              </div>
         </div>
         <div class="col-md-9">
             <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h3 class="panel-title"></h3>
-              </div>
-              <div class="panel-body">
+                <div class="panel-heading">
+                    <h3 class="panel-title"></h3>
+                </div>
+                <div class="panel-body">
                     <ul id="myTab1" class="nav nav-tabs">
                       <li class="active"><a href="#profile3" data-toggle="tab">Spaces</a></li>
                       <li class=""><a href="#home3" data-toggle="tab">Settings</a></li>
-                  </ul>
+                    </ul>
                     <div id="myTabContent" class="tab-content">
-                     <div class="tab-pane fade active in" id="profile3">
-                     {% block modal %}
-                             <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
-                         {% endblock modal %}
-                         <table class="table table-bordered table-hover" id="ufs">
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Tipus</th>
-                            <th>Adress</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                             {% for space in spaces %}
-                             <tr style="cursor:pointer" data-link="{% url 'administrationspace' space.id %}">
-                                <td><img src="{% if space.logotype %} {{ space.logotype.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" alt="User Image" style=" width:25px;height:25px;float: left; margin-right: 10px;"> {{ space.name }}</td>
-                                <td>{{ space.email }}</td>
-                                <td>
-                                    <span class="label label-success">Rumba</span>
-                                </td>
-                                <td>Riu Éssera, 6 Lleida</td>
-                             </tr>
-                             {% endfor %}
-                        </tbody>
-                      </table>
-
-                  </div>
-                     <div class="tab-pane fade" id="home3">
-
-                          <form action="." method="post" role="form" enctype="multipart/form-data">
-                              {% csrf_token %}
-                               <div class="row">
-                                  <div class="col-md-6">
-                                      <div class="form-group">
-                                          <label for="formuser.username.id_for_label">User Name</label>
-                                          {{ formuser.username|add_class:"form-control" }}
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="formuser.first_name.id_for_label">Business Name</label>
-                                          {{ formuser.first_name|add_class:"form-control" }}
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="formuser.email.id_for_label">Email</label><br>
-                                          <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                            {{ formuser.email|add_class:"form-control" }}
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                         <div class="form-group">
+                        <div class="tab-pane fade active in" id="profile3">
+                            {% block modal %}
+                                <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
+                            {% endblock modal %}
+                            <table class="table table-bordered table-hover" id="ufs">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Tipus</th>
+                                    <th>Adress</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for space in spaces %}
+                                    <tr style="cursor:pointer" data-link="{% url 'administrationspace' space.id %}">
+                                        <td><img src="{% if space.logotype %} {{ space.logotype.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" alt="User Image" style=" width:25px;height:25px;float: left; margin-right: 10px;"> {{ space.name }}</td>
+                                        <td>{{ space.email }}</td>
+                                        <td>
+                                            <span class="label label-success">Rumba</span>
+                                        </td>
+                                        <td>Riu Éssera, 6 Lleida</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="home3">
+                            <form action="." method="post" role="form" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="formuser.username.id_for_label">User Name</label>
+                                            {{ formuser.username|add_class:"form-control" }}
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formuser.first_name.id_for_label">Business Name</label>
+                                            {{ formuser.first_name|add_class:"form-control" }}
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formuser.email.id_for_label">Email</label><br>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                {{ formuser.email|add_class:"form-control" }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
                                             <label for="form.avatar.id_for_label">Avatar</label></br>
                                             <!--<img class="img-responsive img-circle" src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" alt="logo" style="width: 64px; height: 64px;"></a>-->
                                             {{ form.avatar|add_class:"form-control" }}
-                                      </div>
-                                  </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
                                 </div>
-                          </form>
-                  </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-
-              </div>
             </div>
         </div>
     </div>
 
     <!-- Modal -->
-		<div class="modal fade" id="SpaceModal" tabindex="-1">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>
-		      </div>
-		      <div class="modal-body" id="space-modal-body">
+    <div class="modal fade" id="SpaceModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>
+                </div>
+                <div class="modal-body" id="space-modal-body">
                   Hola
-		      </div>
-                 <div class="modal-footer">
-
-              </div>
-		    </div>
-		  </div>
-		</div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
 
     <script>
-            $(document).ready(function() {
-                $('#ufs').DataTable();
-                $("tr[data-link]").click(function() {
-						window.location = this.dataset.link
-					});
+    $(document).ready(function() {
+        $('#ufs').DataTable();
+        $("tr[data-link]").click(function() {
+                window.location = this.dataset.link
+            });
 
-                var formAjaxSubmit = function(form, modal) {
-                $(form).submit(function (e) {
-                        e.preventDefault();
-                        $.ajax({
-                            type: $(this).attr('method'),
-                            url: $(this).attr('action'),
-                            data: $(this).serialize(),
-                            success: function (xhr, ajaxOptions, thrownError) {
-                                if ( $(xhr).find('.has-error').length > 0 ) {
-                                    $(modal).find('.modal-body').html(xhr);
-                                    formAjaxSubmit(form, modal);
-                                } else {
-                                    $(modal).modal('toggle');
-                                    $.notify({
-                                        icon: 'glyphicon glyphicon glyphicon-ok-sign',
-                                        message: 'Space added successfully'
-                                    },{
-                                        // settings
-                                        type: 'success',
-                                        newest_on_top: true
-                                    });
-                                    location.reload();
-                                }
-                            },
-                            error: function (xhr, ajaxOptions, thrownError) {
-                            }
-                        });
-                    });
-                }
-                $('#comment-button').click(function() {
-                    $('#space-modal-body').load('{% url 'space-modal' %}', function () {
-                        $('#SpaceModal').modal('toggle');
-                        formAjaxSubmit('#space-modal-body form', '#SpaceModal');
-                    });
+        var formAjaxSubmit = function(form, modal) {
+        $(form).submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function (xhr, ajaxOptions, thrownError) {
+                        if ( $(xhr).find('.has-error').length > 0 ) {
+                            $(modal).find('.modal-body').html(xhr);
+                            formAjaxSubmit(form, modal);
+                        } else {
+                            $(modal).modal('toggle');
+                            $.notify({
+                                icon: 'glyphicon glyphicon glyphicon-ok-sign',
+                                message: 'Space added successfully'
+                            },{
+                                // settings
+                                type: 'success',
+                                newest_on_top: true
+                            });
+                            location.reload();
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                    }
                 });
-			} );
+            });
+        }
+        $('#comment-button').click(function() {
+            $('#space-modal-body').load('{% url 'space-modal' %}', function () {
+                $('#SpaceModal').modal('toggle');
+                formAjaxSubmit('#space-modal-body form', '#SpaceModal');
+            });
+        });
+    } );
     </script>
+
 {% endblock %}

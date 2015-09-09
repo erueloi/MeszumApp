@@ -13,11 +13,9 @@ urlpatterns = patterns('',
     url(r'^startpage/', views.startpage, name='startpage'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^meszum/', include('meszum.urls')),
-    #All Auth URLS
     url(r'^accounts/', include('allauth.urls')),
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-    #url(r'^accounts/', include('registration.backends.simple.urls')),
 )
 
 # UNDERNEATH your urlpatterns definition, add the following two lines:

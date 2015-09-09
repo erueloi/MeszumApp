@@ -2,14 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bd94954-7cc6-4e1c-853d-392bf07ea119" name="Default" comment="Correct Space Modal and save&#10;Add Event in Modal and save&#10;Add Song List and autocomplete">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/meszum/serializers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/Material-Design-Icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/Material-Design-Icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/Material-Design-Icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftBold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftBold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftItalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftItalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftMedium.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftMedium.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftRegular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/RobotoDraftRegular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/fonts/Material-Design-Icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/materialdesign/material.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/materialdesign/material.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/materialdesign/ripples.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/materialdesign/ripples.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/materialdesign/roboto.css" />
+      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\demo.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\plugins.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\modernizr-2.8.3-respond-1.4.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\npm.js" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\bootflat.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap/bootflat.min.css" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\bootplus.css" afterPath="$PROJECT_DIR$/static/css/bootstrap/bootplus.css" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\bootstrap-datetimepicker.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap/bootstrap-datetimepicker.min.css" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\dataTables.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap/dataTables.bootstrap.min.css" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\fullcalendar.min.css" afterPath="$PROJECT_DIR$/static/css/fullcalendar/fullcalendar.min.css" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\fullcalendar.print.css" afterPath="$PROJECT_DIR$/static/css/fullcalendar/fullcalendar.print.css" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\jquery-ui.min.css" afterPath="$PROJECT_DIR$/static/css/jquery/jquery-ui.min.css" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\bootstrap-notify.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/bootstrap-notify.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\dataTables.bootstrap.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/dataTables.bootstrap.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\fullcalendar.min.js" afterPath="$PROJECT_DIR$/static/js/fullcalendar/fullcalendar.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\jquery-ui.min.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery-ui.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\jquery.backstretch.min.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery.backstretch.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\jquery.dataTables.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery.dataTables.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\modernizr.custom.js" afterPath="$PROJECT_DIR$/static/js/modernizr/modernizr.custom.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\slick.min.js" afterPath="$PROJECT_DIR$/static/js/slick/slick.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\bootstrap-datetimepicker.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/bootstrap-datetimepicker.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\bootstrap.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/bootstrap.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\bootstrap.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/bootstrap.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\jquery-1.11.2.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery-1.11.2.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\jquery-1.11.2.min.js" afterPath="$PROJECT_DIR$/static/js/jquery/jquery-1.11.2.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\moment-with-locales.min.js" afterPath="$PROJECT_DIR$/static/js/moment/moment-with-locales.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\vendor\moment.min.js" afterPath="$PROJECT_DIR$/static/js/moment/moment.min.js" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\templates\admin\sd_spaces.html" afterPath="$PROJECT_DIR$/templates/superdashboard/sd_spaces.html" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\templates\admin\sd_users.html" afterPath="$PROJECT_DIR$/templates/superdashboard/sd_users.html" />
+      <change type="MOVED" beforePath="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\templates\admin\superuser_dashboard.html" afterPath="$PROJECT_DIR$/templates/superdashboard/superuser_dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MeszumApp.iml" afterPath="$PROJECT_DIR$/.idea/MeszumApp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/addevents.html" afterPath="$PROJECT_DIR$/templates/admin/addevents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/classie.js" afterPath="$PROJECT_DIR$/static/js/classie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/commingsoon.html" afterPath="$PROJECT_DIR$/templates/commingsoon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/component.css" afterPath="$PROJECT_DIR$/static/css/component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/commingsoon/css/form-elements.css" afterPath="$PROJECT_DIR$/static/commingsoon/css/form-elements.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MeszumApp/settings.py" afterPath="$PROJECT_DIR$/MeszumApp/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/account/profilespace.html" afterPath="$PROJECT_DIR$/templates/account/profilespace.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/commingsoon/css/style.css" afterPath="$PROJECT_DIR$/static/commingsoon/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MeszumApp/urls.py" afterPath="$PROJECT_DIR$/MeszumApp/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/urls.py" afterPath="$PROJECT_DIR$/meszum/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meszum/views.py" afterPath="$PROJECT_DIR$/meszum/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MeszumApp.iws" />
@@ -73,7 +127,18 @@
     <favorites_list name="MeszumApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.38403043">
+              <caret line="108" column="56" selection-start-line="108" selection-start-column="56" selection-end-line="108" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,8 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/AdministrationEvents.html" />
-        <option value="$PROJECT_DIR$/meszum/migrations/0007_auto_20150818_2229.py" />
         <option value="$PROJECT_DIR$/meszum/migrations/0006_auto_20150818_2229.py" />
         <option value="dbtable:/a85d32fb/ec4d8fa9-1718-4cdc-a0e4-c716454e65b8/meszum..meszum_space" />
         <option value="$PROJECT_DIR$/templates/AdministrationSpace.html" />
@@ -114,7 +177,6 @@
         <option value="$PROJECT_DIR$/MeszumApp/wsgi.py" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/MeszumApp/views.py" />
-        <option value="$PROJECT_DIR$/static/commingsoon/css/style.css" />
         <option value="$PROJECT_DIR$/meszum/migrations/0005_auto_20150827_1721.py" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="dbtable:/a85d32fb/b895b5c2-83d9-4826-8773-0ffad7fbed02/meszum.public.django_site" />
@@ -125,7 +187,6 @@
         <option value="$PROJECT_DIR$/templates/admin/profile.html" />
         <option value="$PROJECT_DIR$/templates/admin/sd_spaces.html" />
         <option value="$PROJECT_DIR$/static/css/font-awesome.min.css" />
-        <option value="$PROJECT_DIR$/templates/commingsoon.html" />
         <option value="$PROJECT_DIR$/static/commingsoon/js/scripts.js" />
         <option value="$PROJECT_DIR$/templates/email/stay_up_date.html" />
         <option value="$PROJECT_DIR$/ChangeLog" />
@@ -135,24 +196,28 @@
         <option value="$PROJECT_DIR$/templates/admin/modals/space_form.html" />
         <option value="$PROJECT_DIR$/templates/admin/modals/space_form_inner.html" />
         <option value="$PROJECT_DIR$/templates/admin/events.html" />
-        <option value="$PROJECT_DIR$/templates/account/profilespace.html" />
-        <option value="$PROJECT_DIR$/meszum/urls.py" />
         <option value="$PROJECT_DIR$/meszum/forms.py" />
         <option value="$PROJECT_DIR$/templates/admin/modals/event_form.html" />
         <option value="$PROJECT_DIR$/templates/admin/modals/event_form_inner.html" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/meszum/models.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/meszum/views.py" />
         <option value="$PROJECT_DIR$/templates/startpage.html" />
         <option value="$PROJECT_DIR$/templates/admin/space.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/static/js/classie.js" />
-        <option value="$PROJECT_DIR$/templates/admin/addevents.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/MeszumApp/settings.py" />
         <option value="$PROJECT_DIR$/meszum/serializers.py" />
         <option value="$PROJECT_DIR$/MeszumApp/urls.py" />
+        <option value="$PROJECT_DIR$/meszum/views.py" />
+        <option value="$PROJECT_DIR$/meszum/urls.py" />
+        <option value="$PROJECT_DIR$/templates/admin/addevents.html" />
+        <option value="$PROJECT_DIR$/templates/account/profilespace.html" />
+        <option value="$PROJECT_DIR$/static/commingsoon/css/magnific-popup.css" />
+        <option value="$PROJECT_DIR$/templates/commingsoon.html" />
+        <option value="$PROJECT_DIR$/static/commingsoon/css/form-elements.css" />
+        <option value="$PROJECT_DIR$/static/commingsoon/css/style.css" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -164,9 +229,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
-    <option name="width" value="1366" />
-    <option name="height" value="744" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -194,7 +260,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -213,37 +279,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MeszumApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MeszumApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meszum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MeszumApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MeszumApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MeszumApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,11 +305,11 @@
       <recent name="$PROJECT_DIR$/templates/account" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\fonts" />
+      <recent name="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js\materialdesign" />
+      <recent name="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css\materialdesign" />
       <recent name="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\css" />
       <recent name="C:\Users\eaymerich\Desktop\Other Projects\erueloi Workspace\MeszumApp\MeszumApp\static\js" />
-      <recent name="$PROJECT_DIR$/templates/account" />
-      <recent name="$PROJECT_DIR$/static/js" />
-      <recent name="$PROJECT_DIR$/static/css" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.Meszum">
@@ -816,56 +854,56 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.35530302" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" x="462" y="89" width="441" height="669" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29181495" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18484849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41795665" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29411766" sideWeight="0.5030303" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60990715" sideWeight="0.50151515" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60835916" sideWeight="0.49848485" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29181495" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25566342" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.35530302" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" x="462" y="89" width="441" height="669" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41795665" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@MeszumApp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5580569" sideWeight="0.4969697" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40712073" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40712073" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="manage.py@MeszumApp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5580569" sideWeight="0.4969697" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60990715" sideWeight="0.50151515" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60990715" sideWeight="0.49848485" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2863777" sideWeight="0.5030303" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22651514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.35530302" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" x="462" y="89" width="441" height="669" />
+      <window_info id="manage.py@MeszumApp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5603715" sideWeight="0.4969697" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4133127" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60990715" sideWeight="0.50151515" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60990715" sideWeight="0.49848485" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="manage.py@MeszumApp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5603715" sideWeight="0.4969697" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22651514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2863777" sideWeight="0.5030303" order="0" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Settings">
@@ -912,14 +950,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/meszum/views.py</url>
-          <line>258</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Python.DjangoServer">
@@ -933,19 +964,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#35#0" expanded="false" />
             <element signature="e#795#1085#0" expanded="false" />
-            <element signature="e#1125#1564#0" expanded="false" />
-            <element signature="e#1641#2330#0" expanded="false" />
-            <element signature="e#3613#4390#0" expanded="false" />
-            <element signature="e#4577#4844#0" expanded="false" />
-            <element signature="e#4874#5006#0" expanded="false" />
-            <element signature="e#5035#5164#0" expanded="false" />
-            <element signature="e#5241#6175#0" expanded="false" />
-            <element signature="e#6224#7065#0" expanded="false" />
-            <element signature="e#7098#8551#0" expanded="false" />
-            <element signature="e#8601#8954#0" expanded="false" />
-            <element signature="e#11486#11640#0" expanded="false" />
+            <element signature="e#1125#1566#0" expanded="false" />
+            <element signature="e#1651#2585#0" expanded="false" />
+            <element signature="e#2662#3353#0" expanded="false" />
+            <element signature="e#3397#4618#0" expanded="false" />
+            <element signature="e#4648#4693#0" expanded="false" />
+            <element signature="e#4719#4841#0" expanded="false" />
+            <element signature="e#4898#5174#0" expanded="false" />
+            <element signature="e#5204#5345#0" expanded="false" />
+            <element signature="e#5374#5512#0" expanded="false" />
+            <element signature="e#5582#7035#0" expanded="false" />
+            <element signature="e#7084#7925#0" expanded="false" />
+            <element signature="e#8405#9900#0" expanded="false" />
+            <element signature="e#9967#10790#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -964,30 +996,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24350649">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/img/backgrounds/2.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/sd_users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.47972974">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/superuser_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="16" column="69" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="69" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/email/stay_up_date.html">
@@ -1012,27 +1023,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/sd_spaces.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7719595">
-          <caret line="69" column="38" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.498311">
-          <caret line="235" column="48" selection-start-line="235" selection-start-column="48" selection-end-line="235" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="36" column="122" selection-start-line="36" selection-start-column="97" selection-end-line="36" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/account/signup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.2083335">
@@ -1054,13 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/profilespace.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="75" column="104" selection-start-line="75" selection-start-column="101" selection-end-line="75" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/modals/event_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1266892">
@@ -1075,20 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5616883">
-          <caret line="702" column="28" selection-start-line="702" selection-start-column="28" selection-end-line="702" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/commingsoon.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="33.458332">
-          <caret line="121" column="32" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/commingsoon/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2786884">
@@ -1096,40 +1065,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meszum/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="103" selection-start-line="9" selection-start-column="84" selection-end-line="9" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31490386">
           <caret line="129" column="45" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meszum/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26948053">
-          <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="false" />
-            <element signature="e#795#1085#0" expanded="false" />
-            <element signature="e#1125#1564#0" expanded="false" />
-            <element signature="e#1641#2330#0" expanded="false" />
-            <element signature="e#3613#4390#0" expanded="false" />
-            <element signature="e#4577#4844#0" expanded="false" />
-            <element signature="e#4874#5006#0" expanded="false" />
-            <element signature="e#5035#5164#0" expanded="false" />
-            <element signature="e#5241#6175#0" expanded="false" />
-            <element signature="e#6224#7065#0" expanded="false" />
-            <element signature="e#7098#8551#0" expanded="false" />
-            <element signature="e#8601#8954#0" expanded="false" />
-            <element signature="e#11486#11640#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1155,31 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/fullcalendar.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/fullcalendar.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/space.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54810125">
-          <caret line="395" column="21" selection-start-line="395" selection-start-column="21" selection-end-line="395" selection-end-column="21" />
-          <folding>
-            <element signature="e#4467#6934#0#HTML" expanded="false" />
-            <element signature="e#9702#10313#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/events.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9746622">
@@ -1192,15 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03529412">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/plugins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,25 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5600649">
           <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/addevents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4391892">
-          <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
-          <folding>
-            <element signature="e#731#2101#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.445946">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="2" selection-end-line="99" selection-end-column="98" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,7 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36525974">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1266,19 +1151,184 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26785713">
           <caret line="11" column="18" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MeszumApp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.121753246">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.12515338">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meszum/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5377856">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meszum/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77504396">
+          <caret line="211" column="29" selection-start-line="211" selection-start-column="29" selection-end-line="211" selection-end-column="29" />
+          <folding>
+            <element signature="e#795#1085#0" expanded="false" />
+            <element signature="e#1125#1566#0" expanded="false" />
+            <element signature="e#1651#2585#0" expanded="false" />
+            <element signature="e#2662#3353#0" expanded="false" />
+            <element signature="e#3397#4618#0" expanded="false" />
+            <element signature="e#4648#4693#0" expanded="false" />
+            <element signature="e#4719#4841#0" expanded="false" />
+            <element signature="e#4898#5174#0" expanded="false" />
+            <element signature="e#5204#5345#0" expanded="false" />
+            <element signature="e#5374#5512#0" expanded="false" />
+            <element signature="e#5582#7035#0" expanded="false" />
+            <element signature="e#7084#7925#0" expanded="false" />
+            <element signature="e#8405#9900#0" expanded="false" />
+            <element signature="e#9967#10790#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/addevents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0126742">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+          <folding>
+            <element signature="e#660#2129#0#HTML" expanded="false" />
+            <element signature="e#761#807#0#HTML" expanded="true" />
+            <element signature="e#821#2084#0#HTML" expanded="false" />
+            <element signature="e#2135#8677#0#HTML" expanded="false" />
+            <element signature="e#2687#2816#0#HTML" expanded="false" />
+            <element signature="e#2878#3145#0#HTML" expanded="false" />
+            <element signature="e#4175#5583#0#HTML" expanded="false" />
+            <element signature="e#5850#8477#0#HTML" expanded="false" />
+            <element signature="e#8683#14972#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/space.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2991128">
+          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+          <folding>
+            <element signature="e#655#1604#0#HTML" expanded="false" />
+            <element signature="e#1609#9678#0#HTML" expanded="false" />
+            <element signature="e#9702#10313#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.9961977">
+          <caret line="235" column="48" selection-start-line="235" selection-start-column="48" selection-end-line="235" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7756654">
+          <caret line="36" column="122" selection-start-line="36" selection-start-column="97" selection-end-line="36" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/superdashboard/superuser_dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.57287705">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/profilespace.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.1538463">
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+          <folding>
+            <element signature="e#1075#2538#0#HTML" expanded="false" />
+            <element signature="e#8316#10030#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/commingsoon/css/animate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="99" column="29" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/commingsoon/css/media-queries.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22264631">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/commingsoon/css/magnific-popup.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24427481">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/commingsoon/css/elegant-font/code/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16030534">
+          <caret line="462" column="1" selection-start-line="462" selection-start-column="1" selection-end-line="462" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/commingsoon/css/form-elements.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/commingsoon/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27116564">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/commingsoon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77439797">
+          <caret line="166" column="39" selection-start-line="166" selection-start-column="39" selection-end-line="166" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38403043">
+          <caret line="108" column="56" selection-start-line="108" selection-start-column="56" selection-end-line="108" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>

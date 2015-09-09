@@ -38,6 +38,33 @@ class AjaxTemplateMixin(object):
             self.template_name = self.ajax_template_name
         return super(AjaxTemplateMixin, self).dispatch(request, *args, **kwargs)
 
+# Modals
+
+class EventFormView(SuccessMessageMixin, AjaxTemplateMixin, FormView):
+    template_name = 'admin/modals/event_form.html'
+    form_class = EventForm
+    success_url = reverse_lazy('profilespace')
+    success_message = "Way to go!"
+
+    def form_valid(self, form):
+        # This method is called when valid form data has been POSTed.
+        # It should return an HttpResponse.
+        objUser = User.objects.get(id=self.request.user.id)
+        try:
+            objSpace = Space.objects.get(id=form.data['spaceid'])
+        except Space.DoesNotExist:
+            objSpace = None
+        address = form.cleaned_data['address']
+        objEvent = form.save(commit=False)
+        objEvent.geometry = geocode_address(address)
+        objEvent.space = objSpace
+        objEvent.save()
+
+        messages.add_message(
+               self.request, messages.SUCCESS, 'Logged in Successfully')
+        messages.success(self.request,'Space added successfully')
+        return super(EventFormView, self).form_valid(form)
+
 class SpaceFormView(SuccessMessageMixin, AjaxTemplateMixin, FormView):
     template_name = 'admin/modals/space_form.html'
     form_class = SpaceForm
@@ -55,6 +82,8 @@ class SpaceFormView(SuccessMessageMixin, AjaxTemplateMixin, FormView):
                self.request, messages.SUCCESS, 'Logged in Successfully')
         messages.success(self.request,'Space added successfully')
         return super(SpaceFormView, self).form_valid(form)
+
+# Index Type
 
 def commingsoon(request):
     if request.method == 'POST':
@@ -85,20 +114,6 @@ def commingsoon(request):
     return render(request, 'commingsoon.html')
 
 def startpage(request):
-    # if request.method == 'POST':
-    #     form = SubscribeForm(request.POST)
-    #     # Send email with activation key
-    #     if form.is_valid():
-    #         form.save(commit=True)
-    #         email_subject = 'Subscribe Meszum Stay up-to-date'
-    #         email_body = "Thanks to subscribe Meszum App. When our application is ready to register will send an email to inform you. See you soon ;),"
-    #         email_address = form.cleaned_data['email']
-    #         send_mail(email_subject, email_body, 'hello@meszum.com',
-    #             [email_address], fail_silently=False)
-    #         messages.success(request, 'Email sent successfully. Thank you for subscribe.')
-    # else:
-    #     form = SubscribeForm()
-
     return render(request, 'startpage.html',  {})
 
 def index(request):
@@ -106,75 +121,26 @@ def index(request):
     context_dict['events'] = Event.objects.all();
     return render(request, 'index.html', context_dict)
 
+# SuperDashboard
+
 def superuserdashboard(request):
     context_dict = {}
     context_dict['nspaces'] = Space.objects.all().count();
     context_dict['nusers'] = User.objects.all().count();
     context_dict['nevents'] = Event.objects.all().count();
-    return render(request, 'admin/superuser_dashboard.html', context_dict)
+    return render(request, 'superdashboard/superuser_dashboard.html', context_dict)
 
 def sd_spaces(request):
     context_dict = {}
     context_dict['spaces'] = Space.objects.all();
-    return render(request, 'admin/sd_spaces.html', context_dict)
+    return render(request, 'superdashboard/sd_spaces.html', context_dict)
 
 def sd_users(request):
     context_dict = {}
     context_dict['users'] = User.objects.all();
-    return render(request, 'admin/sd_users.html', context_dict)
+    return render(request, 'superdashboard/sd_users.html', context_dict)
 
-class EventFormView(SuccessMessageMixin, AjaxTemplateMixin, FormView):
-    template_name = 'admin/modals/event_form.html'
-    form_class = EventForm
-    success_url = reverse_lazy('profilespace')
-    success_message = "Way to go!"
-
-    def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        objUser = User.objects.get(id=self.request.user.id)
-        try:
-            objSpace = Space.objects.get(id=form.data['spaceid'])
-        except Space.DoesNotExist:
-            objSpace = None
-        address = form.cleaned_data['address']
-        objEvent = form.save(commit=False)
-        objEvent.geometry = geocode_address(address)
-        objEvent.space = objSpace
-        objEvent.save()
-
-        messages.add_message(
-               self.request, messages.SUCCESS, 'Logged in Successfully')
-        messages.success(self.request,'Space added successfully')
-        return super(EventFormView, self).form_valid(form)
-
-def administrationspace(request, idspace):
-    context_dict = {}
-    try:
-        objSpace = Space.objects.get(id=idspace)
-    except Space.DoesNotExist:
-        objSpace = None
-
-    context_dict['space'] = objSpace
-    context_dict['events'] = Event.objects.filter(space=objSpace)
-
-    # A HTTP POST?
-    if request.method == 'POST':
-        form = SpaceForm(request.POST, request.FILES, instance=objSpace)
-        if form.is_valid():
-            objSpace = form.save(commit=False)
-            objUser = User.objects.get(id=request.user.id)
-            objSpace.user = objUser
-            objSpace.save()
-            messages.add_message(request, messages.SUCCESS, 'S''ha guardat correctament')
-        else:
-            print form.errors
-    else:
-        form = SpaceForm(instance=objSpace)
-
-    context_dict['form'] = form
-
-    return render(request, 'admin/space.html', context_dict)
+#Administration/Configuration Space
 
 def profilespace(request):
     context_dict = {}
@@ -212,19 +178,47 @@ def profilespace(request):
 
     return render(request, 'account/profilespace.html', context_dict)
 
-def administrationevents(request, idspace):
+def administrationspace(request, idspace):
     context_dict = {}
     try:
-        space = Space.objects.get(id=idspace)
-        events = Event.objects.filter(space=space).order_by('startdate')
+        objSpace = Space.objects.get(id=idspace)
     except Space.DoesNotExist:
-        space = None
-        events = None
+        objSpace = None
 
-    context_dict['space'] = space
-    context_dict['events'] = events
+    context_dict['space'] = objSpace
+    context_dict['events'] = Event.objects.filter(space=objSpace)
 
-    return render(request, 'admin/events.html', context_dict)
+    # A HTTP POST?
+    if request.method == 'POST':
+        form = SpaceForm(request.POST, request.FILES, instance=objSpace)
+        if form.is_valid():
+            objSpace = form.save(commit=False)
+            objUser = User.objects.get(id=request.user.id)
+            objSpace.user = objUser
+            objSpace.save()
+            messages.add_message(request, messages.SUCCESS, 'S''ha guardat correctament')
+        else:
+            print form.errors
+    else:
+        form = SpaceForm(instance=objSpace)
+
+    context_dict['form'] = form
+
+    return render(request, 'admin/space.html', context_dict)
+
+# def administrationevents(request, idspace):
+#     context_dict = {}
+#     try:
+#         space = Space.objects.get(id=idspace)
+#         events = Event.objects.filter(space=space).order_by('startdate')
+#     except Space.DoesNotExist:
+#         space = None
+#         events = None
+#
+#     context_dict['space'] = space
+#     context_dict['events'] = events
+#
+#     return render(request, 'admin/events.html', context_dict)
 
 def addevents(request, idspace, idevent=None):
     context_dict = {}
@@ -272,6 +266,8 @@ def addevents(request, idspace, idevent=None):
     context_dict['form'] = form
     return render(request, 'admin/addevents.html', context_dict)
 
+# Administration/Configuration Member
+
 def profile(request):
     context_dict = {}
     objUser = User.objects.get(id=request.user.id)
@@ -292,36 +288,3 @@ def profile(request):
     context_dict['form'] = form
 
     return render(request, 'account/profile.html', context_dict)
-
-#This class holds the tweet - it's structured
-# on purpose so we can easily access elements in
-# a template tag
-class tweet():
-    def __init__(self, user, text, graphic, time):
-        self.user = user
-        self.text = text
-        self.graphic = graphic
-        self.time = time
-
-# The meat of the operation
-def search_twitter():
-    search_url = 'http://search.twitter.com/search.json?q=Django'
-    import simplejson as json
-    import urllib
-
-    raw = urllib.urlopen(search_url)
-    js = raw.readlines()
-    js_object = json.loads(js[0])
-
-    #filter it all
-    tweets = []
-    for item in js_object['results']:
-        user = item['from_user']
-        graphic = item['profile_image_url']
-        text = item['text']
-        time = item['created_at']
-
-        thistweet = tweet(user, text, graphic, time)
-        tweets.append(thistweet)
-
-    return tweets
