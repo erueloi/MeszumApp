@@ -116,10 +116,10 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.contrib.gis.db.backends.postgis',
-            'NAME': 'meszum',
+            'NAME': 'dbmeszumdev',
             'USER': 'postgres',
-            'PASSWORD': 'Naieruvaryvalee',
-            'HOST': 'localhost',
+            'PASSWORD': 'darrueyeWEB',
+            'HOST': '192.168.1.2',
         }
     }
 

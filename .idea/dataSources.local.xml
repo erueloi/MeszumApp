@@ -13,5 +13,11 @@
       <schema-pattern>meszum.pg_catalog meszum.public</schema-pattern>
       <default-schemas>meszum.pg_catalog meszum.public</default-schemas>
     </data-source>
+    <data-source name="PostgreSQL - dbmeszumdev@192.168.1.2" uuid="608e5eac-db38-4248-87c3-285b4482fb86">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-pattern>dbmeszumdev.pg_catalog dbmeszumdev.public</schema-pattern>
+      <default-schemas>dbmeszumdev.pg_catalog dbmeszumdev.public</default-schemas>
+    </data-source>
   </component>
 </project>

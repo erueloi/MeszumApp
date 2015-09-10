@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1289297219">
+  <component name="DataSourceManagerImpl" format="xml" hash="2779782380">
     <data-source source="LOCAL" name="Django default" uuid="ec4d8fa9-1718-4cdc-a0e4-c716454e65b8">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -27,6 +27,13 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/meszum</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - dbmeszumdev@192.168.1.2" uuid="608e5eac-db38-4248-87c3-285b4482fb86">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://192.168.1.2:5432/dbmeszumdev</jdbc-url>
       <libraries />
     </data-source>
   </component>
