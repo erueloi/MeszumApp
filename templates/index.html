@@ -3,92 +3,69 @@
 
 {% block container %}
     <style>
-     #PopularPosts1 h2{
-padding:7px 0 3px 0;
-width:100%;
-margin-bottom:10px;
-font-size:1.3em;
-text-indent:-12px;
-font-size:18px;
-text-align:center;
-color: #dfb92f; /* Color of the widget's title */
-}
-#PopularPosts1 ul{
-list-style:none;
-counter-reset:li;
-padding:8px 0px 1px;
-left:-7px;
-width:290px;
-}
-#PopularPosts1 li{
-position:relative;
-margin:0 0 10px 0;
-padding: 3px 2px 0 17px;
-left:-5px;
-width:285px;
-}
-#PopularPosts1 ul li{
-background: #eee;
-position: relative;
-display: block;
-padding: .4em .2em .4em 5px;
-*padding: .2em;
-margin: .5em 0;
-background: #dfb92f;
-text-decoration: none;
-border-radius: .3em;
-    border-color:black;
-    border-style: solid;
-transition: all .3s ease-out;
-}
-#PopularPosts1 ul li:before{
-content: counter(li);
-counter-increment: li;
-position: absolute;
-top: 50%;
-margin: -1.3em;
-height: 2em;
-width: 2em;
-line-height: 2em;
-font-size: 15px;
-color: #fff; /* text color of numbers */
-background: #FB8835; /* background color of numbers */
-border: .2em solid #fff; /* border color */
--webkit-box-shadow: 0 8px 5px -7px #888;
--moz-box-shadow: 0 8px 5px -7px #888;
-box-shadow: 0 8px 5px -7px #888;
-text-align: center;
-font-weight: bold;
-border-radius: 2em;
-position: absolute;
-left: 0;
-transition: all .3s ease-out;
-}
-#PopularPosts1 ul li:hover{
-background: #eee;
-}
-#PopularPosts1 ul li:hover:before{
-transform: rotate(360deg);
-}
-#PopularPosts1 ul li a{
-text-shadow: 0 -1px 2px #fff;
-color: #444;
-display:block;
-min-height:25px;
-text-decoration:none;
-text-transform: uppercase;
-}
-#PopularPosts1 ul li a:hover{
-color: #444;
+    ol {
+    counter-reset: li 5; /* Initiate a counter at 5 */
+    list-style: none; /* Remove default numbering */
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+    padding: 0;
+    padding-left: 10px;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    font: 15px 'trebuchet MS', 'lucida sans'!important;
+    }
+
+    ol ol {
+        margin: 0 0 0 2em; /* Add some left margin for inner lists */
+        counter-reset: ol;
+    }
+
+    .rounded-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+        text-align: left!important;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;
 }
 
+    .rounded-list a:hover{
+        background: #eee;
+    }
+
+    .rounded-list a:hover:before{
+        transform: rotate(360deg);
+    }
+
+    .rounded-list a:before{
+        content: counter(li);
+        counter-increment: li;
+        position: absolute;
+        left: -1.3em;
+        top: 50%;
+        margin-top: -1.3em;
+        background: #ef6c00;
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        border: .3em solid #d26700;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 2em;
+        transition: all .3s ease-out;
+        color: white;
+    }
     </style>
       <section class="grid3d horizontal" id="grid3d" style="margin-bottom:40px;">
 				<div class="grid-wrap">
 					<div class="grid">
                         <!--  List Events -->
                         {% for event in events %}
-                            <figure class="animated fadeInUp">
+                            <figure>
                                 <div class="card">
                                  <div class="card-heading image">
                                     <img src="https://pbs.twimg.com/profile_images/547294814031839232/gvj_6sJ1_400x400.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -108,7 +85,7 @@ color: #444;
                               </div>
                             </figure>
                         {% endfor %}
-						<figure class="animated fadeInUp">
+						<figure>
 							<div class="card">
 		                     <div class="card-heading image">
 		                        <img src="https://pbs.twimg.com/profile_images/547294814031839232/gvj_6sJ1_400x400.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -127,7 +104,7 @@ color: #444;
 		                     </div>	                    		                   
 		                  </div>
 						</figure>
-						<figure class="animated fadeInUp">
+						<figure>
 							<div class="card">
 		                     <div class="card-heading image">
 		                        <img src="https://pbs.twimg.com/profile_images/515450714114359298/22mGyQqz.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -146,7 +123,7 @@ color: #444;
 		                     </div>		                   		                     
 		                  </div>
 						</figure>
-						<figure class="animated fadeInUp">
+						<figure>
 							<div class="card">
 		                     <div class="card-heading image">
 		                        <img src="https://pbs.twimg.com/profile_images/515450714114359298/22mGyQqz.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -165,7 +142,7 @@ color: #444;
 		                     </div>	
 		                  </div>
 						</figure>	
-						<figure class="animated fadeInUp">
+						<figure>
 							<div class="card">
 		                     <div class="card-heading image">
 		                        <img src="https://pbs.twimg.com/profile_images/3694859351/417c3467774dd62fe729740b988c3f46_400x400.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
@@ -206,31 +183,35 @@ color: #444;
 						</figure>
 					</div>
 				</div><!--/grid-wrap -->
-				<div class="content">
+				<div class="content" style="background-color:rgba(238, 238, 238, 1); overflow-y: visible;">
                     <!--  Content Events -->
                     {% for event in events %}
-                        <div class="container-fluid" style=" background: url('{{ event.poster.url }}') no-repeat center center fixed; background-size: cover; ">
-                            <div class="row" style="background-color:rgba(255, 248, 255, 0.8);">
+                        <div class="container" style="background: url('{{ event.poster.url }}') no-repeat center center fixed; background-size: cover; height: 100%;overflow-y: visible; ">
+                            <div class="row" style="background-color:rgba(238, 238, 238, 0.9);">
                                 <div class="col-md-12">
                                     <img src="{% static "img/lp_list.png" %}" class="img-responsive" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
                                 </div>
                             </div>
-                            <div class="row" style="background-color:rgba(255, 248, 255, 0.8);">
-                                <div class="col-md-3">
+                            <div class="row" style="background-color:rgba(238, 238, 238, 0.9);height: 100%">
+                                <div style="position: absolute; top:20%; left: 25px">
                                         <img src="{{ event.poster.url }}" style="width: 275px;">
                                 </div>
-                                <div class="col-md-5" style="text-align: center">
-                                    <div class="PopularPosts" id="PopularPosts1">
-                                        <div class="popular-posts" style="padding-left: 35%">
-                                            <ul>
-                                                {% for song in event.song_set.all %}
-                                                    <li class="animated bounceIn">
-                                                        <a href="#">{{ song.title }}</a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
+                                <div class="col-md-4 col-md-offset-4" style="margin-top: 20px; background-color: white!important; border-radius: 25px; border: 2px solid #ef6c00; padding-top: 10px;">
+                                    <ol class="rounded-list">
+                                        <li><a href="#">Por - Aixó És Espectacle - 3:56 </a></li>
+                                        <li><a href="#">Agost - Agost - 4:27</a> </li>
+                                        <li><a href="#">Bona nit - Bondia (10è aniversari edició especial) - 3:54	</a>
+                                        <li><a href="#">Pau - Agost - 3:38</a></li>
+                                        <li><a href="">Jo vull ser rei - Brut Natural - 3:14</a></li>
+                                        <li><a href="">Bon Dia - Malacara - 4:40</a></li>
+                                        <li><a href="">	Esta plovent - Calla i Balla ! - 2:48</a></li>
+                                        <li><a href="">Quina tabarra - Vine a la festa -3:09</a></li>
+                                        {% for song in event.song_set.all %}
+                                            <li class="animated bounceIn">
+                                                <a href="">{{ song.title }} - {{ song.album }} - 3:45</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ol>
                                 </div>
                             </div>
                         </div>
