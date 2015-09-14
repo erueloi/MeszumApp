@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, url
 from meszum import views
+from allauth.account.views import signup
 
 urlpatterns = patterns('',
         url(r'^$', views.index, name='index'),
@@ -15,4 +16,5 @@ urlpatterns = patterns('',
         url(r'^admin/space/eventmodal/$', views.EventFormView.as_view(), name='event-modal'),
         url(r'^admin/space/(?P<idspace>[0-9]+)/events/(?P<idevent>[0-9]+)/$', views.addevents, name='administrationevent'),
         url(r'^profile/', views.profile, name='profile'),
+        url(r'^business/signup/$', signup, {'template_name': 'business/signup.html'}, name='businesssignup'),
     )

@@ -3,62 +3,35 @@
 
 {% block container %}
     <style>
-    ol {
-    counter-reset: li 5; /* Initiate a counter at 5 */
-    list-style: none; /* Remove default numbering */
-    *list-style: decimal; /* Keep using default numbering for IE6/7 */
-    padding: 0;
-    padding-left: 10px;
-    margin-bottom: 4em;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-    font: 15px 'trebuchet MS', 'lucida sans'!important;
+    #songs_wrapper{
+               color:white;
+        font-size: 1em;
+        vertical-align: middle!important;
+    }
+    table{
+        color:white;
+        font-size: 0.8em;
+        vertical-align: middle!important;
     }
 
-    ol ol {
-        margin: 0 0 0 2em; /* Add some left margin for inner lists */
-        counter-reset: ol;
+    .table>tbody>tr>td{
+        vertical-align: middle!important;
     }
 
-    .rounded-list a{
-    position: relative;
-    display: block;
-    padding: .4em .4em .4em 2em;
-    *padding: .4em;
-        text-align: left!important;
-    margin: .5em 0;
-    background: #ddd;
-    color: #444;
-    text-decoration: none;
-    border-radius: .3em;
-    transition: all .3s ease-out;
+    .glyphiconlike {
+        color: #FC122D;
+{#        background-color: #FF8A3C;#}
+        padding: 5px;}
+
+    .glyphiconlike:hover, .glyphiconlike:focus {
+  	color: #FF8A3C;
+    background-color: #FC122D;
+  	padding: 5px;}
+
+
+.glyph {
+    text-align: center;
 }
-
-    .rounded-list a:hover{
-        background: #eee;
-    }
-
-    .rounded-list a:hover:before{
-        transform: rotate(360deg);
-    }
-
-    .rounded-list a:before{
-        content: counter(li);
-        counter-increment: li;
-        position: absolute;
-        left: -1.3em;
-        top: 50%;
-        margin-top: -1.3em;
-        background: #ef6c00;
-        height: 2em;
-        width: 2em;
-        line-height: 2em;
-        border: .3em solid #d26700;
-        text-align: center;
-        font-weight: bold;
-        border-radius: 2em;
-        transition: all .3s ease-out;
-        color: white;
-    }
     </style>
       <section class="grid3d horizontal" id="grid3d" style="margin-bottom:40px;">
 				<div class="grid-wrap">
@@ -183,37 +156,55 @@
 						</figure>
 					</div>
 				</div><!--/grid-wrap -->
-				<div class="content" style="background-color:rgba(238, 238, 238, 1);">
+				<div class="content" style="background-color:rgb(18, 19, 20);">
                     <!--  Content Events -->
                     {% for event in events %}
-                        <div class="container" style="background: url('{{ event.poster.url }}') no-repeat center center fixed; background-size: cover; overflow-y: visible; ">
-                            <div class="row" style="background-color:rgba(238, 238, 238, 0.85);">
-                                <div class="col-md-12">
-                                    <img src="{% static "img/lp_list.png" %}" class="img-responsive" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
+                        <div class="container" style="background: url('{{ event.poster.url }}') no-repeat center center fixed; background-size: cover; overflow-y: visible; height: 100% ">
+                            <div class="row" style="height: 100%" >
+                                <div class="col-md-8 col-md-offset-2" style="background-color:rgba(18, 19, 20, 0.95); height: 100%; border-color: white; border-style: groove; border-top-style: none; border-bottom-style: none;">
+                                     <div>
+                                         <img src="{% static "img/lp_list.png" %}" class="img-responsive" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
+                                     </div>
+                                    <div style="margin-top: 20px; padding-top: 10px; ">
+                                        <table class="table responsive" id="songs">
+                                            <thead>
+                                              <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                 {% for song in event.song_set.all %}
+                                                 <tr >
+                                                    <td>
+                                                        <img src="https://d3rt1990lpmkn.cloudfront.net/60/b13c44e00ca96657913d59d676d402d4aa76dfb6" height="40" width="40" class="tl-album-cover">
+                                                    </td>
+                                                    <td>
+                                                      <span class="tl-number-wrap">{{ forloop.counter }}</span>
+                                                      <audio id="player{{ song.id }}" src="{{ song.href_play }}"></audio>
+                                                        <div>
+                                                            <button class="play" id="btnPlay{{ song.id }}"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-play"></span></button>
+                                                            <button class="stop" style="display: none;" id="btnPause{{ song.id }}"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-pause"></span></button>
+                                                        </div>
+                                                    </td>
+                                                    <td>{{ song.title }}</td>
+                                                    <td>{{ song.album }}</td>
+                                                    <td>666.116</td>
+                                                 </tr>
+                                                 {% endfor %}
+                                            </tbody>
+                                        </table>
+                                </div>
                                 </div>
                             </div>
-                            <div class="row" style="background-color:rgba(238, 238, 238, 0.85);height: 100%">
-                                <div style="position: absolute; top:20%; left: 25px">
-                                        <img src="{{ event.poster.url }}" style="width: 275px;">
-                                </div>
-                                <div class="col-md-4 col-md-offset-4" style="margin-top: 20px; background-color: white!important; border-radius: 25px; border: 2px solid #ef6c00; padding-top: 10px;">
-                                    <ol class="rounded-list">
-                                        <li><a href="#">Por - Aixó És Espectacle - 3:56 </a></li>
-                                        <li><a href="#">Agost - Agost - 4:27</a> </li>
-                                        <li><a href="#">Bona nit - Bondia (10è aniversari edició especial) - 3:54	</a>
-                                        <li><a href="#">Pau - Agost - 3:38</a></li>
-                                        <li><a href="">Jo vull ser rei - Brut Natural - 3:14</a></li>
-                                        <li><a href="">Bon Dia - Malacara - 4:40</a></li>
-                                        <li><a href="">	Esta plovent - Calla i Balla ! - 2:48</a></li>
-                                        <li><a href="">Quina tabarra - Vine a la festa -3:09</a></li>
-                                        {% for song in event.song_set.all %}
-                                            <li class="animated bounceIn">
-                                                <a href="">{{ song.title }} - {{ song.album }} - 3:45</a>
-                                            </li>
-                                        {% endfor %}
-                                    </ol>
-                                </div>
-                            </div>
+    {#                            <div class="row" style="height: 100%">#}
+    {#                                <div style="position: absolute; top:20%; left: 25px">#}
+    {#                                        <img src="{{ event.poster.url }}" style="width: 275px;">#}
+    {#                                </div>#}
+    {#                            </div>#}
                         </div>
                         {% endfor %}
 					<div>
@@ -250,6 +241,26 @@
      <script>
         $(document).ready(function() {
             new grid3D( document.getElementById( 'grid3d' ) );
+
+            $(document).ready(function() {
+				$('#songs').DataTable({
+                    searching: false,
+                    ordering:  false,
+                    lengthChange: false,
+                    info:false
+            });
+			});
+
+{#            document.getElementById('player{{ song.id }}').play()#}
+            $(".play").click(function(){
+                btnid = this.id.replace("btnPlay", "");
+                audioplayer = document.getElementById('player'+btnid)   ;
+                if (audioplayer.paused == false) {
+                    audioplayer.pause();
+                } else {
+                    audioplayer.play();
+                }
+            });
 
             /*
                 Fullscreen background

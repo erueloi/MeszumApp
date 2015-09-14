@@ -7,7 +7,7 @@ from geopy.geocoders.googlev3 import GoogleV3
 from geopy.geocoders.googlev3 import GeocoderQueryError
 from urllib2 import URLError
 from django.contrib.gis import geos
-from django.core.mail import send_mail, EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.http import JsonResponse
 from django.core.urlresolvers import reverse_lazy

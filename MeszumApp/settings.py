@@ -119,7 +119,7 @@ else:
             'NAME': 'dbmeszumdev',
             'USER': 'postgres',
             'PASSWORD': 'darrueyeWEB',
-            'HOST': '192.168.1.2',
+            'HOST': 'darrueye.com',
         }
     }
 
