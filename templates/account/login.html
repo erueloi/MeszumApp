@@ -6,7 +6,7 @@
 
     	<div class="row">
                    {% if messages %}
-                        <div class="col-sm-4 col-sm-offset-4 " style="padding-top: 50px;">
+                        <div class="col s4 offset-s4 " style="padding-top: 50px;">
                             <div class="alert alert-success alert-dismissable">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                               <ul class="messages">
@@ -17,10 +17,10 @@
                             </div>
                           </div>
                     {% endif %}         
-                        <div class="col-sm-4 col-sm-offset-4 form-box">
+                        <div class="col s4 offset-s4 form-box">
                         	<div class="form-top">
                         		<div class="form-top-left">
-                        			<h3>Login to our site</h3>
+                        			<h3>Login</h3>
                             		<p>Enter your username and password to log</p>
                         		</div>
                         		<div class="form-top-right">
@@ -30,22 +30,20 @@
                             <div class="form-bottom">
 			                    <form role="form" action="." method="post" class="form-horizontal" id="logForm">
                                     {% csrf_token %}
-			                    	<div class="form-group">
-                                         <div class="col-xs-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                                                <input type="text" id="id_username" name="login" placeholder="Username..." class="form-control input-lg">
-                                            </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                          <i class="material-icons prefix">account_circle</i>
+                                          <input id="id_username" type="text" name="login" class="validate">
+                                          <label for="id_username">Username</label>
                                         </div>
-			                        </div>
-			                        <div class="form-group">
-                                        <div class="col-xs-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                                                <input type="password" placeholder="Password..." class="form-control input-lg" id="id_password" name="password">
-                                            </div>
+                                      </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">vpn_key</i>
+                                            <input id="id_password" name="password" type="password" class="validate">
+                                            <label for="id_password">Password</label>
                                         </div>
-			                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-sm-7">
@@ -62,13 +60,13 @@
                                     </div>
 			                    </form>
                             </div>
-                             <div class="col-xs-12 formNotice" style="color: #fff; padding-top: 5px;">
+                             <div class="col s12 formNotice" style="color: #fff;">
                                 <p class="text-center">Don't have an account? <span><a href="{% url 'account_signup' %}"> Register now</a></span></p>
                              </div>
                         </div>
                     </div>
                 <div class="row">
-                            <div class="col-sm-6 col-sm-offset-3 social-login">
+                            <div class="col s6 offset-s3 social-login">
                         	<h3>...or login with:</h3>
                         	<div class="social-login-buttons">
 	                        	<a class="btn btn-link-1 btn-link-1-facebook" href="#">

@@ -7,9 +7,9 @@
         <div class="col s12 m12">
             <div class="container-fluid">
                 <div class="page-header" style="border-bottom:1px solid #f6bb42; margin-bottom: 10px!important;">
-                    <h4 class="pull-left" style="margin-bottom: 0px!important;">
+                    <h5 class="pull-left" style="margin-bottom: 0px!important;">
                         Administration
-                    </h4>
+                    </h5>
                     <div class="pull-right">
                         <ol class="breadcrumb breadcrumb-arrow" style="margin-bottom: 0px!important;">
                             <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
@@ -24,45 +24,42 @@
 
     <div class="row">
         <div class="col m3">
-             <div class="panel panel-default">
-                 <div class="panel-body">
-                     <img src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" style="width: 100px; height: 100px; margin:0px auto!important;">
-                     <h4 style="text-align: center;">La Boite</h4>
-                     <ul class="list-group">
-                      <li class="list-group-item"><span class="badge badge-default">{{ nevents }}</span>Events</li>
-                      <li class="list-group-item"><span class="badge badge-primary">1500</span>Followers</li>
-                     </ul>
-                     <div>
-                         <strong><i class="fa fa-pencil margin-r-5"></i> Type</strong>
-                         <p>
-                             <span class="label label-danger">Rumba</span>
-                             <span class="label label-success">Techno</span>
-                             <span class="label label-info">Swing</span>
-                             <span class="label label-warning">Rock</span>
-                         </p>
-                         <hr>
-                         <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
-                         <p class="text-muted">Essera, 29 Lleida</p>
-                    </div>
+            <div class="card-panel white z-depth-3">
+                <div class="center-align">
+                    <img src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="center-align circle responsive-img" style="width: 100px; height: 100px; margin:0px auto!important;">
+                </div>
+                <h4 style="text-align: center;">La Boite</h4>
+                 <ul class="transparent collection">
+                  <li class="collection-item transparent">Events<span class="badge red white-text">{{ nevents }}</span></li>
+                  <li class="collection-item transparent">Followers<span class="badge green white-text">1500</span></li>
+                </ul>
+                 <div>
+                     <strong><i class="material-icons prefix">mode_edit</i> Type</strong>
+                     <p>
+                         <span class="badge badge-alone red white-text">Rumba</span>
+                         <span class="badge badge-alone brown white-text">Techno</span>
+                         <span class="badge badge-alone blue white-text">Swing</span>
+                         <span class="badge badge-alone blue-grey white-text">Rock</span>
+                     </p>
+                     <hr>
+                     <strong><i class="material-icons prefix">location_on</i></i> Location</strong>
+                     <p class="text-muted">Essera, 29 Lleida</p>
                  </div>
-             </div>
+            </div>
         </div>
         <div class="col m9">
-            <div class="panel panel-warning">
-                <div class="panel-heading">
-                    <h3 class="panel-title"></h3>
-                </div>
-                <div class="panel-body">
-                    <ul id="myTab1" class="nav nav-tabs">
-                      <li class="active"><a href="#profile3" data-toggle="tab">Spaces</a></li>
-                      <li class=""><a href="#home3" data-toggle="tab">Settings</a></li>
+            <div class="card-panel white z-depth-3">
+                <div class="row">
+                    <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a class="active" href="#test1">Spaces</a></li>
+                        <li class="tab col s3"><a href="#test2">Settings</a></li>
                     </ul>
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade active in" id="profile3">
-                            {% block modal %}
-                                <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
-                            {% endblock modal %}
-                            <table class="table table-bordered table-hover" id="ufs">
+                        <div id="test1" class="col s12">
+                     {% block modal %}
+                     <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
+                     {% endblock modal %}
+                     <table class="table bordered highlight responsive-table" id="ufs">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
@@ -84,9 +81,9 @@
                                 {% endfor %}
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="tab-pane fade" id="home3">
-                            <form action="." method="post" role="form" enctype="multipart/form-data">
+                 </div>
+                        <div id="test2" class="col s12">
+                    <form action="." method="post" role="form" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-6">
@@ -117,13 +114,15 @@
                                 <div class="row">
                                     <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+                </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="SpaceModal" tabindex="-1">

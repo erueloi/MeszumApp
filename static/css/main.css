@@ -25,11 +25,11 @@ body {
 	/*font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;*/
 }
 
-a {
-	color: rgba(0,0,0,0.4);
-	text-decoration: none;
-	outline: none;
-}
+/*a {*/
+	/*color: rgba(0,0,0,0.4);*/
+	/*text-decoration: none;*/
+	/*outline: none;*/
+/*}*/
 
 a:hover, a:focus {
 	/*color: #fff;*/
@@ -138,11 +138,11 @@ body {
 	content: "\e004";
 }
 
-section {
-/*  	padding: 0em 5% 4em;  */
-	text-align: center;
-	font-size: 1.5em;
-}
+/*section {*/
+/*/!*  	padding: 0em 5% 4em;  *!/*/
+	/*text-align: center;*/
+	/*font-size: 1.5em;*/
+/*}*/
 
 .related > a {
 	border: 3px solid rgba(0,0,0,0.4);;
@@ -213,14 +213,23 @@ section {
 		text-transform: none;
 		font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 		line-height: 40px;
-		color:#ffffff;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
 	}
 	ul.social-buttons {
 		margin-bottom: 0;
 	}
+	ul.social-buttons li{
+		display: inline;
+	}
+
+	ul.quicklinks li{
+		display: inline;
+	}
 
 	ul.social-buttons li a {
-		display: block;
+		display: inline-block;
 		width: 40px;
 		height: 40px;
 		border-radius: 100%;
@@ -394,24 +403,24 @@ textarea.form-control {
 	line-height: 30px;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-textarea.form-control:focus {
-	outline: 0;
-	background: #fff;
-    border: 3px solid #ccc;
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
-}
+/*input[type="text"]:focus,*/
+/*input[type="password"]:focus,*/
+/*textarea:focus,*/
+/*textarea.form-control:focus {*/
+	/*outline: 0;*/
+	/*background: #fff;*/
+    /*/!*border: 3px solid #ccc;*!/*/
+    /*-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;*/
+/*}*/
 
-input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder,
-textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
+/*input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder,*/
+/*textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }*/
 
-input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder,
-textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
+/*input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder,*/
+/*textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }*/
 
-input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
+/*input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder,*/
+/*textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }*/
 
 
 
@@ -935,6 +944,67 @@ fieldset[disabled] .twitter-typeahead .tt-input {
 /* ==========================================================================
    Autocomplete Typeahead.js
    ========================================================================== */
+
+/* Badge  */
+
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777;
+    border-radius: 10px
+}
+
+.badge-alone{
+	position: inherit!important;
+}
+
+.badge:empty {
+    display: none
+}
+
+.btn .badge {
+    position: relative;
+    top: -1px
+}
+
+.btn-group-xs>.btn .badge,.btn-xs .badge {
+    top: 0;
+    padding: 1px 5px
+}
+
+a.badge:focus,a.badge:hover {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer
+}
+
+
+.list-group-item.active>.badge,.nav-pills>.active>a>.badge {
+    color: #337ab7;
+    background-color: #fff
+}
+
+.list-group-item>.badge {
+    float: right
+}
+
+.list-group-item>.badge+.badge {
+    margin-right: 5px
+}
+
+.nav-pills>li>a>.badge {
+    margin-left: 3px
+}
+
+/* Datatable materialize Style*/
 
 
 

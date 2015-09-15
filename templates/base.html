@@ -28,10 +28,10 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick.css" %}"/>
         <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick-theme.css" %}"/>
         <link rel="stylesheet" type="text/css" href="{% static "css/animate.css" %}"/>
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
 		<link rel="stylesheet" type="text/css" href="{% static "css/component.css" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 
     </head>
     <body>
@@ -40,29 +40,37 @@
                 <div class="nav-wrapper container">
                     <a id="logo-container" href="/meszum" class="brand-logo"><img src="http://meszum.darrueye.com/img/nav_logo.png"> Meszum</a>
                     <ul class="right hide-on-med-and-down">
-                        <li>
-                             <img src="{% if user.userprofile.avatar %} {{ user.userprofile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="circle responsive-img" alt="User Image" style=" width:30px;height:30px;margin-top:17px;">
-                        </li>
-                        <li>
-                            <a class="dropdown-button" href="#!" data-activates="dropdown1">
-                               {{ user.username }} <i class="material-icons right">more_vert</i>
-                            </a>
-                            <ul id="dropdown1" class="dropdown-content">
-                              {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
-                              {% if user.groups.all.0.name == 'Space' %}
-                                  <li><a href="{% url 'profilespace' %}">Administration</a></li>
-                                  {% for space in user.space_set.all  %}
-                                  <li><a href="{% url 'administrationspace' space.id %}">{{ space.name }} Events</a></li>
-                                  {% endfor %}
-                              {% endif %}
-                              {% if user.groups.all.0.name == 'Member' %}<li><a href="{% url 'profile' %}">Profile</a></li>{% endif %}
-                              <li class="divider"></li>
-                              <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>
-                            </ul>
-                        </li>
+                        {% if user.is_authenticated %}
+                            <li>
+                                 <img src="{% if user.userprofile.avatar %} {{ user.userprofile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="circle responsive-img" alt="User Image" style=" width:30px;height:30px;margin-top:17px;">
+                            </li>
+                            <li>
+                                <a class="dropdown-button" href="#!" data-activates="dropdown1">
+                                   {{ user.username }} <i class="material-icons right">more_vert</i>
+                                </a>
+                                <ul id="dropdown1" class="dropdown-content">
+                                  {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
+                                  {% if user.groups.all.0.name == 'Space' %}
+                                      <li><a href="{% url 'profilespace' %}">Administration</a></li>
+                                      {% for space in user.space_set.all  %}
+                                      <li><a href="{% url 'administrationspace' space.id %}">{{ space.name }} Events</a></li>
+                                      {% endfor %}
+                                  {% endif %}
+                                  {% if user.groups.all.0.name == 'Member' %}<li><a href="{% url 'profile' %}">Profile</a></li>{% endif %}
+                                  <li class="divider"></li>
+                                  <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{% url 'account_login' %}">Log in</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'account_signup' %}">Sign up</a>
+                            </li>
+                        {% endif %}
                     </ul>
                     <ul id="nav-mobile" class="side-nav">
-                        <li><a href="#">Navbar Link</a></li>
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown2">{{ user.username }}<i class="material-icons right">arrow_drop_down</i></a>
                          <ul id="dropdown2" class="dropdown-content">
                               {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
@@ -136,33 +144,33 @@
             <div class="clearfix"></div>
         </div>
 
+
+
         <!-- Footer -->
         <footer class="page-footer grey darken-3" style="padding: 10px 0 10px!important;">
-
-                <div class="row">
-                    <div class="col l4 s12">
-                        <span class="copyright">Copyright &copy; Meszum 2015</span>
-                    </div>
-                    <div class="col l4 s12">
-                        <ul class="list-inline social-buttons" style="display: inline; list-style-type: none;">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col l4 s12">
-                        <ul class="list-inline quicklinks">
-                            <li><a href="#">Privacy Policy</a>
-                            </li>
-                            <li><a href="#">Terms of Use</a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="row">
+                <div class="col l4 s12">
+                    <span class="copyright">Copyright &copy; Meszum 2015</span>
                 </div>
-
+                <div class="col l4 s12">
+                    <ul class="list-inline social-buttons ">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l4 s12">
+                    <ul class="list-inline quicklinks white-text">
+                        <li><a href="#" class="white-text">Privacy Policy</a>
+                        </li>
+                        <li><a href="#" class="white-text">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </footer>
 
         <script src="{% static "js/jquery/jquery-ui.min.js" %}"></script>
