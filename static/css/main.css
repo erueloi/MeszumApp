@@ -19,10 +19,10 @@
    ========================================================================== */
 body {
 	height: 100%;
-	padding-top: 25px;
+	/*padding-top: 25px;*/
 	padding-bottom: 20px;
 	background-color: #e6e9ed;
-	font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+	/*font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;*/
 }
 
 a {

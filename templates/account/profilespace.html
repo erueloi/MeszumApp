@@ -4,7 +4,7 @@
 
 {% block container %}
     <div class="row">
-        <div class="col-sm-12 col-md-12">
+        <div class="col s12 m12">
             <div class="container-fluid">
                 <div class="page-header" style="border-bottom:1px solid #f6bb42; margin-bottom: 10px!important;">
                     <h4 class="pull-left" style="margin-bottom: 0px!important;">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-3">
+        <div class="col m3">
              <div class="panel panel-default">
                  <div class="panel-body">
                      <img src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" style="width: 100px; height: 100px; margin:0px auto!important;">
@@ -47,7 +47,7 @@
                  </div>
              </div>
         </div>
-        <div class="col-md-9">
+        <div class="col m9">
             <div class="panel panel-warning">
                 <div class="panel-heading">
                     <h3 class="panel-title"></h3>

@@ -1,7 +1,5 @@
 <!doctype html>
-
 {% load staticfiles %}
-
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -16,10 +14,14 @@
 
         <script src="{% static "js/jquery/jquery-1.11.2.min.js" %}"></script>
 
-        <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootstrap.min.css" %}">
+        <!-- CSS Materialize  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="{% static "css/materialize/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+{#        <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootstrap.min.css" %}">#}
         <link rel="stylesheet" type="text/css" href="{% static "css/jquery/jquery-ui.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootplus.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootflat.min.css" %}">
+{#        <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootflat.min.css" %}">#}
         <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootstrap-datetimepicker.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/fullcalendar/fullcalendar.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/dataTables.bootstrap.min.css" %}">
@@ -30,72 +32,119 @@
 		<link rel="stylesheet" type="text/css" href="{% static "css/component.css" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-{#        <link rel="stylesheet" type="text/css"href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">#}
+
     </head>
     <body>
+        <div class="navbar-fixed">
+            <nav class="grey darken-4" role="navigation">
+                <div class="nav-wrapper container">
+                    <a id="logo-container" href="/meszum" class="brand-logo"><img src="http://meszum.darrueye.com/img/nav_logo.png"> Meszum</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                             <img src="{% if user.userprofile.avatar %} {{ user.userprofile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="circle responsive-img" alt="User Image" style=" width:30px;height:30px;margin-top:17px;">
+                        </li>
+                        <li>
+                            <a class="dropdown-button" href="#!" data-activates="dropdown1">
+                               {{ user.username }} <i class="material-icons right">more_vert</i>
+                            </a>
+                            <ul id="dropdown1" class="dropdown-content">
+                              {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
+                              {% if user.groups.all.0.name == 'Space' %}
+                                  <li><a href="{% url 'profilespace' %}">Administration</a></li>
+                                  {% for space in user.space_set.all  %}
+                                  <li><a href="{% url 'administrationspace' space.id %}">{{ space.name }} Events</a></li>
+                                  {% endfor %}
+                              {% endif %}
+                              {% if user.groups.all.0.name == 'Member' %}<li><a href="{% url 'profile' %}">Profile</a></li>{% endif %}
+                              <li class="divider"></li>
+                              <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="nav-mobile" class="side-nav">
+                        <li><a href="#">Navbar Link</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">{{ user.username }}<i class="material-icons right">arrow_drop_down</i></a>
+                         <ul id="dropdown2" class="dropdown-content">
+                              {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
+                              {% if user.groups.all.0.name == 'Space' %}
+                                  <li><a href="{% url 'profilespace' %}">Administration</a></li>
+                                  {% for space in user.space_set.all  %}
+                                  <li><a href="{% url 'administrationspace' space.id %}">{{ space.name }} Events</a></li>
+                                  {% endfor %}
+                              {% endif %}
+                              {% if user.groups.all.0.name == 'Member' %}<li><a href="{% url 'profile' %}">Profile</a></li>{% endif %}
+                              <li class="divider"></li>
+                              <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                </div>
+            </nav>
+        </div>
 
         <div id="wrap">
             <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
             <!-- NavBar -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-              <div class="container">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="#">
-                     <img src="http://meszum.darrueye.com/img/nav_logo.png">
-                  </a>
-                  <a class="navbar-brand" href="/meszum">MeSZum</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                 <ul class="nav navbar-nav navbar-right">
-                    {% if user.is_authenticated %}
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{% if user.userprofile.avatar %} {{ user.userprofile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" alt="User Image" style=" width:25px;height:25px;float: left; margin-right: 10px;">{{ user.username }}<span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                  {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
-                                  {% if user.groups.all.0.name == 'Space' %}
-                                      <li><a href="{% url 'profilespace' %}">Administration</a></li>
-                                      {% for space in user.space_set.all  %}
-                                      <li><a href="{% url 'administrationspace' space.id %}">{{ space.name }} Events</a></li>
-                                      {% endfor %}
-                                  {% endif %}
-                                  {% if user.groups.all.0.name == 'Member' %}<li><a href="{% url 'profile' %}">Profile</a></li>{% endif %}
-                                  <li role="separator" class="divider"></li>
-                                  <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>
-                              </ul>
-                        </li>
-                    {% else %}
-                        <a href="{% url 'account_login' %}" class="btn btn-success navbar-btn">Log in</a>
-                        <a href="{% url 'account_signup' %}" class="btn btn-primary navbar-btn">Sign up</a>
-                    {% endif %}
-                 </ul>
-                </div><!--/.navbar-collapse -->
-              </div>
-            </nav>
+{#            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">#}
+{#              <div class="container">#}
+{#                <div class="navbar-header">#}
+{#                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">#}
+{#                    <span class="sr-only">Toggle navigation</span>#}
+{#                    <span class="icon-bar"></span>#}
+{#                    <span class="icon-bar"></span>#}
+{#                    <span class="icon-bar"></span>#}
+{#                  </button>#}
+{#                  <a class="navbar-brand" href="#">#}
+{#                     <img src="http://meszum.darrueye.com/img/nav_logo.png">#}
+{#                  </a>#}
+{#                  <a class="navbar-brand" href="/meszum">MeSZum</a>#}
+{#                </div>#}
+{#                <div id="navbar" class="navbar-collapse collapse">#}
+{#                 <ul class="nav navbar-nav navbar-right">#}
+{#                    {% if user.is_authenticated %}#}
+{#                        <li class="dropdown">#}
+{#                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{% if user.userprofile.avatar %} {{ user.userprofile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" alt="User Image" style=" width:25px;height:25px;float: left; margin-right: 10px;">{{ user.username }}<span class="caret"></span></a>#}
+{#                              <ul class="dropdown-menu">#}
+{#                                  {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}#}
+{#                                  {% if user.groups.all.0.name == 'Space' %}#}
+{#                                      <li><a href="{% url 'profilespace' %}">Administration</a></li>#}
+{#                                      {% for space in user.space_set.all  %}#}
+{#                                      <li><a href="{% url 'administrationspace' space.id %}">{{ space.name }} Events</a></li>#}
+{#                                      {% endfor %}#}
+{#                                  {% endif %}#}
+{#                                  {% if user.groups.all.0.name == 'Member' %}<li><a href="{% url 'profile' %}">Profile</a></li>{% endif %}#}
+{#                                  <li role="separator" class="divider"></li>#}
+{#                                  <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>#}
+{#                              </ul>#}
+{#                        </li>#}
+{#                    {% else %}#}
+{#                        <a href="{% url 'account_login' %}" class="btn btn-success navbar-btn">Log in</a>#}
+{#                        <a href="{% url 'account_signup' %}" class="btn btn-primary navbar-btn">Sign up</a>#}
+{#                    {% endif %}#}
+{#                 </ul>#}
+{#                </div><!--/.navbar-collapse -->#}
+{#              </div>#}
+{#            </nav>#}
 
             <!-- Container -->
-            <div class="container-fluid">
-                  {% block container %} {% endblock %}
+
+            {% block container %} {% endblock %}
             </div>
             <div class="clearfix"></div>
         </div>
 
         <!-- Footer -->
-        <footer class="footer" style="padding: 10px 0 10px!important;">
-            <div class="container">
+        <footer class="page-footer grey darken-3" style="padding: 10px 0 10px!important;">
+
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col l4 s12">
                         <span class="copyright">Copyright &copy; Meszum 2015</span>
                     </div>
-                    <div class="col-md-4">
-                        <ul class="list-inline social-buttons">
+                    <div class="col l4 s12">
+                        <ul class="list-inline social-buttons" style="display: inline; list-style-type: none;">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a>
@@ -104,7 +153,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col l4 s12">
                         <ul class="list-inline quicklinks">
                             <li><a href="#">Privacy Policy</a>
                             </li>
@@ -113,11 +162,12 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+
         </footer>
 
         <script src="{% static "js/jquery/jquery-ui.min.js" %}"></script>
-        <script src="{% static "js/bootstrap/bootstrap.min.js" %}"></script>
+        <script src="{% static "js/materialize/materialize.js" %}"></script>
+{#        <script src="{% static "js/bootstrap/bootstrap.min.js" %}"></script>#}
         <script src="{% static "js/moment/moment-with-locales.min.js" %}"></script>
         <script src="{% static "js/bootstrap/bootstrap-datetimepicker.min.js" %}"></script>
         <script src="{% static "js/typeahead/bloodhound.min.js" %}"></script>
@@ -138,6 +188,9 @@
        <!-- System Notifications Alerts -->
         <script>
             $(document).ready(function() {
+                $(".button-collapse").sideNav();
+                $(".dropdown-button").dropdown();
+
                 {% if messages %}
                     {% for message in messages %}
                         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
