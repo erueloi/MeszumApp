@@ -3,6 +3,7 @@
 {% load widget_tweaks %}
 
 {% block container %}
+
     <div class="row">
         <div class="col s12 m12">
             <div class="container-fluid">
@@ -23,7 +24,7 @@
     </div>
 
     <div class="row">
-        <div class="col m3">
+        <div class="col s12 m3">
             <div class="card-panel white z-depth-3">
                 <div class="center-align">
                     <img src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="center-align circle responsive-img" style="width: 100px; height: 100px; margin:0px auto!important;">
@@ -47,19 +48,19 @@
                  </div>
             </div>
         </div>
-        <div class="col m9">
+        <div class="col s12 m9">
             <div class="card-panel white z-depth-3">
                 <div class="row">
-                    <div class="col s12">
+                    <div class="col s12 m12">
                     <ul class="tabs">
                         <li class="tab col s3"><a class="active" href="#test1">Spaces</a></li>
                         <li class="tab col s3"><a href="#test2">Settings</a></li>
                     </ul>
-                        <div id="test1" class="col s12">
+                        <div id="test1" class="col s12 m12">
                      {% block modal %}
                      <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
                      {% endblock modal %}
-                     <table class="table bordered highlight responsive-table" id="ufs">
+                     <table class="table bordered highlight" id="ufs">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
@@ -74,7 +75,7 @@
                                         <td><img src="{% if space.logotype %} {{ space.logotype.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" alt="User Image" style=" width:25px;height:25px;float: left; margin-right: 10px;"> {{ space.name }}</td>
                                         <td>{{ space.email }}</td>
                                         <td>
-                                            <span class="label label-success">Rumba</span>
+                                            <span class="badge green white-text badge-alone">Rumba</span>
                                         </td>
                                         <td>Riu Éssera, 6 Lleida</td>
                                     </tr>
@@ -82,11 +83,11 @@
                                 </tbody>
                             </table>
                  </div>
-                        <div id="test2" class="col s12">
+                        <div id="test2" class="col s12 m12">
                     <form action="." method="post" role="form" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col s12 m6">
                                         <div class="form-group">
                                             <label for="formuser.username.id_for_label">User Name</label>
                                             {{ formuser.username|add_class:"form-control" }}
@@ -103,7 +104,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col s12 m6">
                                         <div class="form-group">
                                             <label for="form.avatar.id_for_label">Avatar</label></br>
                                             <!--<img class="img-responsive img-circle" src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" alt="logo" style="width: 64px; height: 64px;"></a>-->
@@ -121,8 +122,6 @@
             </div>
         </div>
     </div>
-
-
 
     <!-- Modal -->
     <div class="modal fade" id="SpaceModal" tabindex="-1">
@@ -143,6 +142,15 @@
     <script>
     $(document).ready(function() {
         $('#ufs').DataTable();
+        $('#ufs_paginate').addClass('pagination');
+        $('#ufs_wrapper').addClass('row');
+        $('#ufs_length').addClass('col');
+        $('#ufs_length').addClass('s12');
+        $('#ufs_length').addClass('m6');
+        $('#ufs_filter').addClass('col');
+        $('#ufs_filter').addClass('s12');
+        $('#ufs_filter').addClass('m6');
+
         $("tr[data-link]").click(function() {
                 window.location = this.dataset.link
             });
