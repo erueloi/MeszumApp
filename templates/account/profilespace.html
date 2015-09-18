@@ -4,6 +4,43 @@
 
 {% block container %}
 
+    <style>
+    .input-field label{
+{#        left: 0rem!important;#}
+{#        width: 100%!important;#}
+    }
+
+    .modal{
+        overflow-y: hidden!important;
+    }
+
+    input[type=text].invalid + label:after,
+    input[type=text]:focus.invalid + label:after,
+    input[type=password].invalid + label:after,
+    input[type=password]:focus.invalid + label:after,
+    input[type=email].invalid + label:after,
+    input[type=email]:focus.invalid + label:after,
+    input[type=url].invalid + label:after,
+    input[type=url]:focus.invalid + label:after,
+    input[type=time].invalid + label:after,
+    input[type=time]:focus.invalid + label:after,
+    input[type=date].invalid + label:after,
+    input[type=date]:focus.invalid + label:after,
+    input[type=datetime-local].invalid + label:after,
+    input[type=datetime-local]:focus.invalid + label:after,
+    input[type=tel].invalid + label:after, input[type=tel]:focus.invalid + label:after,
+    input[type=number].invalid + label:after,
+    input[type=number]:focus.invalid + label:after,
+    input[type=search].invalid + label:after,
+    input[type=search]:focus.invalid + label:after,
+    textarea.materialize-textarea.invalid + label:after,
+    textarea.materialize-textarea:focus.invalid + label:after {
+        font-size: 0.75rem!important;
+        top: 35px!important;
+        width: 10rem;
+    }
+    </style>
+
     <div class="row">
         <div class="col s12 m12">
             <div class="container-fluid">
@@ -14,7 +51,7 @@
                     <div class="pull-right">
                         <ol class="breadcrumb breadcrumb-arrow" style="margin-bottom: 0px!important;">
                             <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
-                            <li class="active"><span><i class="glyphicon glyphicon-user"></i>  {{ user.username }}</span></li>
+                            <li class="active"><a href="#"><span><i class="glyphicon glyphicon-user"></i>  {{ user.username }}</span></a></li>
                         </ol>
                     </div>
                     <div class="clearfix"></div>
@@ -58,7 +95,7 @@
                     </ul>
                         <div id="test1" class="col s12 m12">
                      {% block modal %}
-                     <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
+                     <br><button id="comment-button" data-target="modal1" class="btn waves-effect right modal-trigger"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
                      {% endblock modal %}
                      <table class="table bordered highlight" id="ufs">
                                 <thead>
@@ -105,11 +142,17 @@
                                         </div>
                                     </div>
                                     <div class="col s12 m6">
-                                        <div class="form-group">
-                                            <label for="form.avatar.id_for_label">Avatar</label></br>
-                                            <!--<img class="img-responsive img-circle" src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" alt="logo" style="width: 64px; height: 64px;"></a>-->
-                                            {{ form.avatar|add_class:"form-control" }}
+                                        <label for="form.avatar.id_for_label">Avatar</label>
+                                        <div class="file-field input-field">
+                                          <div class="btn">
+                                            <span>File</span>
+                                            {{ form.avatar }}
+                                          </div>
+                                          <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                          </div>
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -123,21 +166,30 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="SpaceModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>
-                </div>
-                <div class="modal-body" id="space-modal-body">
-                  Hola
-                </div>
-                <div class="modal-footer"></div>
-            </div>
+    <!-- Modal Structure -->
+      <div id="SpaceModal" class="modal">
+        <div class="modal-content" id="space-modal-body">
+           <h4 id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>
         </div>
-    </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+
+    <!-- Modal -->
+{#    <div class="modal fade" id="SpaceModal" tabindex="-1">#}
+{#        <div class="modal-dialog">#}
+{#            <div class="modal-content">#}
+{#                <div class="modal-header">#}
+{#                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>#}
+{#                    <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>#}
+{#                </div>#}
+{#                <div class="modal-body" id="space-modal-body">#}
+{#                  Hola#}
+{#                </div>#}
+{#                <div class="modal-footer"></div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 
     <script>
     $(document).ready(function() {
@@ -146,10 +198,10 @@
         $('#ufs_wrapper').addClass('row');
         $('#ufs_length').addClass('col');
         $('#ufs_length').addClass('s12');
-        $('#ufs_length').addClass('m6');
+        $('#ufs_length').addClass('m3');
         $('#ufs_filter').addClass('col');
         $('#ufs_filter').addClass('s12');
-        $('#ufs_filter').addClass('m6');
+        $('#ufs_filter').addClass('m3 offset-m6');
 
         $("tr[data-link]").click(function() {
                 window.location = this.dataset.link
@@ -163,11 +215,11 @@
                     url: $(this).attr('action'),
                     data: $(this).serialize(),
                     success: function (xhr, ajaxOptions, thrownError) {
-                        if ( $(xhr).find('.has-error').length > 0 ) {
-                            $(modal).find('.modal-body').html(xhr);
+                        if ( $(xhr).find('.invalid').length > 0 ) {
+                            $(modal).find('.modal-content').html(xhr);
                             formAjaxSubmit(form, modal);
                         } else {
-                            $(modal).modal('toggle');
+                            $(modal).closeModal();
                             $.notify({
                                 icon: 'glyphicon glyphicon glyphicon-ok-sign',
                                 message: 'Space added successfully'
@@ -186,7 +238,7 @@
         }
         $('#comment-button').click(function() {
             $('#space-modal-body').load('{% url 'space-modal' %}', function () {
-                $('#SpaceModal').modal('toggle');
+                $('#SpaceModal').openModal();
                 formAjaxSubmit('#space-modal-body form', '#SpaceModal');
             });
         });

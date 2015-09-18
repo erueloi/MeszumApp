@@ -1,27 +1,43 @@
 {% load staticfiles %}
 {% load widget_tweaks %}
+ <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>
 <form action="{% url 'space-modal' %}" method="post" role="form" enctype="multipart/form-data">
   {% csrf_token %}
-    <div class="form-group {% if form.name.errors %}has-error{% endif %}">
-      <label for="form.name.id_for_label">Name</label>
-      {% if form.name.errors %}<label class="control-label" for="form.name.id_for_label"> {{ form.name.errors|striptags }}</label>{% endif %}
-      {{ form.name|add_class:"form-control" }}
+{#    <div class="form-group {% if form.name.errors %}has-error{% endif %}">#}
+{#      <label for="form.name.id_for_label">Name</label>#}
+{#      {% if form.name.errors %}<label class="control-label" for="form.name.id_for_label"> {{ form.name.errors|striptags }}</label>{% endif %}#}
+{#      {{ form.name|add_class:"form-control" }}#}
+{#    </div>#}
+    <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="id_name" name="name" type="text" class="validate {% if form.name.errors %}invalid{% endif %}">
+        <label for="{{ form.name.id_for_label }}" data-error="{% if form.name.errors %} {{ form.name.errors|striptags }} {% endif %}">Name</label>
     </div>
-    <div class="form-group {% if form.email.errors %}has-error{% endif %}">
-      <label for="form.email.id_for_label">Email</label>
-        {% if form.email.errors %}<label class="control-label" for="form.email.id_for_label"> {{ form.email.errors|striptags }}</label>{% endif %}
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        {{ form.email|add_class:"form-control" }}
+
+    <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+        <input id="email" name="email" type="text" class="validate {% if form.email.errors %}invalid{% endif %}">
+        <label for="{{ form.email.id_for_label }}" data-error="{% if form.email.errors %} {{ form.email.errors|striptags }} {% endif %}">Email</label>
+    </div>
+
+    <label for="{{form.logotype.id_for_label}}">Logotype</label>
+    <div class="file-field input-field {% if form.logotype.errors %}invalid{% endif %}">
+      <div class="btn">
+        <span>File</span>
+        {{ form.logotype }}
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+        <label for="{{ form.logotype.id_for_label }}" data-error="{% if form.logotype.errors %} {{ form.logotype.errors|striptags }} {% endif %}"></label>
       </div>
     </div>
-       <div class="form-group {% if form.logotype.errors %}has-error{% endif %}">
-                <label for="form.logotype.id_for_label">Logotype</label></br>
-                <!--<img class="img-responsive img-circle" src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" alt="logo" style="width: 64px; height: 64px;"></a>-->
-                {{ form.logotype|add_class:"form-control" }}
-          </div>
-<button type="submit" class="btn btn-success pull-right" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
-<button type="button" class="btn btn-default pull-right" data-dismiss="modal" style="margin-right: 10px;">Cancel</button>
+{#       <div class="form-group {% if form.logotype.errors %}has-error{% endif %}">#}
+{#                <label for="form.logotype.id_for_label">Logotype</label></br>#}
+{#                <!--<img class="img-responsive img-circle" src="{% if profile.avatar %} {{ profile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" alt="logo" style="width: 64px; height: 64px;"></a>-->#}
+{#                {{ form.logotype|add_class:"form-control" }}#}
+{#          </div>#}
 
-{#            <input type="submit" class="btn btn-success pull-right"> Save</input>#}
+<button type="submit" class="btn btn-success right" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+<button type="button" class="btn btn-default right modal-action modal-close" data-dismiss="modal" style="margin-right: 10px;">Cancel</button>
+
 </form>

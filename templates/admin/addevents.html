@@ -47,10 +47,10 @@
 </style>
 
     <div class="row">
-        <div class="col-sm-12 col-md-12">
+        <div class="col s12 m12">
             <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
             <div class="page-header" style="border-bottom:1px solid #f6bb42">
-              <h4 class="pull-left">
+              <h4 class="left">
                 Events
               </h4>
               <div class="pull-right">
@@ -59,9 +59,9 @@
                     <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-user"></i> {{ user.username }}</a></li>
                     <li><a href="{% url 'administrationspace' space.id %}"><i class="glyphicon glyphicon-fullscreen"></i> {{ space.name }}</a></li>
                     {% if event %}
-                        <li class="active"><span><i class="glyphicon glyphicon-calendar"></i>  {{ event.title    }}</span></li>
+                        <li class="active"><a href="#"><span><i class="glyphicon glyphicon-calendar"></i>  {{ event.title    }}</span></a></li>
                     {% else %}
-                        <li class="active"><span><i class="glyphicon glyphicon-calendar"></i>  Add</span></li>
+                        <li class="active"><a href="#"><span><i class="glyphicon glyphicon-calendar"></i>  Add</span></a></li>
                     {% endif %}
                 </ol>
               </div>
@@ -72,26 +72,22 @@
     </div>
 
     <div class="row">
-        <div class="col-md-2">
-            <div class="panel panel-default">
-                <div class="panel-body">
+        <div class="col s12 m2">
+            <div class="card-panel white z-depth-3">
                     <h5>{{ event.title }}</h5>
-                    <img src="{% if event.poster %} {{ event.poster.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive" style="width: 226px; margin:0px auto!important;">
+                    <img src="{% if event.poster %} {{ event.poster.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="responsive-img" style="width: 226px; margin:0px auto!important;">
                 </div>
-            </div>
         </div>
-        <div class="col-md-10">
-            <div class="panel panel-warning">
-                <div class="panel-heading">
-                         <h3 class="panel-title">Event Configuration</h3>
-                     </div>
-                <div class="panel-body">
-                    <ul id="myTab1" class="nav nav-tabs">
-                             <li class="active"><a href="#profile3" data-toggle="tab">Playlist</a></li>
-                             <li class=""><a href="#home3" data-toggle="tab">Settings</a></li>
-                         </ul>
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade active in" id="profile3">
+        <div class="col s12 m10">
+           <div class="card-panel white z-depth-3">
+                <div class="row">
+                    <div class="col s12 m12">
+                    <h5>Event Configuration</h5>
+                    <ul class="tabs">
+                      <li class="tab col s3"><a class="active" href="#test1">Playlist</a></li>
+                      <li class="tab col s3"><a href="#test2">Settings</a></li>
+                    </ul>
+                    <div class="col s12 m12" id="test1">
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="input-group">
@@ -129,9 +125,9 @@
                       </table>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="home3">
+                    <div class="col s12 m12" id="test2">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col s12 m8">
                                     <form action="." method="post" role="form" enctype="multipart/form-data">
                                         {% csrf_token %}
                                         <div class="form-group">
@@ -168,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
                 </div>
             </div>
         </div>

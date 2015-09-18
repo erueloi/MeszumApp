@@ -48,17 +48,17 @@
 
 </style>
    <div class="row">
-    <div class="col-sm-12 col-md-12">
+    <div class="col s12 m12">
        <div class="container-fluid">
             <div class="page-header" style="border-bottom:1px solid #f6bb42; margin-bottom: 10px!important;">
-              <h4 class="pull-left" style="margin-bottom: 0px!important;">
+              <h5 class="left" style="margin-bottom: 0px!important;">
                 Administration
-              </h4>
+              </h5>
               <div class="pull-right">
                 <ol class="breadcrumb breadcrumb-arrow" style="margin-bottom: 0px!important;">
                   <li><a href="#"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
                   <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-user"></i> {{ user.username }}</a></li>
-                  <li class="active"><span><i class="glyphicon glyphicon-fullscreen"></i>  {{ space.name }}</span></li>
+                  <li class="active"><a href="#"> <span><i class="glyphicon glyphicon-fullscreen"></i>  {{ space.name }}</span></a></li>
                 </ol>
               </div>
               <div class="clearfix"></div>
@@ -67,49 +67,45 @@
     </div>
    </div>
     <div class="row">
-        <div class="col-md-3">
-             <div class="panel panel-default">
-                 <div class="panel-body">
-                     <img src="{% if space.logotype %} {{ space.logotype.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" style="width: 100px; height: 100px; margin:0px auto!important;">
+        <div class="col s12 m3">
+             <div class="card-panel white z-depth-3">
+                     <div class="center-align">
+                         <img src="{% if space.logotype %} {{ space.logotype.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" style="width: 100px; height: 100px; margin:0px auto!important;">
+                     </div>
                      <h4 style="text-align: center;">La Boite</h4>
-                     <ul class="list-group">
-                      <li class="list-group-item"><span class="badge badge-default">{{ space.event_set.all.count }}</span>Events</li>
-                      <li class="list-group-item"><span class="badge badge-primary">1500</span>Followers</li>
+                     <ul class="transparent collection">
+                      <li class="collection-item transparent"><span class="badge red white-text">{{ space.event_set.all.count }}</span>Events</li>
+                      <li class="collection-item transparent"><span class="badge green white-text">1500</span>Followers</li>
                     </ul>
                      <div>
-                         <strong><i class="fa fa-pencil margin-r-5"></i> Type</strong>
+                         <strong><i class="material-icons prefix">mode_edit</i> Type</strong>
                           <p>
-                            <span class="label label-danger">Rumba</span>
-                            <span class="label label-success">Techno</span>
-                            <span class="label label-info">Swing</span>
-                            <span class="label label-warning">Rock</span>
+                            <span class="badge badge-alone red white-text">Rumba</span>
+                            <span class="badge badge-alone brown white-text">Techno</span>
+                            <span class="badge badge-alone blue white-text">Swing</span>
+                            <span class="badge badge-alone blue-grey white-text">Rock</span>
                           </p>
                           <hr>
-                          <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                          <strong><i class="material-icons prefix">location_on</i> Location</strong>
                           <p class="text-muted">Essera, 29 Lleida</p>
-                    </div>
                  </div>
              </div>
         </div>
 
-        <div class="col-md-9">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h3 class="panel-title"></h3>
-              </div>
-              <div class="panel-body">
-                  <ul id="myTab1" class="nav nav-tabs">
-                      <li class="active"><a href="#profile3" data-toggle="tab">Upcoming Events</a></li>
-                      <li class=""><a href="#home3" data-toggle="tab">Settings</a></li>
-                  </ul>
-                  <div id="myTabContent" class="tab-content">
-                     <div class="tab-pane fade active in" id="profile3">
-
+        <div class="col s12 m9">
+           <div class="card-panel white z-depth-3">
+                <div class="row">
+                    <div class="col s12 m12">
+                        <ul class="tabs">
+                            <li class="tab col s3"><a class="active" href="#test1">Upcoming Events</a></li>
+                            <li class="tab col s3"><a href="#test2">Settings</a></li>
+                        </ul>
+                        <div id="test1" class="col s12 m12">
                      <div class="row" style="text-align: center;">
                          <div class="btn-group">
-                          <button id="btncalendarevents" type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
-                          <button id="btnlistevents" type="button" class="btn btn-default"><i class="glyphicon glyphicon-list"></i></button>
-                        </div>
+                             <button id="btncalendarevents" type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
+                             <button id="btnlistevents" type="button" class="btn btn-default"><i class="glyphicon glyphicon-list"></i></button>
+                         </div>
                          {% block modal %}
                              <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
                          {% endblock modal %}
@@ -174,11 +170,10 @@
                              {% endfor %}
                         </div>
                     </div>
-
                   </div>
-                     <div class="tab-pane fade" id="home3">
-                      <div class="row">
-                          <div class="col-md-6">
+                        <div id="test2" class="col s12 m12">
+                            <div class="row">
+                                <div class="col s12 m6">
                               <form action="." method="post" role="form" enctype="multipart/form-data">
                                   {% csrf_token %}
                               <div class="form-group">
@@ -208,22 +203,30 @@
         </div>
     </div>
 
-     <!-- Modal -->
-		<div class="modal fade" id="SpaceModal" tabindex="-1">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-calendar"></i> Add Event</h4>
-		      </div>
-		      <div class="modal-body" id="space-modal-body">
-		      </div>
-                 <div class="modal-footer">
+     <div id="SpaceModal" class="modal">
+        <div class="modal-content" id="space-modal-body">
+           <h4 id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
 
-              </div>
-		    </div>
-		  </div>
-		</div>
+     <!-- Modal -->
+{#		<div class="modal fade" id="SpaceModal" tabindex="-1">#}
+{#		  <div class="modal-dialog">#}
+{#		    <div class="modal-content">#}
+{#		      <div class="modal-header">#}
+{#		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>#}
+{#		        <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-calendar"></i> Add Event</h4>#}
+{#		      </div>#}
+{#		      <div class="modal-body" id="space-modal-body">#}
+{#		      </div>#}
+{#                 <div class="modal-footer">#}
+{##}
+{#              </div>#}
+{#		    </div>#}
+{#		  </div>#}
+{#		</div>#}
 
     <script>
             $(document).ready(function() {
@@ -267,11 +270,11 @@
 	                        processData: false,
                             success: function (xhr, ajaxOptions, thrownError) {
                                 if ( $(xhr).find('.has-error').length > 0 ) {
-                                    $(modal).find('.modal-body').html(xhr);
+                                    $(modal).find('.modal-content').html(xhr);
                                     formAjaxSubmit(form, modal);
                                     initMap();
                                 } else {
-                                    $(modal).modal('toggle');
+                                    $(modal).closeModal();
                                     location.reload();
                                     $.notify({
                                         icon: 'glyphicon glyphicon glyphicon-ok-sign',
@@ -290,7 +293,7 @@
                 }
                 $('#comment-button').click(function() {
                     $('#space-modal-body').load('{% url 'event-modal' %}', function () {
-                        $('#SpaceModal').modal('toggle');
+                        $('#SpaceModal').openModal();
                         formAjaxSubmit('#space-modal-body form', '#SpaceModal');
                         initMap();
                     });
