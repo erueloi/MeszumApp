@@ -28,7 +28,6 @@
     background-color: #FC122D;
   	padding: 5px;}
 
-
 .glyph {
     text-align: center;
 }
@@ -159,14 +158,14 @@
 				<div class="content" style="background-color:rgb(18, 19, 20);">
                     <!--  Content Events -->
                     {% for event in events %}
-                        <div class="container" style="background: url('{{ event.poster.url }}') no-repeat center center fixed; background-size: cover; overflow-y: visible; height: 100% ">
+                        <div class="container" style="background: url('{{ event.poster.url }}') no-repeat center center fixed; background-size: cover; height: 100% ">
                             <div class="row" style="height: 100%" >
-                                <div class="col-md-8 col-md-offset-2" style="background-color:rgba(18, 19, 20, 0.95); height: 100%; border-color: white; border-style: groove; border-top-style: none; border-bottom-style: none;">
+                                <div class="col m8 offset-m2" style="background-color:rgba(18, 19, 20, 0.95); height: 100%; border-color: white; border-style: groove; border-top-style: none; border-bottom-style: none;">
                                      <div>
-                                         <img src="{% static "img/lp_list.png" %}" class="img-responsive" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
+                                         <img src="{% static "img/lp_list.png" %}" class="responsive-img" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
                                      </div>
                                     <div style="margin-top: 20px; padding-top: 10px; ">
-                                        <table class="table responsive" id="songs">
+                                        <table class="table responsive bordered highlight" id="songs">
                                             <thead>
                                               <tr>
                                                 <th></th>
@@ -242,14 +241,12 @@
         $(document).ready(function() {
             new grid3D( document.getElementById( 'grid3d' ) );
 
-            $(document).ready(function() {
-				$('#songs').DataTable({
+            $('#songs').DataTable({
                     searching: false,
                     ordering:  false,
                     lengthChange: false,
                     info:false
             });
-			});
 
 {#            document.getElementById('player{{ song.id }}').play()#}
             $(".play").click(function(){

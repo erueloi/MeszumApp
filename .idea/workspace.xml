@@ -3,10 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="1bd94954-7cc6-4e1c-853d-392bf07ea119" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/addevents.html" afterPath="$PROJECT_DIR$/templates/admin/addevents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/classie.js" afterPath="$PROJECT_DIR$/static/js/classie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/component.css" afterPath="$PROJECT_DIR$/static/css/component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/bootstrap/dataTables.bootstrap.min.js" afterPath="$PROJECT_DIR$/static/js/bootstrap/dataTables.bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/materialize/materialize.css" afterPath="$PROJECT_DIR$/static/css/materialize/materialize.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/account/profile.html" afterPath="$PROJECT_DIR$/templates/account/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/account/profilespace.html" afterPath="$PROJECT_DIR$/templates/account/profilespace.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/superdashboard/sd_events.html" afterPath="$PROJECT_DIR$/templates/superdashboard/sd_events.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/superdashboard/sd_spaces.html" afterPath="$PROJECT_DIR$/templates/superdashboard/sd_spaces.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/superdashboard/sd_users.html" afterPath="$PROJECT_DIR$/templates/superdashboard/sd_users.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/space.html" afterPath="$PROJECT_DIR$/templates/admin/space.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/modals/space_form_inner.html" afterPath="$PROJECT_DIR$/templates/admin/modals/space_form_inner.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/superdashboard/superuser_dashboard.html" afterPath="$PROJECT_DIR$/templates/superdashboard/superuser_dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MeszumApp.iws" />
@@ -71,33 +81,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="addevents.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/admin/addevents.html">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9265823">
-              <caret line="77" column="151" selection-start-line="77" selection-start-column="151" selection-end-line="77" selection-end-column="151" />
-              <folding>
-                <element signature="e#660#2007#0#HTML" expanded="false" />
-                <element signature="e#2545#8231#0#HTML" expanded="false" />
-                <element signature="e#2640#2858#0#HTML" expanded="false" />
-                <element signature="e#2879#5279#0#HTML" expanded="false" />
-                <element signature="e#3731#3766#0#HTML" expanded="true" />
-                <element signature="e#4209#4231#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="space.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/admin/space.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.153846">
-              <caret line="96" column="33" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="33" />
-              <folding>
-                <element signature="e#672#1625#0#HTML" expanded="false" />
-                <element signature="e#3731#8471#0#HTML" expanded="false" />
-                <element signature="e#8496#10352#0#HTML" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.6886076">
+              <caret line="66" column="115" selection-start-line="66" selection-start-column="115" selection-end-line="66" selection-end-column="115" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,8 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/requeriments.txt" />
-        <option value="$PROJECT_DIR$/MeszumApp/wsgi.py" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/MeszumApp/views.py" />
         <option value="$PROJECT_DIR$/meszum/migrations/0005_auto_20150827_1721.py" />
@@ -149,7 +136,6 @@
         <option value="$PROJECT_DIR$/templates/email/stay_up_date.html" />
         <option value="$PROJECT_DIR$/ChangeLog" />
         <option value="$PROJECT_DIR$/templates/account/signup.html" />
-        <option value="$PROJECT_DIR$/templates/account/profile.html" />
         <option value="dbtable:/a85d32fb/b895b5c2-83d9-4826-8773-0ffad7fbed02/meszum.public.meszum_userprofile" />
         <option value="$PROJECT_DIR$/templates/admin/modals/space_form.html" />
         <option value="$PROJECT_DIR$/templates/admin/events.html" />
@@ -158,7 +144,6 @@
         <option value="$PROJECT_DIR$/templates/admin/modals/event_form_inner.html" />
         <option value="$PROJECT_DIR$/meszum/models.py" />
         <option value="$PROJECT_DIR$/templates/startpage.html" />
-        <option value="$PROJECT_DIR$/static/js/classie.js" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/static/commingsoon/css/magnific-popup.css" />
         <option value="$PROJECT_DIR$/templates/commingsoon.html" />
@@ -166,22 +151,26 @@
         <option value="$PROJECT_DIR$/static/commingsoon/css/style.css" />
         <option value="$PROJECT_DIR$/MeszumApp/urls.py" />
         <option value="$PROJECT_DIR$/meszum/serializers.py" />
-        <option value="$PROJECT_DIR$/templates/superdashboard/sd_users.html" />
-        <option value="$PROJECT_DIR$/templates/superdashboard/sd_spaces.html" />
-        <option value="$PROJECT_DIR$/templates/superdashboard/superuser_dashboard.html" />
-        <option value="$PROJECT_DIR$/templates/superdashboard/sd_events.html" />
         <option value="$PROJECT_DIR$/meszum/urls.py" />
         <option value="$PROJECT_DIR$/meszum/views.py" />
         <option value="dbtable:/a85d32fb/608e5eac-db38-4248-87c3-285b4482fb86/dbmeszumdev.public.meszum_song" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/MeszumApp/settings.py" />
-        <option value="$PROJECT_DIR$/static/css/materialize/materialize.css" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/admin/modals/space_form_inner.html" />
+        <option value="$PROJECT_DIR$/templates/superdashboard/superuser_dashboard.html" />
+        <option value="$PROJECT_DIR$/templates/superdashboard/sd_spaces.html" />
+        <option value="$PROJECT_DIR$/templates/superdashboard/sd_events.html" />
+        <option value="$PROJECT_DIR$/templates/superdashboard/sd_users.html" />
+        <option value="$PROJECT_DIR$/static/js/classie.js" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
-        <option value="$PROJECT_DIR$/templates/account/profilespace.html" />
+        <option value="$PROJECT_DIR$/static/js/bootstrap/dataTables.bootstrap.min.js" />
         <option value="$PROJECT_DIR$/templates/admin/space.html" />
         <option value="$PROJECT_DIR$/templates/admin/addevents.html" />
+        <option value="$PROJECT_DIR$/templates/account/profilespace.html" />
+        <option value="$PROJECT_DIR$/templates/account/profile.html" />
+        <option value="$PROJECT_DIR$/static/css/component.css" />
+        <option value="$PROJECT_DIR$/static/css/materialize/materialize.css" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -250,6 +239,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MeszumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MeszumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MeszumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -844,7 +847,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442507192441</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Materializecss App &#10;- Admin Event&#10;- Modals">
+      <created>1442581738758</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1442581738758</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView">
@@ -860,7 +869,7 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16181229" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2435275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28944248" sideWeight="0.5030303" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -925,7 +934,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Register Bussines&#10;Change user identification django-register to django-allauth&#10;" />
     <MESSAGE value="Correct migrate" />
     <MESSAGE value="Styleize Superdashboar, Administration Space" />
     <MESSAGE value="Slider Events in Space Admin&#10;Styleize Events, Add Events" />
@@ -950,11 +958,12 @@
     <MESSAGE value="Add Events List in Superdash borad&#10;Calendar/List toggle in Space&#10;" />
     <MESSAGE value="Full Opacity Background&#10;Add Remote Database" />
     <MESSAGE value="Materializecss App - Admin Space" />
-    <option name="LAST_COMMIT_MESSAGE" value="Materializecss App - Admin Space" />
+    <MESSAGE value="Materializecss App &#10;- Admin Event&#10;- Modals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Materializecss App &#10;- Admin Event&#10;- Modals" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="36" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Python.DjangoServer">
@@ -963,33 +972,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="255" column="25" selection-start-line="255" selection-start-column="25" selection-end-line="255" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="22" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/profilespace.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2427#8935#0#HTML" expanded="false" />
-            <element signature="e#2453#3983#0#HTML" expanded="false" />
-            <element signature="e#2859#2886#0#HTML" expanded="true" />
-            <element signature="e#4415#6185#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChangeLog">
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -1044,13 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36525974">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.9961977">
-          <caret line="235" column="48" selection-start-line="235" selection-start-column="48" selection-end-line="235" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1125,59 +1100,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/superdashboard/sd_spaces.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0">
-          <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/superdashboard/superuser_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7601351">
-          <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/superdashboard/sd_users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5574324">
-          <caret line="43" column="77" selection-start-line="43" selection-start-column="77" selection-end-line="43" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/commingsoon.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.75">
           <caret line="166" column="39" selection-start-line="166" selection-start-column="39" selection-end-line="166" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.020833334">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/classie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0416666">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/grid3d.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="65" selection-start-line="117" selection-start-column="65" selection-end-line="117" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -1243,24 +1169,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/bootstrap/dataTables.bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.024350649">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/superdashboard/sd_events.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7916665">
-          <caret line="46" column="32" selection-start-line="38" selection-start-column="24" selection-end-line="46" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1272,34 +1184,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/materialize/materialize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28970775">
-          <caret line="5385" column="34" selection-start-line="5385" selection-start-column="34" selection-end-line="5385" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39746836">
-          <caret line="255" column="25" selection-start-line="255" selection-start-column="25" selection-end-line="255" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/bootstrap/dataTables.bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16687116">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.373891">
-          <caret line="187" column="67" selection-start-line="187" selection-start-column="58" selection-end-line="187" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/modals/space_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
@@ -1308,34 +1192,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0625">
-          <caret line="1019" column="29" selection-start-line="1019" selection-start-column="24" selection-end-line="1019" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/modals/space_form_inner.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44050634">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#button#1;n#form#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/profilespace.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3113924">
-          <caret line="218" column="57" selection-start-line="218" selection-start-column="44" selection-end-line="218" selection-end-column="57" />
-          <folding>
-            <element signature="e#2427#8935#0#HTML" expanded="false" />
-            <element signature="e#2453#3983#0#HTML" expanded="false" />
-            <element signature="e#2859#2886#0#HTML" expanded="true" />
-            <element signature="e#4415#6185#0#HTML" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1347,30 +1208,195 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/bootstrap/bootstrap-notify.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/jquery/jquery.dataTables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70012707">
+          <caret line="3527" column="66" selection-start-line="3527" selection-start-column="66" selection-end-line="3527" selection-end-column="66" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/superdashboard/sd_spaces.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4620253">
+          <caret line="46" column="83" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="83" />
+          <folding>
+            <element signature="e#1403#1429#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/superdashboard/superuser_dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3443038">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="51" />
+          <folding>
+            <element signature="e#964#1065#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/superdashboard/sd_users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6341772">
+          <caret line="53" column="70" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
+          <folding>
+            <element signature="e#1268#1427#0#HTML" expanded="false" />
+            <element signature="e#1488#1514#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/superdashboard/sd_events.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5265823">
+          <caret line="47" column="83" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/helper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.020833334">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/grid3d.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/classie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="2" selection-start-line="68" selection-start-column="2" selection-end-line="68" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/materialize/materialize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="19.75">
+          <caret line="505" column="7" selection-start-line="505" selection-start-column="7" selection-end-line="505" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1101" column="14" selection-start-line="1101" selection-start-column="14" selection-end-line="1101" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/space.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.153846">
-          <caret line="96" column="33" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="33" />
-          <folding>
-            <element signature="e#672#1625#0#HTML" expanded="false" />
-            <element signature="e#3731#8471#0#HTML" expanded="false" />
-            <element signature="e#8496#10352#0#HTML" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-8.384615">
+          <caret line="237" column="20" selection-start-line="237" selection-start-column="20" selection-end-line="237" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/addevents.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9265823">
-          <caret line="77" column="151" selection-start-line="77" selection-start-column="151" selection-end-line="77" selection-end-column="151" />
+        <state vertical-scroll-proportion="0.42531645">
+          <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/bootstrap/dataTables.bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.020833334">
+          <caret line="4" column="166" selection-start-line="4" selection-start-column="166" selection-end-line="4" selection-end-column="166" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21518987">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
           <folding>
-            <element signature="e#660#2007#0#HTML" expanded="false" />
-            <element signature="e#2545#8231#0#HTML" expanded="false" />
-            <element signature="e#2640#2858#0#HTML" expanded="false" />
-            <element signature="e#2879#5279#0#HTML" expanded="false" />
-            <element signature="e#3731#3766#0#HTML" expanded="true" />
-            <element signature="e#4209#4231#0#HTML" expanded="true" />
+            <element signature="e#1194#1257#0#HTML" expanded="true" />
+            <element signature="e#1310#1337#0#HTML" expanded="true" />
+            <element signature="e#2956#2982#0#HTML" expanded="true" />
+            <element signature="e#3008#12228#0#HTML" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/profilespace.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28101265">
+          <caret line="99" column="88" selection-start-line="99" selection-start-column="70" selection-end-line="99" selection-end-column="88" />
+          <folding>
+            <element signature="e#1721#1758#0#HTML" expanded="true" />
+            <element signature="e#1934#1971#0#HTML" expanded="true" />
+            <element signature="e#2804#2831#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4841169">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4949367">
+          <caret line="160" column="150" selection-start-line="160" selection-start-column="150" selection-end-line="160" selection-end-column="150" />
+          <folding>
+            <element signature="e#8062#8082#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/materialize/materialize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59212196">
+          <caret line="5343" column="19" selection-start-line="5343" selection-start-column="19" selection-end-line="5343" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6886076">
+          <caret line="66" column="115" selection-start-line="66" selection-start-column="115" selection-end-line="66" selection-end-column="115" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -55,9 +55,6 @@ function toggleClass( elem, c ) {
   fn( elem, c );
 }
 
-
-
-
 var classie = {
   // full names
   hasClass: hasClass,

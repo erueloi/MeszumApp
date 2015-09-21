@@ -35,7 +35,8 @@
 
     </head>
     <body>
-        <div class="navbar-fixed">
+        <!-- Navbar -->
+        <div class="navbar-fixed z-depth-3">
             <nav class="grey darken-4" role="navigation">
                 <div class="nav-wrapper container">
                     <a id="logo-container" href="/meszum" class="brand-logo"><img src="http://meszum.darrueye.com/img/nav_logo.png"> Meszum</a>
@@ -45,13 +46,13 @@
                                  <img src="{% if user.userprofile.avatar %} {{ user.userprofile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="circle responsive-img" alt="User Image" style=" width:30px;height:30px;margin-top:17px;">
                             </li>
                             <li>
-                                <a class="dropdown-button" href="#!" data-activates="dropdown1">
+                                <a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true"  alignment="left">
                                    {{ user.username }} <i class="material-icons right">more_vert</i>
                                 </a>
                                 <ul id="dropdown1" class="dropdown-content">
                                   {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
                                   {% if user.groups.all.0.name == 'Space' %}
-                                      <li><a href="{% url 'profilespace' %}">Administration</a></li>
+                                      <li><a href="{% url 'profilespace' %}">Admin</a></li>
                                       {% for space in user.space_set.all  %}
                                       <li><a href="{% url 'administrationspace' space.id %}">{{ space.name }} Events</a></li>
                                       {% endfor %}
@@ -63,15 +64,15 @@
                             </li>
                         {% else %}
                             <li>
-                                <a href="{% url 'account_login' %}">Log in</a>
+                                <a href="{% url 'account_login' %}" class="yellow darken-3 waves-effect waves-light">Log in</a>
                             </li>
                             <li>
-                                <a href="{% url 'account_signup' %}">Sign up</a>
+                                <a href="{% url 'account_signup' %}" class="green darken-3">Sign up</a>
                             </li>
                         {% endif %}
                     </ul>
                     <ul id="nav-mobile" class="side-nav">
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">{{ user.username }}<i class="material-icons right">arrow_drop_down</i></a>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">{{ user.username }}<i class="material-icons right">arrow_drop_down</i></a>
                          <ul id="dropdown2" class="dropdown-content">
                               {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}
                               {% if user.groups.all.0.name == 'Space' %}
@@ -95,50 +96,8 @@
             <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
-            <!-- NavBar -->
-{#            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">#}
-{#              <div class="container">#}
-{#                <div class="navbar-header">#}
-{#                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">#}
-{#                    <span class="sr-only">Toggle navigation</span>#}
-{#                    <span class="icon-bar"></span>#}
-{#                    <span class="icon-bar"></span>#}
-{#                    <span class="icon-bar"></span>#}
-{#                  </button>#}
-{#                  <a class="navbar-brand" href="#">#}
-{#                     <img src="http://meszum.darrueye.com/img/nav_logo.png">#}
-{#                  </a>#}
-{#                  <a class="navbar-brand" href="/meszum">MeSZum</a>#}
-{#                </div>#}
-{#                <div id="navbar" class="navbar-collapse collapse">#}
-{#                 <ul class="nav navbar-nav navbar-right">#}
-{#                    {% if user.is_authenticated %}#}
-{#                        <li class="dropdown">#}
-{#                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{% if user.userprofile.avatar %} {{ user.userprofile.avatar.url }} {% else %} {% static "img/no_logo.png" %} {% endif %}" class="img-responsive img-circle" alt="User Image" style=" width:25px;height:25px;float: left; margin-right: 10px;">{{ user.username }}<span class="caret"></span></a>#}
-{#                              <ul class="dropdown-menu">#}
-{#                                  {% if user.is_superuser %}<li><a href="{% url 'superuserdashboard' %}">Superuser Dashboard</a></li>{% endif %}#}
-{#                                  {% if user.groups.all.0.name == 'Space' %}#}
-{#                                      <li><a href="{% url 'profilespace' %}">Administration</a></li>#}
-{#                                      {% for space in user.space_set.all  %}#}
-{#                                      <li><a href="{% url 'administrationspace' space.id %}">{{ space.name }} Events</a></li>#}
-{#                                      {% endfor %}#}
-{#                                  {% endif %}#}
-{#                                  {% if user.groups.all.0.name == 'Member' %}<li><a href="{% url 'profile' %}">Profile</a></li>{% endif %}#}
-{#                                  <li role="separator" class="divider"></li>#}
-{#                                  <li><a href="{% url 'account_logout' %}?next=/meszum/">Logout</a></li>#}
-{#                              </ul>#}
-{#                        </li>#}
-{#                    {% else %}#}
-{#                        <a href="{% url 'account_login' %}" class="btn btn-success navbar-btn">Log in</a>#}
-{#                        <a href="{% url 'account_signup' %}" class="btn btn-primary navbar-btn">Sign up</a>#}
-{#                    {% endif %}#}
-{#                 </ul>#}
-{#                </div><!--/.navbar-collapse -->#}
-{#              </div>#}
-{#            </nav>#}
 
             <!-- Container -->
-
             {% block container %} {% endblock %}
             </div>
             <div class="clearfix"></div>
@@ -185,10 +144,10 @@
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
         <script src="{% static "js/jquery/jquery.backstretch.min.js" %}"></script>
         <script src="{% static "js/jquery/jquery.dataTables.js" %}"></script>
-{#        <script src="{% static "js/bootstrap/dataTables.bootstrap.min.js" %}"></script>#}
+        <script src="{% static "js/bootstrap/dataTables.bootstrap.min.js" %}"></script>
         <script src="{% static "js/slick/slick.min.js" %}"></script>
         <script src="{% static "js/modernizr/modernizr.custom.js" %}"></script>
-        <script src="{% static "js/bootstrap/bootstrap-notify.min.js" %}"></script>
+{#        <script src="{% static "js/bootstrap/bootstrap-notify.min.js" %}"></script>#}
         <script src="{% static "js/classie.js" %}"></script>
         <script src="{% static "js/helper.js" %}"></script>
         <script src="{% static "js/grid3d.js" %}"></script>
@@ -197,64 +156,19 @@
         <script>
             $(document).ready(function() {
                 $(".button-collapse").sideNav();
-                $(".dropdown-button").dropdown();
+{#                $(".dropdown-button").dropdown();#}
                 $('select').material_select();
-
                 {% if messages %}
                     {% for message in messages %}
+                         var $toastContent = $('<span><i class="material-icons">done</i>' + '{{ message }}' + '</span>');
                         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
-                            $.notify({
-                                // options
-                                icon: 'glyphicon glyphicon-warning-sign',
-                                message: '{{ message }}'
-                            },{
-                                // settings
-                                placement: {
-                                    from: "top",
-		                            align: 'center'
-                                },
-                                type: 'danger',
-                                newest_on_top: true
-                            });
+                            Materialize.toast($toastContent, 5000, 'rounded red');
                         {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                            $.notify({
-                                icon: 'glyphicon glyphicon glyphicon-ok-sign',
-                                message: '{{ message }}'
-                            },{
-                                // settings
-                                placement: {
-                                    from: "top",
-		                            align: 'center'
-                                },
-                                type: 'success',
-                                newest_on_top: true
-                            });
+                            Materialize.toast($toastContent, 10000, 'rounded green');
                         {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
-                            $.notify({
-                                icon: 'glyphicon glyphicon glyphicon-warning-sign',
-                                message: '{{ message }}'
-                            },{
-                                // settings
-                                placement: {
-                                    from: "top",
-		                            align: 'center'
-                                },
-                                type: 'warning',
-                                newest_on_top: true
-                            });
+                            Materialize.toast($toastContent, 10000, 'rounded yellow');
                         {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
-                            $.notify({
-                                icon: 'glyphicon glyphicon glyphicon-info-sign',
-                                message: '{{ message }}'
-                            },{
-                                // settings
-                                placement: {
-                                    from: "top",
-		                            align: 'center'
-                                },
-                                type: 'info',
-                                newest_on_top: true
-                            });
+                            Materialize.toast($toastContent, 10000, 'rounded blue');
                         {% endif %}
                     {% endfor %}
             {% endif %}

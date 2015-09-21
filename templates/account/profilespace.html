@@ -51,7 +51,7 @@
                     <div class="pull-right">
                         <ol class="breadcrumb breadcrumb-arrow" style="margin-bottom: 0px!important;">
                             <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
-                            <li class="active"><a href="#"><span><i class="glyphicon glyphicon-user"></i>  {{ user.username }}</span></a></li>
+                            <li class="active"><a href="#">{{ user.username }}</a></li>
                         </ol>
                     </div>
                     <div class="clearfix"></div>
@@ -89,15 +89,15 @@
             <div class="card-panel white z-depth-3">
                 <div class="row">
                     <div class="col s12 m12">
-                    <ul class="tabs">
-                        <li class="tab col s3"><a class="active" href="#test1">Spaces</a></li>
-                        <li class="tab col s3"><a href="#test2">Settings</a></li>
-                    </ul>
+                        <ul class="tabs">
+                            <li class="tab col s3"><a class="active" href="#test1">Spaces</a></li>
+                            <li class="tab col s3"><a href="#test2">Settings</a></li>
+                        </ul>
                         <div id="test1" class="col s12 m12">
-                     {% block modal %}
+                            {% block modal %}
                      <br><button id="comment-button" data-target="modal1" class="btn waves-effect right modal-trigger"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
                      {% endblock modal %}
-                     <table class="table bordered highlight" id="ufs">
+                     <table class="table table-striped table-bordered bordered highlight" id="ufs">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
@@ -120,8 +120,8 @@
                                 </tbody>
                             </table>
                  </div>
-                        <div id="test2" class="col s12 m12">
-                    <form action="." method="post" role="form" enctype="multipart/form-data">
+                        <div id="test2" class="col s12 m12"  style="padding-top: 15px">
+                    <form action="." method="post" role="form" enctype="multipart/form-data" >
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="col s12 m6">
@@ -149,7 +149,7 @@
                                             {{ form.avatar }}
                                           </div>
                                           <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text">
+                                            <input class="file-path validate" type="text" placeholder="Upload your avatar image">
                                           </div>
                                         </div>
 
@@ -175,34 +175,9 @@
         </div>
       </div>
 
-    <!-- Modal -->
-{#    <div class="modal fade" id="SpaceModal" tabindex="-1">#}
-{#        <div class="modal-dialog">#}
-{#            <div class="modal-content">#}
-{#                <div class="modal-header">#}
-{#                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>#}
-{#                    <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>#}
-{#                </div>#}
-{#                <div class="modal-body" id="space-modal-body">#}
-{#                  Hola#}
-{#                </div>#}
-{#                <div class="modal-footer"></div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-
     <script>
     $(document).ready(function() {
         $('#ufs').DataTable();
-        $('#ufs_paginate').addClass('pagination');
-        $('#ufs_wrapper').addClass('row');
-        $('#ufs_length').addClass('col');
-        $('#ufs_length').addClass('s12');
-        $('#ufs_length').addClass('m3');
-        $('#ufs_filter').addClass('col');
-        $('#ufs_filter').addClass('s12');
-        $('#ufs_filter').addClass('m3 offset-m6');
-
         $("tr[data-link]").click(function() {
                 window.location = this.dataset.link
             });

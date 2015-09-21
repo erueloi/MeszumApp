@@ -241,6 +241,7 @@ body {
 		-webkit-transition: all .3s;
 		-moz-transition: all .3s;
 		transition: all .3s;
+		margin-left: 35px;
 	}
 
 	ul.social-buttons li a:hover,
@@ -1016,7 +1017,7 @@ a.badge:focus,a.badge:hover {
 		.breadcrumb li a {
 			color: white;
 			text-decoration: none;
-			padding: 10px 0 10px 55px;
+			padding: 10px 25px 10px 45px;
 			background: brown;                   /* fallback color */
 			background: hsla(34,85%,35%,1);
 			position: relative;
@@ -1074,6 +1075,32 @@ a.badge:focus,a.badge:hover {
 		.breadcrumb li a:hover:after { border-left-color: hsla(34,85%,25%,1) !important; }
 
 
+		/* Centered Toast */
+
+   @media only screen and (min-width: 1024px){
+                #toast-container {
+                    min-width: 8%;
+                    top: 1%;
+                    right: 0;
+                    left: 0;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+
+                .toast {
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    margin-right: auto;
+                    margin-left: auto;
+                    max-width: 30%;
+                    height: initial;
+                }
+            }
+
+.pagination{
+	margin: 0;
+}
 
 
 

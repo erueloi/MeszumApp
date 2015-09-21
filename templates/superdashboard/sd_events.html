@@ -4,38 +4,31 @@
 
 
 {% block container %}
-     <div class="row" style="padding-top: 50px;">
-        <div class="col-xs-11 col-md-10">
+     <div class="row">
+        <div class="col s11 m10">
                 <ol class="breadcrumb breadcrumb-arrow">
                   <li><a href="{% url 'superuserdashboard' %}"><i class="glyphicon glyphicon-home"></i> SuperUser Dashboard</a></li>
                   <li><a href="{% url 'sd_spaces' %}"><i class="glyphicon glyphicon-fullscreen"></i> Spaces</a></li>
-                  <li class="active"><span><i class="glyphicon glyphicon-calendar"></i> Events</span></li>
+                  <li class="active"><a href="#"><span><i class="glyphicon glyphicon-calendar"></i> Events</span></a></li>
                 </ol>
               </div>
-         <div class="col-xs-1 col-md-2">
+         <div class="col s1 m2">
                 <div class="form-search search-only">
                   <i class="search-icon glyphicon glyphicon-search"></i>
                   <input type="text" class="form-control search-query">
                 </div>
          </div>
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel-group panel-group-lists collapse in" id="accordion2">
-              <div class="panel panel-warning">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-                      Events
-                       <i class="fa fa-minus pull-right"></i>
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseFour" class="panel-collapse collapse in">
-                  <div class="panel-body">
-                    <div class="col-xs-12">
+        <div class="col m10 offset-m1">
+                <ul class="collapsible white" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header active yellow darken-2"><i class="material-icons">filter_drama</i>Events</div>
+                    <div class="collapsible-body">
+                     <div class="row">
+                            <div class="col s12">
                         <a href="#" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add Event</a>
                     </div>
-                      <div class="col-xs-12 table-responsive" style="padding-top: 20px;">
-                    <table class="table table-bordered table-hover responsive" id="ufs">
+                      <div class="col s12 table-responsive" style="padding-top: 20px;">
+                    <table class="table table-bordered table-hover responsive bordered highlight" id="ufs">
                         <thead>
                           <tr>
                             <th>Name</th>
@@ -52,7 +45,7 @@
                                 <td>{{ event.descritpion }}</td>
                                 <td>{{ event.startdate }}</td>
                                 <td>
-                                    <span class="label label-success">Normal</span>
+                                    <span class="badge badge-alone white-text green">Normal</span>
                                 </td>
                                 <td>{{ event.address }}</td>
                              </tr>
@@ -60,15 +53,24 @@
                         </tbody>
                       </table>
                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                     </div>
+                    </div>
+                </li>
+            </ul>
+
         </div>
     </div>
       <script>
             $(document).ready(function() {
 				$('#ufs').DataTable();
+                $('#ufs_paginate').addClass('pagination');
+                $('#ufs_wrapper').addClass('row');
+                $('#ufs_length').addClass('col');
+                $('#ufs_length').addClass('s12');
+                $('#ufs_length').addClass('m3');
+                $('#ufs_filter').addClass('col');
+                $('#ufs_filter').addClass('s12');
+                $('#ufs_filter').addClass('m3 offset-m6');
 			} );
     </script>
 {% endblock %}
