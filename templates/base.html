@@ -21,18 +21,14 @@
 {#        <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootstrap.min.css" %}">#}
         <link rel="stylesheet" type="text/css" href="{% static "css/jquery/jquery-ui.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootplus.css" %}">
-{#        <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootflat.min.css" %}">#}
         <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/bootstrap-datetimepicker.min.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/fullcalendar/fullcalendar.min.css" %}">
-{#        <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap/dataTables.bootstrap.min.css" %}">#}
         <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick.css" %}"/>
         <link rel="stylesheet" type="text/css" href="{% static "css/slick/slick-theme.css" %}"/>
         <link rel="stylesheet" type="text/css" href="{% static "css/animate.css" %}"/>
 		<link rel="stylesheet" type="text/css" href="{% static "css/component.css" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-
     </head>
     <body>
         <!-- Navbar -->
@@ -147,7 +143,6 @@
         <script src="{% static "js/bootstrap/dataTables.bootstrap.min.js" %}"></script>
         <script src="{% static "js/slick/slick.min.js" %}"></script>
         <script src="{% static "js/modernizr/modernizr.custom.js" %}"></script>
-{#        <script src="{% static "js/bootstrap/bootstrap-notify.min.js" %}"></script>#}
         <script src="{% static "js/classie.js" %}"></script>
         <script src="{% static "js/helper.js" %}"></script>
         <script src="{% static "js/grid3d.js" %}"></script>
@@ -156,7 +151,6 @@
         <script>
             $(document).ready(function() {
                 $(".button-collapse").sideNav();
-{#                $(".dropdown-button").dropdown();#}
                 $('select').material_select();
                 {% if messages %}
                     {% for message in messages %}
