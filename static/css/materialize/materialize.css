@@ -5735,7 +5735,7 @@ small {
     letter-spacing: .8px;
     width: 15%; }
     .tabs .tab a {
-      color: #ee6e73;
+      color: #fed136;
       display: block;
       width: 100%;
       height: 100%;
@@ -5745,15 +5745,15 @@ small {
       -ms-transition: color .28s ease;
       transition: color .28s ease; }
       .tabs .tab a:hover {
-        color: #f9c9cb; }
+        color: #feed6f; }
     .tabs .tab.disabled a {
-      color: #f9c9cb;
+      color: #feed6f;
       cursor: default; }
   .tabs .indicator {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: #f6b2b5;
+    background-color: #fed136;
     will-change: left, right; }
 
 .tabs .tab {

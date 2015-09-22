@@ -1,23 +1,20 @@
 {% load staticfiles %}
 {% load widget_tweaks %}
- <h4 class="modal-title" id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>
-<form action="{% url 'space-modal' %}" method="post" role="form" enctype="multipart/form-data">
+ <h4 class="modal-title" id="SpaceModalLabel"><i class="material-icons">fullscreen</i> Add Space</h4>
+<form action="{% url 'space-modal' %}" id="spaceform" method="post" role="form" enctype="multipart/form-data">
   {% csrf_token %}
-{#    <div class="form-group {% if form.name.errors %}has-error{% endif %}">#}
-{#      <label for="form.name.id_for_label">Name</label>#}
-{#      {% if form.name.errors %}<label class="control-label" for="form.name.id_for_label"> {{ form.name.errors|striptags }}</label>{% endif %}#}
-{#      {{ form.name|add_class:"form-control" }}#}
-{#    </div>#}
-    <div class="input-field col s12">
+    <label for="{{ form.name.id_for_label }}">Name</label>
+    <div class="col s12 input-field">
         <i class="material-icons prefix">account_circle</i>
-        <input id="id_name" name="name" type="text" class="validate {% if form.name.errors %}invalid{% endif %}">
-        <label for="{{ form.name.id_for_label }}" data-error="{% if form.name.errors %} {{ form.name.errors|striptags }} {% endif %}">Name</label>
+        {{ form.name }}
+        {% if form.name.errors %}<label class="validate invalid red-text" for="{{ form.name.id_for_label }}"> {{ form.name.errors|striptags }}</label>{% endif %}
     </div>
 
-    <div class="input-field col s12">
+    <label for="{{ form.email.id_for_label }}">Name</label>
+    <div class="col s12 input-field">
         <i class="material-icons prefix">email</i>
-        <input id="email" name="email" type="text" class="validate {% if form.email.errors %}invalid{% endif %}">
-        <label for="{{ form.email.id_for_label }}" data-error="{% if form.email.errors %} {{ form.email.errors|striptags }} {% endif %}">Email</label>
+        {{ form.email }}
+        {% if form.email.errors %}<label class="validate invalid red-text" for="{{ form.email.id_for_label }}"> {{ form.email.errors|striptags }}</label>{% endif %}
     </div>
 
     <label for="{{form.logotype.id_for_label}}">Logotype</label>
@@ -28,7 +25,7 @@
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text">
-        <label for="{{ form.logotype.id_for_label }}" data-error="{% if form.logotype.errors %} {{ form.logotype.errors|striptags }} {% endif %}"></label>
+        {% if form.logotype.errors %}<label class="validate invalid red-text" for="{{ form.logotype.id_for_label }}"> {{ form.logotype.errors|striptags }}</label>{% endif %}
       </div>
     </div>
 {#       <div class="form-group {% if form.logotype.errors %}has-error{% endif %}">#}
@@ -37,7 +34,7 @@
 {#                {{ form.logotype|add_class:"form-control" }}#}
 {#          </div>#}
 
-<button type="submit" class="btn btn-success right" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
-<button type="button" class="btn btn-default right modal-action modal-close" data-dismiss="modal" style="margin-right: 10px;">Cancel</button>
+{#<input type="submit" class="btn btn-success right" ><span class="glyphicon glyphicon-floppy-save"></span> Save</input>#}
+{#<button type="button" class="btn btn-default right modal-action modal-close" data-dismiss="modal" style="margin-right: 10px;">Cancel</button>#}
 
 </form>

@@ -50,15 +50,15 @@
    <div class="row">
     <div class="col s12 m12">
        <div class="container-fluid">
-            <div class="page-header" style="border-bottom:1px solid #f6bb42; margin-bottom: 10px!important;">
-              <h5 class="left" style="margin-bottom: 0px!important;">
-                Administration
-              </h5>
+            <div class="page-header" style="border-bottom:1px solid #f6bb42;">
+              <h4 class="left">
+                Space
+              </h4>
               <div class="pull-right">
                 <ol class="breadcrumb breadcrumb-arrow" style="margin-bottom: 0px!important;">
-                  <li><a href="#"><i class="glyphicon glyphicon-home"></i> Administration</a></li>
-                  <li><a href="{% url 'profilespace' %}"><i class="glyphicon glyphicon-user"></i> {{ user.username }}</a></li>
-                  <li class="active"><a href="#"> <span><i class="glyphicon glyphicon-fullscreen"></i>  {{ space.name }}</span></a></li>
+                  <li><a href="#"><i class="material-icons left">home</i> Administration</a></li>
+                  <li><a href="{% url 'profilespace' %}"><i class="material-icons left">face</i> {{ user.username }}</a></li>
+                  <li class="active"><a href="#"> <span><i class="material-icons left">fullscreen</i>  {{ space.name }}</span></a></li>
                 </ol>
               </div>
               <div class="clearfix"></div>
@@ -102,10 +102,10 @@
                         </ul>
                         <div id="test1" class="col s12 m12">
                      <div class="row" style="text-align: center; margin-top: 10px!important;">
-                         <button id="btncalendarevents" class="waves-effect waves-light btn" style="padding: 0px 15px 0px 15px!important;"><i class="material-icons">event</i></button>
-                         <button id="btnlistevents" class="waves-effect waves-light btn" style="padding: 0px 15px 0px 15px!important;"><i class="material-icons">list</i></button>
+                         <button id="btncalendarevents" class="waves-effect waves-light btn yellow lighten-1 black-text" style="padding: 0px 15px 0px 15px!important;"><i class="material-icons">event</i></button>
+                         <button id="btnlistevents" class="waves-effect waves-light btn yellow lighten-1 black-text" style="padding: 0px 15px 0px 15px!important;"><i class="material-icons">list</i></button>
                          {% block modal %}
-                             <button id="comment-button" class="btn btn-warning pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button><br><br>
+                             <button id="comment-button" class="btn btn-warning pull-right yellow lighten-1 black-text"><i class="material-icons right">add</i> Add</button><br><br>
                          {% endblock modal %}
                      </div>
                      <div class="row" id="calendarevents">
@@ -201,11 +201,13 @@
         </div>
     </div>
 
-     <div id="SpaceModal" class="modal">
+     <div id="SpaceModal" class="modal modal-fixed-footer">
         <div class="modal-content" id="space-modal-body">
            <h4 id="SpaceModalLabel"><i class="glyphicon glyphicon-fullscreen"></i> Add Space</h4>
         </div>
         <div class="modal-footer">
+            <button type="submit" form="eventform" id="btnSaveEvent" class="btn btn-success right waves-effect waves-green" >Save <i class="material-icons left">save</i></button>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
         </div>
       </div>
 
@@ -237,6 +239,7 @@
                   "lengthMenu": [ 5, 10, 25, 50, 75, 100 ]
                 } );
 
+
                 $("tr[data-link]").click(function() {
 						window.location = this.dataset.link
 					});
@@ -251,7 +254,7 @@
                             contentType: false,
 	                        processData: false,
                             success: function (xhr, ajaxOptions, thrownError) {
-                                if ( $(xhr).find('.has-error').length > 0 ) {
+                                if ( $(xhr).find('.invalid').length > 0 ) {
                                     $(modal).find('.modal-content').html(xhr);
                                     formAjaxSubmit(form, modal);
                                     initMap();

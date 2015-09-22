@@ -1015,11 +1015,11 @@ a.badge:focus,a.badge:hover {
 			float: left;
 		}
 		.breadcrumb li a {
-			color: white;
+			color: black;
 			text-decoration: none;
-			padding: 10px 25px 10px 45px;
+			padding: 7px 20px 7px 40px;
 			background: brown;                   /* fallback color */
-			background: hsla(34,85%,35%,1);
+			background: hsl(53, 100%, 51%);
 			position: relative;
 			display: block;
 			float: left;
@@ -1031,7 +1031,7 @@ a.badge:focus,a.badge:hover {
 			height: 0;
 			border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
 			border-bottom: 50px solid transparent;
-			border-left: 30px solid hsla(34,85%,35%,1);
+			border-left: 30px solid hsla(53,100%,51%,1);
 			position: absolute;
 			top: 50%;
 			margin-top: -50px;
@@ -1056,14 +1056,14 @@ a.badge:focus,a.badge:hover {
 		.breadcrumb li:first-child a {
 			padding-left: 10px;
 		}
-		.breadcrumb li:nth-child(2) a       { background:        hsla(34,85%,45%,1); }
-		.breadcrumb li:nth-child(2) a:after { border-left-color: hsla(34,85%,45%,1); }
-		.breadcrumb li:nth-child(3) a       { background:        hsla(34,85%,55%,1); }
-		.breadcrumb li:nth-child(3) a:after { border-left-color: hsla(34,85%,55%,1); }
-		.breadcrumb li:nth-child(4) a       { background:        hsla(34,85%,65%,1); }
-		.breadcrumb li:nth-child(4) a:after { border-left-color: hsla(34,85%,65%,1); }
-		.breadcrumb li:nth-child(5) a       { background:        hsla(34,85%,75%,1); }
-		.breadcrumb li:nth-child(5) a:after { border-left-color: hsla(34,85%,75%,1); }
+		.breadcrumb li:nth-child(2) a       { background:        hsla(53,100%,61%,1); }
+		.breadcrumb li:nth-child(2) a:after { border-left-color: hsla(53,100%,61%,1); }
+		.breadcrumb li:nth-child(3) a       { background:        hsla(53,100%,71%,1); }
+		.breadcrumb li:nth-child(3) a:after { border-left-color: hsla(53,100%,71%,1); }
+		.breadcrumb li:nth-child(4) a       { background:        hsla(53,100%,81%,1); }
+		.breadcrumb li:nth-child(4) a:after { border-left-color: hsla(53,100%,81%,1); }
+		.breadcrumb li:nth-child(5) a       { background:        hsla(53,100%,91%,1); }
+		.breadcrumb li:nth-child(5) a:after { border-left-color: hsla(53,100%,91%,1); }
 		.breadcrumb li:last-child a {
 			background: white !important;
 			color: black;
@@ -1071,37 +1071,45 @@ a.badge:focus,a.badge:hover {
  			cursor: default;
 		}
 		.breadcrumb li:last-child a:after { border: 0; }
-		.breadcrumb li a:hover { background: hsla(34,85%,25%,1); }
-		.breadcrumb li a:hover:after { border-left-color: hsla(34,85%,25%,1) !important; }
+		.breadcrumb li a:hover { background: hsl(58, 75%, 49%); }
+		.breadcrumb li a:hover:after { border-left-color: hsla(58,75%,49%,1) !important; }
 
 
-		/* Centered Toast */
+/* Centered Toast */
 
-   @media only screen and (min-width: 1024px){
-                #toast-container {
-                    min-width: 8%;
-                    top: 1%;
-                    right: 0;
-                    left: 0;
-                    margin-right: auto;
-                    margin-left: auto;
-                }
+@media only screen and (min-width: 1024px){
+    #toast-container {
+        min-width: 8%;
+        top: 1%;
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-                .toast {
-                    position: absolute;
-                    right: 0;
-                    left: 0;
-                    margin-right: auto;
-                    margin-left: auto;
-                    max-width: 30%;
-                    height: initial;
-                }
-            }
-
+    .toast {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 30%;
+        height: initial;
+    }
+}
 .pagination{
 	margin: 0;
 }
 
+.dropdown-content-nav{
+    background-color: #212121!important;
+    color: white!important;
+}
+.dropdown-content-nav li > a, .dropdown-content-nav li > span{
+    color: white!important;
+}
+.dropdown-content-nav li:hover, .dropdown-content-nav li.active {
+    background-color: #808080 !important; }
 
 
 

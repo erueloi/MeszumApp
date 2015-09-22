@@ -1,50 +1,62 @@
 {% load staticfiles %}
 {% load widget_tweaks %}
+<h4 class="modal-title" id="EventModalLabel"><i class="material-icons">event</i> Add Event</h4>
  <form action="{% url 'event-modal'%}" method="post" role="form" id="eventform" enctype="multipart/form-data">
-                    {% csrf_token %}
-                              <div class="form-group {% if form.title.errors %}has-error{% endif %}">
-                                  <label for="form.title.id_for_label">Name</label>
-                                  {% if form.title.errors %}<label class="control-label" for="form.title.id_for_label"> {{ form.title.errors|striptags }}</label>{% endif %}
-                                  {{ form.title|add_class:"form-control" }}
-                              </div>
-                              <div class="form-group {% if form.description.errors %}has-error{% endif %}">
-                                  <label for="form.description.id_for_label">Description</label>
-                                  {% if form.description.errors %}<label class="control-label" for="form.description.id_for_label"> {{ form.description.errors|striptags }}</label>{% endif %}
-                                  {{ form.description|add_class:"form-control" }}
-                              </div>
-                             <div class="form-group {% if form.startdate.errors %}has-error{% endif %}">
-                                 <label for="form.startdate.id_for_label">Start Date</label>
-                                 {% if form.startdate.errors %}<label class="control-label" for="form.startdate.id_for_label"> {{ form.startdate.errors|striptags }}</label>{% endif %}
-                                 <div class='input-group date' id='datetimepicker1'>
-                                    {{ form.startdate|add_class:"form-control" }}
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                              </div>
-                             <div class="form-group {% if form.poster.errors %}has-error{% endif %}">
-	                          	 <label for="form.poster.id_for_label">Poster Event</label></br>
-                                 {% if form.poster.errors %}<label class="control-label" for="form.poster.id_for_label"> {{ form.poster.errors|striptags }}</label>{% endif %}
-                                 <div class="input-group">
-	                    	        <span class="input-group-addon"><i class="glyphicon glyphicon-link"></i></span>
-                                     {{ form.poster|add_class:"form-control" }}
-	                    	  	</div>
-	              	        </div>
-                            <br>
-                            <div class="form-group {% if form.title.errors %}has-error{% endif %}">
-                                  <label for="form.title.address">Address</label>
-                                  {% if form.address.errors %}<label class="control-label" for="form.poster.id_for_label"> {{ form.address.errors|striptags }}</label>{% endif %}
-                                  {{ form.address|add_class:"form-control" }}
-                              </div>
-                            <input type='hidden' id="spaceid" name="spaceid" value="0" />
-                            <div id="map" class="form-group"></div>
-                           <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
-                </form>
+     {% csrf_token %}
+
+    <label for="{{ form.title.id_for_label }}">Title</label>
+    <div class="col s12 input-field">
+        <i class="material-icons prefix">format_color_text</i>
+        {{ form.title }}
+        {% if form.title.errors %}<label class="validate invalid red-text" for="{{ form.title.id_for_label }}"> {{ form.title.errors|striptags }}</label>{% endif %}
+    </div>
+     <label for="{{ form.description.id_for_label }}">Description</label>
+    <div class="col s12 input-field">
+        <i class="material-icons prefix">description</i>
+        {{ form.description }}
+        {% if form.description.errors %}<label class="validate invalid red-text" for="{{ form.description.id_for_label }}"> {{ form.description.errors|striptags }}</label>{% endif %}
+    </div>
+     <label for="{{ form.startdate.id_for_label }}">Start Date</label>
+    <div class="input-field col s12">
+        <i class="material-icons prefix">today</i>
+        {{ form.startdate|add_class:"datepicker" }}
+        {% if form.startdate.errors %}<label class="validate invalid red-text" for="{{ form.startdate.id_for_label }}"> {{ form.startdate.errors|striptags }}</label>{% endif %}
+    </div>
+    <label for="{{form.poster.id_for_label}}">Poster</label>
+    <div class="file-field input-field {% if form.poster.errors %}invalid{% endif %}">
+      <div class="btn">
+        <span>File</span>
+        {{ form.poster }}
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+        {% if form.poster.errors %}<label class="validate invalid red-text" for="{{ form.poster.id_for_label }}"> {{ form.poster.errors|striptags }}</label>{% endif %}
+      </div>
+    </div>
+
+{#     <div class="form-group {% if form.poster.errors %}has-error{% endif %}">#}
+{#         <label for="form.poster.id_for_label">Poster Event</label></br>#}
+{#         {% if form.poster.errors %}<label class="control-label" for="form.poster.id_for_label"> {{ form.poster.errors|striptags }}</label>{% endif %}#}
+{#         <div class="input-group">#}
+{#             <span class="input-group-addon"><i class="glyphicon glyphicon-link"></i></span>#}
+{#             {{ form.poster|add_class:"form-control" }}#}
+{#         </div>#}
+{#     </div>#}
+
+     <br>
+     <div class="form-group {% if form.title.errors %}has-error{% endif %}">
+         <label for="form.title.address">Address</label>
+         {% if form.address.errors %}<label class="control-label" for="form.poster.id_for_label"> {{ form.address.errors|striptags }}</label>{% endif %}
+         {{ form.address|add_class:"form-control" }}
+     </div>
+     <input type='hidden' id="spaceid" name="spaceid" value="0" />
+     <div id="map" class="form-group"></div>
+ </form>
     <script type="text/javascript">
-             $('#datetimepicker1').datetimepicker({
-                    locale: 'ca',
-                    showTodayButton: true,
-                    allowInputToggle: true,
-                    format: 'L'
-                });
+            $('.datepicker').pickadate({
+                selectMonths: true,
+                selectYears: 15,
+                format: 'dd/mm/yyyy',
+                formatSubmit: 'dd/mm/yyyy'
+            });
         </script>
