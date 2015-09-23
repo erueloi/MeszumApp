@@ -54,9 +54,11 @@
  </form>
     <script type="text/javascript">
             $('.datepicker').pickadate({
+                firstDay: 1,
+                closeOnSelect: true,
+                closeOnClear: true,
                 selectMonths: true,
                 selectYears: 15,
                 format: 'dd/mm/yyyy',
-                formatSubmit: 'dd/mm/yyyy'
             });
         </script>

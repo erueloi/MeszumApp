@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+ {% block srcjs %}
+
+ {% endblock %}
+
 {% block container %}
     <style>
     #songs_wrapper{
@@ -32,9 +36,84 @@
     text-align: center;
 }
     </style>
-      <section class="grid3d horizontal" id="grid3d" style="margin-bottom:40px;">
-				<div class="grid-wrap">
-					<div class="grid">
+
+    <section class="grid3d horizontal" id="grid3d" style="margin-bottom:40px;">
+
+        <div class="cd-filter z-depth-3">
+			<form>
+				<div class="cd-filter-block">
+					<h4>Search</h4>
+
+                    <div class="input-field">
+						<input type="search" id="search-field" class="field" required="" maxlength="">
+						<label for="search-field"><i class="material-icons">search</i></label>
+						<i class="material-icons">close</i>
+					</div> <!-- cd-filter-content -->
+				</div> <!-- cd-filter-block -->
+
+                <div>
+					<h4>Distance</h4>
+                    <p class="range-field">
+                        <input type="range" id="test5" min="0" max="100" />
+                    </p>
+                </div>
+
+				<div>
+					<h4>Check boxes</h4>
+                    <p>
+                      <input type="checkbox" id="test5" />
+                      <label for="test5">Option 1</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" id="test6" />
+                      <label for="test6">Option 2</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" id="test7" />
+                      <label for="test7">Option 3</label>
+                    </p>
+
+				</div> <!-- cd-filter-block -->
+
+				<div class="cd-filter-block">
+					<h4>Select</h4>
+
+					<div class="cd-filter-content">
+						<div class="cd-select cd-filters">
+							<select class="filter" name="selectThis" id="selectThis">
+								<option value="">Choose an option</option>
+								<option value=".option1">Option 1</option>
+								<option value=".option2">Option 2</option>
+								<option value=".option3">Option 3</option>
+								<option value=".option4">Option 4</option>
+							</select>
+						</div> <!-- cd-select -->
+					</div> <!-- cd-filter-content -->
+				</div> <!-- cd-filter-block -->
+
+				<div class="cd-filter-block">
+					<h4>Radio buttons</h4>
+
+					<p>
+                      <input name="group1" type="radio" id="test1" />
+                      <label for="test1">Red</label>
+                    </p>
+                    <p>
+                      <input name="group1" type="radio" id="test2" />
+                      <label for="test2">Yellow</label>
+                    </p>
+                    <p>
+                      <input class="with-gap" name="group1" type="radio" id="test3"  />
+                      <label for="test3">Green</label>
+                    </p>
+				</div> <!-- cd-filter-block -->
+			</form>
+
+			<a href="#0" class="cd-close">Close</a>
+		</div> <!-- cd-filter -->
+        <a href="#0" class="cd-filter-trigger">Filter <i class="material-icons left">filter_list</i></a>
+        <div class="grid-wrap">
+            <div class="grid">
                         <!--  List Events -->
                         {% for event in events %}
                             <figure>
@@ -43,7 +122,7 @@
                                     <img src="https://pbs.twimg.com/profile_images/547294814031839232/gvj_6sJ1_400x400.jpeg" alt="46x46" data-src="holder.js/46x46" style="width: 46px; height: 46px;">
                                     <div class="card-heading-header">
                                        <h3>{{ event.title }}</h3>
-                                       <span><i class="glyphicon glyphicon-calendar"></i> Date: {{ event.startdate|date }}</span>
+                                       <span><i class="material-icons left">event</i>Date: {{ event.startdate|date }}</span>
                                     </div>
                                  </div>
                                  <div class="card-media">
@@ -154,8 +233,8 @@
 						</figure>	
 						</figure>
 					</div>
-				</div><!--/grid-wrap -->
-				<div class="content" style="background-color:rgb(18, 19, 20);">
+        </div><!--/grid-wrap -->
+        <div class="content" style="background-color:rgb(18, 19, 20);">
                     <!--  Content Events -->
                     {% for event in events %}
                         <div class="container" style="background: url('{{ event.poster.url }}') no-repeat center center fixed; background-size: cover; height: 100% ">
@@ -234,12 +313,18 @@
 					<span class="loading"></span>
 					<span class="icon close-content"></span>
 				</div>
-		</section>    
-        <div class="clearfix"></div>
+    </section>
+    <div class="clearfix"></div>
 
      <script>
         $(document).ready(function() {
             new grid3D( document.getElementById( 'grid3d' ) );
+
+            $('#some-element').backgroundBlur({
+                imageURL : 'http://URL-of-the-image',
+                blurAmount : 50,
+                imageClass : 'bg-blur'
+            });
 
             $('#songs').DataTable({
                     searching: false,
@@ -267,6 +352,21 @@
                         "{% static "img/backgrounds/2.jpg" %}",
                         "{% static "img/backgrounds/3.jpg" %}",
                        ], {duration: 8000, fade: 750});
+
+            //open/close lateral filter
+            $('.cd-filter-trigger').on('click', function(){
+                triggerFilter(true);
+            });
+            $('.cd-filter .cd-close').on('click', function(){
+                triggerFilter(false);
+            });
+
+            function triggerFilter($bool) {
+                var elementsToTrigger = $([$('.cd-filter-trigger'), $('.cd-filter'), $('.cd-tab-filter'), $('.cd-gallery')]);
+                elementsToTrigger.each(function(){
+                    $(this).toggleClass('filter-is-visible', $bool);
+                });
+            }
 
         });
     </script>

@@ -99,8 +99,6 @@
             <div class="clearfix"></div>
         </div>
 
-
-
         <!-- Footer -->
         <footer class="page-footer grey darken-3" style="padding: 10px 0 10px!important;">
             <div class="row">
@@ -143,9 +141,12 @@
         <script src="{% static "js/bootstrap/dataTables.bootstrap.min.js" %}"></script>
         <script src="{% static "js/slick/slick.min.js" %}"></script>
         <script src="{% static "js/modernizr/modernizr.custom.js" %}"></script>
+        {% block srcjs %} {% endblock %}
+        <script src="{% static "js/background-blur.js" %}"></script>
         <script src="{% static "js/classie.js" %}"></script>
         <script src="{% static "js/helper.js" %}"></script>
         <script src="{% static "js/grid3d.js" %}"></script>
+
 
        <!-- System Notifications Alerts -->
         <script>

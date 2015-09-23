@@ -102,10 +102,10 @@
                         </ul>
                         <div id="test1" class="col s12 m12">
                      <div class="row" style="text-align: center; margin-top: 10px!important;">
-                         <button id="btncalendarevents" class="waves-effect waves-light btn yellow lighten-1 black-text" style="padding: 0px 15px 0px 15px!important;"><i class="material-icons">event</i></button>
-                         <button id="btnlistevents" class="waves-effect waves-light btn yellow lighten-1 black-text" style="padding: 0px 15px 0px 15px!important;"><i class="material-icons">list</i></button>
+                         <button id="btncalendarevents" class="waves-effect waves-light btn amber lighten-2 black-text" style="padding: 0px 15px 0px 15px!important;"><i class="material-icons">event</i></button>
+                         <button id="btnlistevents" class="waves-effect waves-light btn amber lighten-2 black-text" style="padding: 0px 15px 0px 15px!important;"><i class="material-icons">list</i></button>
                          {% block modal %}
-                             <button id="comment-button" class="btn btn-warning pull-right yellow lighten-1 black-text"><i class="material-icons right">add</i> Add</button><br><br>
+                             <button id="comment-button" class="btn btn-warning pull-right amber lighten-2 black-text"><i class="material-icons right">add</i> Add</button><br><br>
                          {% endblock modal %}
                      </div>
                      <div class="row" id="calendarevents">
@@ -368,10 +368,15 @@
                     eventLimit: true, // allow "more" link when too many events
                     timeFormat: 'H:mm',
                     events: '/api/events/?format=json',
+                    eventAfterRender : function (event, element) {
+                        var tooltip = event._start._i + ' ' +  event.description;
+                        $(element).attr("data-tooltip", tooltip);
+                        $(element).attr("data-position", "top");
+                        $(element).tooltip({delay: 50});
+                    },
                     eventClick: function(calEvent, jsEvent, view) {
                         url_to = window.location.href  + 'events/' +  calEvent.id
                         window.location.href = url_to;
-{#                        window.open(url_to, '_self');#}
                     }
                 });
                 $('#btncalendarevents').on('click', function(e) {

@@ -103,6 +103,12 @@
 				classie.addClass( self.loader, 'show' );
 				classie.addClass( document.body, 'noscroll' );
 				self.isAnimating = false;
+				self.contentItems[pos].outerHTML.backgroundBlur({
+                    imageURL : '/media/events/boite3_szvDnjd.jpg',
+                    blurAmount : 50,
+                    imageClass : 'bg-blur'
+                });
+
 			};
 
 		// if no support just load the content (simple fallback - no animation at all)
