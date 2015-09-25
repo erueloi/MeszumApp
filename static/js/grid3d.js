@@ -96,6 +96,8 @@
 					classie.removeClass( self.loader, 'show' );
 					// in the end of the transition set class "show" to respective content item
 					classie.addClass( self.contentItems[ pos ], 'show' );
+					classie.addClass( self.contentItems[ pos ].children[1], 'animated' );
+					classie.addClass( self.contentItems[ pos ].children[1], 'fadeInDown' );
 				}, 1000 );
 				// show content area
 				classie.addClass( self.contentEl, 'show' );
@@ -147,9 +149,12 @@
 		var self = this,
 			contentItem = this.el.querySelector( 'div.content > .show' ),
 			currentItem = this.gridItems[ this.contentItems.indexOf( contentItem ) ];
-		
+
+		classie.removeClass( contentItem.children[1], 'animated' );
+		classie.removeClass( contentItem.children[1], 'fadeInDown' );
 		classie.removeClass( contentItem, 'show' );
 		classie.removeClass( this.contentEl, 'show' );
+
 		// without the timeout there seems to be some problem in firefox
 		setTimeout( function() { classie.removeClass( document.body, 'noscroll' ); }, 25 );
 		// that's it for no support..

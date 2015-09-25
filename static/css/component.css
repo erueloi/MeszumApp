@@ -331,3 +331,32 @@ p.dummy-text:nth-child(3) {
 	}
 
 }
+
+.eventbackground{
+    background-attachment:fixed;
+    background-size: cover;
+    height: 100%!important;
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    -ms-filter: blur(15px);
+    -o-filter: blur(15px);
+    filter: blur(15px);
+}
+.eventjukebox{
+    background: transparent!important;
+    position: absolute;
+    top:30px;
+    height: 80%;
+    width: 100%;
+    color:white;
+}
+
+.eventplaylist{
+    background-color:rgba(18, 19, 20, 0.80);
+    height: 100%;
+    border-color: white;
+    border-style: solid;
+    border-radius: 25px;
+/*border-top-style: none;*/
+/*border-bottom-style: none;*/
+}

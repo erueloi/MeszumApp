@@ -7,21 +7,6 @@
 
 {% block container %}
     <style>
-    #songs_wrapper{
-               color:white;
-        font-size: 1em;
-        vertical-align: middle!important;
-    }
-    table{
-        color:white;
-        font-size: 0.8em;
-        vertical-align: middle!important;
-    }
-
-    .table>tbody>tr>td{
-        vertical-align: middle!important;
-    }
-
     .glyphiconlike {
         color: #FC122D;
 {#        background-color: #FF8A3C;#}
@@ -35,6 +20,8 @@
 .glyph {
     text-align: center;
 }
+
+
     </style>
 
     <section class="grid3d horizontal" id="grid3d" style="margin-bottom:40px;">
@@ -237,46 +224,49 @@
         <div class="content" style="background-color:rgb(18, 19, 20);">
                     <!--  Content Events -->
                     {% for event in events %}
-{#                        data-href="{{ event.poster.url }}" data-sharpness="90" id="{{ event.id }}"#}
-                        <div class="container" id="{{ event.id }}" style="background: url('{{ event.poster.url }}') no-repeat center center fixed; background-attachment:fixed; background-size: cover; height: 100% ">
-                            <div class="row" style="height: 100%" >
-                                <div class="col m8 offset-m2" style="background-color:rgba(18, 19, 20, 0.80); height: 100%; border-color: white; border-style: groove; border-top-style: none; border-bottom-style: none;">
-                                     <div>
-                                         <img src="{% static "img/lp_list.png" %}" class="responsive-img" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
-                                     </div>
-                                    <div style="margin-top: 20px; padding-top: 10px; ">
-                                        <table class="table responsive bordered highlight" id="songs">
-                                            <thead>
-                                              <tr>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                              </tr>
-                                            </thead>
-                                            <tbody>
-                                                 {% for song in event.song_set.all %}
-                                                 <tr >
-                                                    <td>
-                                                        <img src="https://d3rt1990lpmkn.cloudfront.net/60/b13c44e00ca96657913d59d676d402d4aa76dfb6" height="40" width="40" class="tl-album-cover">
-                                                    </td>
-                                                    <td>
-                                                      <span class="tl-number-wrap">{{ forloop.counter }}</span>
-                                                      <audio id="player{{ song.id }}" src="{{ song.href_play }}"></audio>
-                                                        <div>
-                                                            <button class="play" id="btnPlay{{ song.id }}"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-play"></span></button>
-                                                            <button class="stop" style="display: none;" id="btnPause{{ song.id }}"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-pause"></span></button>
-                                                        </div>
-                                                    </td>
-                                                    <td>{{ song.title }}</td>
-                                                    <td>{{ song.album }}</td>
-                                                    <td>666.116</td>
-                                                 </tr>
-                                                 {% endfor %}
-                                            </tbody>
-                                        </table>
-                                </div>
+                        <div style="height: 100%!important;">
+                            <div class="eventbackground" style="background: url('{{ event.poster.url }}') no-repeat center center fixed;  ">
+                            </div>
+                            <div class="container eventjukebox " >
+                                 <div class="row" style="height: 100%;"  >
+                                        <div class="col m8 offset-m2 eventplaylist z-depth-5" >
+                                             <div>
+                                                 <img src="{% static "img/lp_list.png" %}" class="responsive-img" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
+                                             </div>
+                                            <div style="margin-top: 20px; padding-top: 10px; ">
+                                                <table class="table responsive bordered highlight" id="songs">
+                                                    <thead>
+                                                      <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                         {% for song in event.song_set.all %}
+                                                         <tr >
+                                                            <td>
+                                                                <img src="https://d3rt1990lpmkn.cloudfront.net/60/b13c44e00ca96657913d59d676d402d4aa76dfb6" height="40" width="40" class="tl-album-cover">
+                                                            </td>
+                                                            <td>
+                                                              <span class="tl-number-wrap">{{ forloop.counter }}</span>
+                                                              <audio id="player{{ song.id }}" src="{{ song.href_play }}"></audio>
+                                                                <div>
+                                                                    <button class="play" id="btnPlay{{ song.id }}"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-play"></span></button>
+                                                                    <button class="stop" style="display: none;" id="btnPause{{ song.id }}"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-pause"></span></button>
+                                                                </div>
+                                                            </td>
+                                                            <td>{{ song.title }}</td>
+                                                            <td>{{ song.album }}</td>
+                                                            <td>666.116</td>
+                                                         </tr>
+                                                         {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -310,8 +300,7 @@
 					<span class="icon close-content"></span>
 				</div>
     </section>
-    <div class="blur-this" data-href="/media/events/boite3_szvDnjd.jpg" data-sharpness="1"><div><p class="large">Can't do without you</p></div></div>
-    <div class="clearfix"></div>
+      <div class="clearfix"></div>
 
      <script>
         $(document).ready(function() {
@@ -357,9 +346,6 @@
                     $(this).toggleClass('filter-is-visible', $bool);
                 });
             }
-$("#1")..blur();
-{#             $('#1').blurr({height: 1024});#}
-
         });
     </script>
 
