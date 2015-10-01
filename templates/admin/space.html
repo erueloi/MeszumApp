@@ -214,35 +214,35 @@
     <script>
             $(document).ready(function() {
                 var map;
-				$('.center').slick({
-                  slidesToShow: 6,
-                  responsive: [
-                    {
-                      breakpoint: 768,
-                      settings: {
-                        arrows: false,
-                        centerPadding: '10px',
-                        slidesToShow: 3
-                      }
-                    },
-                    {
-                      breakpoint: 480,
-                      settings: {
-                        arrows: false,
-                        centerPadding: '10px',
-                        slidesToShow: 1
-                      }
-                    }
-                  ]
-                });
+{#				$('.center').slick({#}
+{#                  slidesToShow: 6,#}
+{#                  responsive: [#}
+{#                    {#}
+{#                      breakpoint: 768,#}
+{#                      settings: {#}
+{#                        arrows: false,#}
+{#                        centerPadding: '10px',#}
+{#                        slidesToShow: 3#}
+{#                      }#}
+{#                    },#}
+{#                    {#}
+{#                      breakpoint: 480,#}
+{#                      settings: {#}
+{#                        arrows: false,#}
+{#                        centerPadding: '10px',#}
+{#                        slidesToShow: 1#}
+{#                      }#}
+{#                    }#}
+{#                  ]#}
+{#                });#}
                 $('#ufs').DataTable({
                   "lengthMenu": [ 5, 10, 25, 50, 75, 100 ]
                 } );
 
-
                 $("tr[data-link]").click(function() {
-						window.location = this.dataset.link
+						window.location.href = this.dataset.link
 					});
+
                 var formAjaxSubmit = function(form, modal) {
                 $(form).submit(function (e) {
                         var formData = new FormData(document.getElementById("eventform"));
@@ -261,14 +261,8 @@
                                 } else {
                                     $(modal).closeModal();
                                     location.reload();
-                                    $.notify({
-                                        icon: 'glyphicon glyphicon glyphicon-ok-sign',
-                                        message: 'Space added successfully'
-                                    },{
-                                        // settings
-                                        type: 'success',
-                                        newest_on_top: true
-                                    });
+                                    var $toastContent = $('<span><i class="material-icons">done</i>' + 'Space added successfully' + '</span>');
+                                    Materialize.toast($toastContent, 5000, 'rounded green');
                                 }
                             },
                             error: function (xhr, ajaxOptions, thrownError) {
@@ -281,6 +275,7 @@
                         $('#SpaceModal').openModal();
                         formAjaxSubmit('#space-modal-body form', '#SpaceModal');
                         initMap();
+                        $('#spaceid').val({{ space.id }});
                     });
                 });
                 $('#SpaceModal').on('shown.bs.modal', function() {

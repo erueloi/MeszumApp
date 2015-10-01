@@ -360,3 +360,12 @@ p.dummy-text:nth-child(3) {
 /*border-top-style: none;*/
 /*border-bottom-style: none;*/
 }
+
+.eventshow{
+	z-index: 1100!important;
+}
+
+.eventhide{
+	z-index:0!important;
+}
+

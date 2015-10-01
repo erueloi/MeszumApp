@@ -96,6 +96,8 @@
 					classie.removeClass( self.loader, 'show' );
 					// in the end of the transition set class "show" to respective content item
 					classie.addClass( self.contentItems[ pos ], 'show' );
+					classie.removeClass( self.contentItems[ pos ], 'eventhide' );
+					classie.addClass( self.contentItems[ pos ], 'eventshow' );
 					classie.addClass( self.contentItems[ pos ].children[1], 'animated' );
 					classie.addClass( self.contentItems[ pos ].children[1], 'fadeInDown' );
 				}, 1000 );
@@ -153,7 +155,10 @@
 		classie.removeClass( contentItem.children[1], 'animated' );
 		classie.removeClass( contentItem.children[1], 'fadeInDown' );
 		classie.removeClass( contentItem, 'show' );
+		classie.removeClass( contentItem, 'eventshow' );
+		classie.addClass( contentItem, 'eventhide' );
 		classie.removeClass( this.contentEl, 'show' );
+		classie.removeClass( this.contentEl, 'eventshow' );
 
 		// without the timeout there seems to be some problem in firefox
 		setTimeout( function() { classie.removeClass( document.body, 'noscroll' ); }, 25 );

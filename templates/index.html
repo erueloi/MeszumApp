@@ -224,7 +224,7 @@
         <div class="content" style="background-color:rgb(18, 19, 20);">
                     <!--  Content Events -->
                     {% for event in events %}
-                        <div style="height: 100%!important;">
+                        <div style="height: 100%!important;" class="eventhide">
                             <div class="eventbackground" style="background: url('{{ event.poster.url }}') no-repeat center center fixed;  ">
                             </div>
                             <div class="container eventjukebox " >
@@ -234,7 +234,7 @@
                                                  <img src="{% static "img/lp_list.png" %}" class="responsive-img" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
                                              </div>
                                             <div style="margin-top: 20px; padding-top: 10px; ">
-                                                <table class="table responsive bordered highlight" id="songs">
+                                                <table class="table responsive bordered highlight" id="songs{{ event.id }}">
                                                     <thead>
                                                       <tr>
                                                         <th></th>
@@ -254,8 +254,12 @@
                                                               <span class="tl-number-wrap">{{ forloop.counter }}</span>
                                                               <audio id="player{{ song.id }}" src="{{ song.href_play }}"></audio>
                                                                 <div>
-                                                                    <button class="play" id="btnPlay{{ song.id }}"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-play"></span></button>
-                                                                    <button class="stop" style="display: none;" id="btnPause{{ song.id }}"><span id="audioControl{{ song.id }}" class="glyphicon glyphicon-pause"></span></button>
+{#                                                                    <span id="audioControl{{ song.id }}" class="glyphicon glyphicon-play"></span>#}
+{#                                                                      <span id="audioControl{{ song.id }}" class="glyphicon glyphicon-pause"></span>#}
+{#                                                                    <a class="play" id="btnPlay{{ song.id }}"><i class="material-icons">play_circle_outline</i></a>#}
+                                                                    <a id="btnPlay{{ song.id }}" class="btn-floating btn-large waves-effect waves-light black play"><i class="material-icons">play_arrow</i></a>
+                                                                    <a id="btnPause{{ song.id }}" class="btn-floating btn-large waves-effect waves-light black stop"><i class="material-icons">pause</i></a>
+{#                                                                    <button class="stop" style="display: none;" id="btnPause{{ song.id }}"><i class="material-icons">pause_circle_outline</i></button>#}
                                                                 </div>
                                                             </td>
                                                             <td>{{ song.title }}</td>
@@ -270,6 +274,7 @@
                                 </div>
                             </div>
                         </div>
+
                         {% endfor %}
 					<div>
 						<div class="dummy-img"></div>
@@ -306,12 +311,22 @@
         $(document).ready(function() {
             new grid3D( document.getElementById( 'grid3d' ) );
 
-            $('#songs').DataTable({
+{#            $('#songs').DataTable({#}
+{#                    searching: false,#}
+{#                    ordering:  false,#}
+{#                    lengthChange: false,#}
+{#                    info:false#}
+{#            });#}
+            for (i = 1; i <= {{ events.count }}; i++) {
+                $('#songs'+i).DataTable({
                     searching: false,
                     ordering:  false,
                     lengthChange: false,
                     info:false
             });
+            }
+
+
 
             $(".play").click(function(){
                 btnid = this.id.replace("btnPlay", "");
