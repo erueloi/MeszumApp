@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Assocr_/.idea/Assocr_.iml" filepath="$PROJECT_DIR$/../../Assocr_/.idea/Assocr_.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MeszumApp.iml" filepath="$PROJECT_DIR$/.idea/MeszumApp.iml" />
     </modules>
   </component>

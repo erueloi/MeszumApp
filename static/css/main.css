@@ -667,7 +667,7 @@ textarea.form-control {
 	box-shadow:0 1px 1px rgba(0,0,0,0.1);
 }
 
-.small-box:hover .icon{font-size:67px}
+.small-box:hover .icon{font-size:100px}
 
 .small-box .inner {padding: 10px;}
 
@@ -679,11 +679,17 @@ textarea.form-control {
 	transition:all .3s linear;
 	position:absolute;
 	top:8px;
-	right:30px;
+	left:80px;
 	z-index:0;
 	font-size:60px;
 	color:rgba(0,0,0,0.15);
 }
+
+.small-box .icon .material-icons{
+	font-size: 95px!important;
+}
+
+
 
 .small-box-footer{
 	position:relative;

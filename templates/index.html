@@ -234,7 +234,7 @@
                                                  <img src="{% static "img/lp_list.png" %}" class="responsive-img" style="width: 100% \9;display: block; margin-left: auto; margin-right:auto">
                                              </div>
                                             <div style="margin-top: 20px; padding-top: 10px; ">
-                                                <table class="table responsive bordered highlight" id="songs{{ event.id }}">
+                                                <table class="table responsive bordered" id="songs{{ event.id }}">
                                                     <thead>
                                                       <tr>
                                                         <th></th>
@@ -248,23 +248,20 @@
                                                          {% for song in event.song_set.all %}
                                                          <tr >
                                                             <td>
-                                                                <img src="https://d3rt1990lpmkn.cloudfront.net/60/b13c44e00ca96657913d59d676d402d4aa76dfb6" height="40" width="40" class="tl-album-cover">
+{#                                                                <img src="https://d3rt1990lpmkn.cloudfront.net/60/b13c44e00ca96657913d59d676d402d4aa76dfb6" height="40" width="40" class="tl-album-cover">#}
+                                                                <span class="tl-number-wrap">{{ forloop.counter }}</span>
                                                             </td>
                                                             <td>
-                                                              <span class="tl-number-wrap">{{ forloop.counter }}</span>
                                                               <audio id="player{{ song.id }}" src="{{ song.href_play }}"></audio>
                                                                 <div>
-{#                                                                    <span id="audioControl{{ song.id }}" class="glyphicon glyphicon-play"></span>#}
-{#                                                                      <span id="audioControl{{ song.id }}" class="glyphicon glyphicon-pause"></span>#}
-{#                                                                    <a class="play" id="btnPlay{{ song.id }}"><i class="material-icons">play_circle_outline</i></a>#}
-                                                                    <a id="btnPlay{{ song.id }}" class="btn-floating btn-large waves-effect waves-light black play"><i class="material-icons">play_arrow</i></a>
-                                                                    <a id="btnPause{{ song.id }}" class="btn-floating btn-large waves-effect waves-light black stop"><i class="material-icons">pause</i></a>
-{#                                                                    <button class="stop" style="display: none;" id="btnPause{{ song.id }}"><i class="material-icons">pause_circle_outline</i></button>#}
+                                                                    <a id="btnPlayPause{{ song.id }}" class="btn-floating waves-effect waves-light black play"><i class="material-icons">play_arrow</i><i class="material-icons" style="display:none">pause</i></a>
                                                                 </div>
                                                             </td>
                                                             <td>{{ song.title }}</td>
                                                             <td>{{ song.album }}</td>
-                                                            <td>666.116</td>
+                                                            <td>
+                                                                <i class="material-icons green">keyboard_arrow_up</i><i class="material-icons red">keyboard_arrow_down</i>
+                                                            </td>
                                                          </tr>
                                                          {% endfor %}
                                                     </tbody>
@@ -311,12 +308,6 @@
         $(document).ready(function() {
             new grid3D( document.getElementById( 'grid3d' ) );
 
-{#            $('#songs').DataTable({#}
-{#                    searching: false,#}
-{#                    ordering:  false,#}
-{#                    lengthChange: false,#}
-{#                    info:false#}
-{#            });#}
             for (i = 1; i <= {{ events.count }}; i++) {
                 $('#songs'+i).DataTable({
                     searching: false,
@@ -326,10 +317,9 @@
             });
             }
 
-
-
             $(".play").click(function(){
                 btnid = this.id.replace("btnPlay", "");
+                $(this).find('i').toggle();
                 audioplayer = document.getElementById('player'+btnid)   ;
                 if (audioplayer.paused == false) {
                     audioplayer.pause();

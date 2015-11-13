@@ -2,8 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Django default" uuid="ec4d8fa9-1718-4cdc-a0e4-c716454e65b8">
-      <user-name>meszum</user-name>
-      <user-password>dfe7dfdfdfd9dfc3dfc9dfebdfc6dfc6dff9dfcfdfde</user-password>
+      <user-name>root</user-name>
       <schema-pattern>meszum.*</schema-pattern>
       <default-schemas>meszum.*</default-schemas>
     </data-source>
@@ -18,6 +17,11 @@
       <user-name>postgres</user-name>
       <schema-pattern>dbmeszumdev.pg_catalog dbmeszumdev.public</schema-pattern>
       <default-schemas>dbmeszumdev.pg_catalog dbmeszumdev.public</default-schemas>
+    </data-source>
+    <data-source name="Assocr" uuid="7103f27c-f7dc-4d8d-b4ac-795e3a8d3b6b">
+      <user-name>root</user-name>
+      <schema-pattern>assocr.*</schema-pattern>
+      <default-schemas>assocr.*</default-schemas>
     </data-source>
   </component>
 </project>
