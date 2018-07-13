@@ -6,7 +6,7 @@ django-postgrespool==0.3.0
 geopy==1.10.0
 dj-database-url==0.3.0
 dj-static==0.0.6
-gunicorn==19.1.1
+gunicorn==19.5.0.
 psycopg2==2.5.1
 static==0.4
 wsgiref==0.1.2
